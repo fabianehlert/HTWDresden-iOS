@@ -77,8 +77,6 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
             
             var retData = formattedXML.dataUsingEncoding(NSUTF8StringEncoding)!
             
-            println(retData.length)
-            
             var parser = NSXMLParser(data: retData)
             parser.delegate = self
             parser.parse()

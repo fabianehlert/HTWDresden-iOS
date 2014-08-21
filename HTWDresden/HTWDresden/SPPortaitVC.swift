@@ -13,29 +13,21 @@ class SPPortaitVC: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     var model: SPPortraitModel!
+    let myAlert = HTWAlert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if CURR_MATRNR == nil {
-            
-            let alert = UIAlertController(title: "Willkommen", message: "Bitte geben Sie Ihre Kennung ein!", preferredStyle: .Alert)
-            alert.addTextFieldWithConfigurationHandler {
-                textField in
-                textField.textAlignment = .Center
-            }
-            alert.addAction(UIAlertAction(title: "Abbrechen", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {
-            action in
-                let kennung = (alert.textFields[0] as UITextField).text
+            myAlert.alertInViewController(self, title: "Willkommen", message: "Bitte geben Sie Ihre Kennung ein!", numberOfTextFields: 1, actions: [(title: "Ok",{
+                let kennung = self.myAlert.stringFromTextFieldAt(0)!
                 CURR_MATRNR = kennung
                 self.model = SPPortraitModel(matrnr: kennung)
-            }))
-            
-            presentViewController(alert, animated: true, completion: nil)
+            }), (title: "Abbrechen", action: nil)])
         }
-        
-        
+        else {
+            self.model = SPPortraitModel(matrnr: CURR_MATRNR!)
+        }
 
     }
     

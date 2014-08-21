@@ -16,3 +16,71 @@ func setNetworkIndicator(on: Bool) {
     UIApplication.sharedApplication().networkActivityIndicatorVisible = on
 }
 
+class HTWAlert: NSObject, UIAlertViewDelegate {
+    
+    var actions: [(title: String,action: (() -> Void)?)]!
+    var numberOfTextFields: Int!
+    var alert8: UIAlertController!
+    var alert7: UIAlertView!
+    
+    override init() {}
+    
+    func alertInViewController(sender: AnyObject, title: String, message: String, numberOfTextFields: Int, actions: [(title: String,action: (() -> Void)?)]) {
+        self.actions = actions
+        self.numberOfTextFields = numberOfTextFields
+        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0 {
+            // iOS 8
+            alert8 = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            for var i = 0; i < numberOfTextFields; i++ {
+                alert8.addTextFieldWithConfigurationHandler(nil)
+            }
+            for (index,(title, function)) in enumerate(actions) {
+                alert8.addAction(UIAlertAction(title: title, style: .Default, handler: {
+                    action in
+                    let temp  = self.actions[index].action
+                    temp?()
+                }))
+            }
+            sender.presentViewController(alert8, animated: true, completion: nil)
+        }
+        else {
+            // iOS 7
+            alert7 = UIAlertView()
+            alert7.title = title
+            alert7.message = message
+            alert7.delegate = self
+            for (title, function) in self.actions {
+                alert7.addButtonWithTitle(title)
+            }
+            switch numberOfTextFields {
+            case 1:
+                alert7.alertViewStyle = .PlainTextInput
+            case 2:
+                alert7.alertViewStyle = .LoginAndPasswordInput
+            default:
+                break
+            }
+            alert7.show()
+            
+        }
+    }
+    
+    func stringFromTextFieldAt(index: Int) -> String? {
+        if index >= numberOfTextFields {
+            println("Tried to reach textField out of index.. aborting")
+            return nil
+        }
+        if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0 {
+            return (alert8.textFields[index] as UITextField).text
+        }
+        else {
+            return alert7.textFieldAtIndex(index).text
+        }
+    }
+    
+    func alertView(alertView: UIAlertView!, clickedButtonAtIndex buttonIndex: Int) {
+        self.actions[buttonIndex].action?()
+    }
+    
+}
+
