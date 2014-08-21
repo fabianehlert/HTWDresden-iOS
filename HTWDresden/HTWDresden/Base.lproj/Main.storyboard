@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="od9-8T-tHe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FN0-ua-YAE">
+            <objects>
+                <tabBarController id="od9-8T-tHe" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="B8M-zx-mQS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eFF-3a-SXn" kind="relationship" relationship="viewControllers" id="9tf-Wq-vb0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LhD-vS-wsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="456"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ZXP-8J-szc">
+            <objects>
+                <navigationController id="eFF-3a-SXn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WdP-QY-FQM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T8w-hW-BaA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1TP-sU-TY3" kind="relationship" relationship="rootViewController" id="bbf-IH-8Ae"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wss-mB-dbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="22"/>
+        </scene>
+        <!--PortaitVC-->
+        <scene sceneID="vBH-vV-eFi">
+            <objects>
+                <viewController id="1TP-sU-TY3" customClass="SPPortaitVC" customModule="HTWDresden" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ayd-fg-2Mc"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGh-3T-Tzp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gep-Kg-Rcc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wY1-cL-BTg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wY1-cL-BTg" firstAttribute="leading" secondItem="Gep-Kg-Rcc" secondAttribute="leadingMargin" constant="-16" id="9ga-TI-eat"/>
+                            <constraint firstItem="wY1-cL-BTg" firstAttribute="bottom" secondItem="Gep-Kg-Rcc" secondAttribute="bottomMargin" id="VG1-M2-SQU"/>
+                            <constraint firstItem="wY1-cL-BTg" firstAttribute="top" secondItem="Gep-Kg-Rcc" secondAttribute="topMargin" id="feO-Xq-DEM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wY1-cL-BTg" secondAttribute="trailing" constant="-16" id="iHJ-M5-Uxi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="96t-ba-mne"/>
+                    <connections>
+                        <outlet property="scrollView" destination="wY1-cL-BTg" id="nZV-IS-mK6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bj6-zS-DnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="22"/>
+        </scene>
+    </scenes>
+</document>
