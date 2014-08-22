@@ -17,25 +17,38 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     var model: SPPortraitModel!
     let myAlert = HTWAlert()
     var buttons = [SPButtonLesson]()
-    var currentDate = NSDate()
+    var selectedButton: SPButtonLesson?
+    var currentDate = NSDate.specificDate(21, month: 04, year: 2014)
     
     // MARK: - UI Elemente
     var tageView: UIView!
     var zeitenView: UIView!
     
+    // MARK: - Detail (iPad)
+    var detailView: SPPortraitDetailPad?
+    
     // MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentDate = NSDate.specificDate(21, month: 04, year: 2014)
+        if device() == .Pad {
+            detailView = SPPortraitDetailPad(frame: CGRect(x: 0, y: view.frame.size.height/2 - 70, width: view.frame.size.width, height: view.frame.size.height/2))
+            detailView!.stunde = nil
+            scrollView.addSubview(detailView!)
+        }
         
-        title = "TEST"
+        title = "Stunden"
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        scrollView.frame = view.frame
         scrollView.contentSize = CGSize(width: CGFloat(60+116*ANZ_PORTRAIT), height: CGFloat(459 + UINavigationBar.appearance().frame.size.height))
         scrollView.directionalLockEnabled = true
         scrollView.delegate = self
+        scrollView.backgroundColor = UIColor.HTWSandColor()
+        let gestureRec = UITapGestureRecognizer(target: self, action: "scrollScrollViewToToday")
+        gestureRec.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(gestureRec)
         loadDayLabels()
         loadTimeLabels()
         
@@ -58,7 +71,9 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     }
     
     func SPPortraitModelfinishedLoading(model: SPPortraitModel) {
-        getButtons()
+        dispatch_async(MAIN_QUEUE) {
+            self.getButtons()
+        }
     }
     
     // MARK: - set up the Interface
@@ -66,9 +81,23 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         
         for stunde in self.model.stunden {
             let button = SPButtonLesson(stunde: stunde, portrait: true, currentDate: currentDate)
+            button.tapHandler = {
+                button in
+                self.selectedButton?.select = false
+                self.selectedButton = button
+                button.select = true
+                self.detailView?.stunde = button.stunde
+            }
+            if button.isNow() {
+                button.now = true
+                selectedButton = button
+                detailView?.stunde = selectedButton?.stunde
+                scrollView.bringSubviewToFront(detailView!)
+            }
             buttons += [button]
             scrollView.addSubview(button)
         }
+        
     }
     
     func loadDayLabels() {
@@ -119,7 +148,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     
     func loadTimeLabels() {
         let today = currentDate.getDayOnly()
-        zeitenView = UIView(frame: CGRect(x: scrollView.contentOffset.x, y: -350, width: 40, height: scrollView.contentSize.height+700))
+        zeitenView = UIView(frame: CGRect(x: scrollView.contentOffset.x, y: -350, width: 40, height: scrollView.frame.size.height+700))
         zeitenView.backgroundColor = UIColor.HTWDarkGrayColor()
         
         let vonStrings = ["07:30", "09:20", "11:10", "13:10", "15:00", "16:50", "18:30"]
@@ -130,18 +159,18 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
                             today.dateByAddingTimeInterval(60*60*13+60*10),
                             today.dateByAddingTimeInterval(60*60*15+60*00),
                             today.dateByAddingTimeInterval(60*60*16+60*50),
-                            today.dateByAddingTimeInterval(60*60*18+60*30) ]
+                            today.dateByAddingTimeInterval(60*60*18+60*30)]
         for var i = 0; i < stundenZeiten.count; i++ {
             let y = 54 + CGFloat(stundenZeiten[i].timeIntervalSinceDate(today.dateByAddingTimeInterval(7*60*60+30*60))) / 60 * PixelPerMin + 350
             let vonBisView = UIView(frame: CGRect(x: 5, y: y, width: 30, height: 90*PixelPerMin))
             let von = UILabel(frame: CGRect(x: 0, y: 0, width: vonBisView.frame.size.width, height: vonBisView.frame.size.height/2))
             von.text = vonStrings[i]
-            von.font = UIFont.HTWSmallestFont()
+            von.font = UIFont.HTWVerySmallFont()
             von.textColor = UIColor.HTWWhiteColor()
             vonBisView.addSubview(von)
             let bis = UILabel(frame: CGRect(x: 0, y: vonBisView.frame.size.height/2, width: vonBisView.frame.size.width, height: vonBisView.frame.size.height/2))
-            bis.text = vonStrings[i]
-            bis.font = UIFont.HTWSmallestFont()
+            bis.text = bisStrings[i]
+            bis.font = UIFont.HTWVerySmallFont()
             bis.textColor = UIColor.HTWWhiteColor()
             vonBisView.addSubview(bis)
             let strich = UIView(frame:CGRect(x: vonBisView.frame.size.width*0.25, y: von.frame.size.height, width: vonBisView.frame.size.width/2, height: 1))
@@ -159,11 +188,20 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         orderViews(scrollView)
     }
     
+    func scrollScrollViewToToday() {
+        scrollView.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+    }
+    
     func orderViews(scrollView: UIScrollView) {
         zeitenView.frame = CGRect(x: scrollView.contentOffset.x, y: zeitenView.frame.origin.y, width: zeitenView.frame.size.width, height: zeitenView.frame.size.height)
         scrollView.bringSubviewToFront(zeitenView)
         tageView.frame = CGRect(x: -scrollView.contentSize.width, y: scrollView.contentOffset.y+64, width: scrollView.contentSize.width*3, height: 40)
         scrollView.bringSubviewToFront(tageView)
+        
+        if device() == .Pad {
+            detailView?.frame.origin.x = scrollView.contentOffset.x
+            scrollView.bringSubviewToFront(detailView!)
+        }
     }
     
     // MARK: - NOT IN FINAL RELEASE

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -60,10 +59,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wY1-cL-BTg" firstAttribute="leading" secondItem="Gep-Kg-Rcc" secondAttribute="leadingMargin" constant="-16" id="9ga-TI-eat"/>
-                            <constraint firstItem="wY1-cL-BTg" firstAttribute="bottom" secondItem="Gep-Kg-Rcc" secondAttribute="bottomMargin" id="VG1-M2-SQU"/>
-                            <constraint firstItem="wY1-cL-BTg" firstAttribute="top" secondItem="Gep-Kg-Rcc" secondAttribute="topMargin" id="feO-Xq-DEM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wY1-cL-BTg" secondAttribute="trailing" constant="-16" id="iHJ-M5-Uxi"/>
+                            <constraint firstItem="wY1-cL-BTg" firstAttribute="width" secondItem="Gep-Kg-Rcc" secondAttribute="width" id="QNO-Mo-4J4"/>
+                            <constraint firstItem="wY1-cL-BTg" firstAttribute="height" secondItem="Gep-Kg-Rcc" secondAttribute="height" id="iIG-vt-LPV"/>
+                            <constraint firstAttribute="centerY" secondItem="wY1-cL-BTg" secondAttribute="centerY" id="lpV-Mc-WIe"/>
+                            <constraint firstAttribute="centerX" secondItem="wY1-cL-BTg" secondAttribute="centerX" id="zfB-9C-NN3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="96t-ba-mne"/>

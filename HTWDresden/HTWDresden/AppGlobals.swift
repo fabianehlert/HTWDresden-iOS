@@ -19,6 +19,10 @@ func setNetworkIndicator(on: Bool) {
     UIApplication.sharedApplication().networkActivityIndicatorVisible = on
 }
 
+func device() -> UIUserInterfaceIdiom {
+    return UIDevice.currentDevice().userInterfaceIdiom
+}
+
 
 // MARK: - Alert that works on iOS 7 and 8
 class HTWAlert: NSObject, UIAlertViewDelegate {

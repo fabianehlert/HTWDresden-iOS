@@ -36,6 +36,8 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
     func parseWithCompletion(handler: (success: Bool, error: String!) -> Void ) -> Void {
         completion = handler
         
+        println("== Lade Daten von \(kennung)")
+        
         let requestString = "matr=\(kennung)&pressme=S+T+A+R+T"
         let requestData = NSData(bytes: (requestString as NSString).UTF8String, length: requestString.length)
         var request = NSMutableURLRequest(URL: NSURL(string: XML_PARSER_URL), cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)

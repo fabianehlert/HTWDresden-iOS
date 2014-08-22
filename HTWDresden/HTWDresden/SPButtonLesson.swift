@@ -16,7 +16,7 @@ class SPButtonLesson: UIButton {
     
     private var portrait: Bool
     private var currentDate: NSDate
-    private var stunde: Stunde
+    var stunde: Stunde
     
     private var width: CGFloat = 0
     private var height: CGFloat = 0
@@ -24,6 +24,23 @@ class SPButtonLesson: UIButton {
     private var y: CGFloat = 0
     
     private var PixelPerMin: CGFloat = 0.0
+    
+    var newGr: UITapGestureRecognizer?
+    
+    var tapHandler: ((sender: SPButtonLesson) -> Void)? {
+        didSet {
+            if newGr != nil {
+                removeGestureRecognizer(newGr!)
+            }
+            newGr = UITapGestureRecognizer(target: self, action: "gestureRecognizerAction:")
+            newGr?.numberOfTapsRequired = 1
+            addGestureRecognizer(newGr!)
+        }
+    }
+    
+    func gestureRecognizerAction(sender: UIGestureRecognizer) {
+        tapHandler?(sender: self)
+    }
     
     // MARK: - UI
     
@@ -157,6 +174,25 @@ class SPButtonLesson: UIButton {
         }
     }
     
+    var select: Bool = false {
+        didSet{
+            if select {
+                backgroundColor = UIColor.HTWBlueColor()
+                kurzel?.textColor = UIColor.HTWWhiteColor()
+                raum?.textColor = UIColor.HTWWhiteColor()
+                typ?.textColor = UIColor.HTWWhiteColor()
+                circle?.backgroundColor = UIColor.HTWWhiteColor()
+            }
+            else {
+                backgroundColor = UIColor.HTWWhiteColor()
+                kurzel?.textColor = UIColor.HTWDarkGrayColor()
+                raum?.textColor = UIColor.HTWGrayColor()
+                typ?.textColor = UIColor.HTWGrayColor()
+                circle?.backgroundColor = UIColor.HTWTextColor()
+            }
+        }
+    }
+    
     func markLesson() {
         backgroundColor = UIColor.HTWBlueColor()
         
@@ -178,7 +214,12 @@ class SPButtonLesson: UIButton {
         circle?.backgroundColor = UIColor.HTWTextColor()
     }
     
-    
+    func isNow() -> Bool {
+        if NSDate().inRange(stunde.anfang, date2: stunde.ende) {
+            return true
+        }
+        return false
+    }
     
     
 }

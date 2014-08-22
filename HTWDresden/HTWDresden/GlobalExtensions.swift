@@ -193,7 +193,7 @@ extension NSDate {
     }
 
     class func weekDay() -> Int {
-        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: NSDate())).weekday
+        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: NSDate())).weekday - 2
         if weekday == -1 {
             weekday = 6
         }
@@ -201,7 +201,7 @@ extension NSDate {
     }
 
     func weekDay() -> Int {
-        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: self)).weekday
+        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: self)).weekday - 2
         if weekday == -1 {
             weekday = 6
         }
@@ -299,17 +299,17 @@ extension UIColor {
 
 extension UIFont {
     
-//    class func systemFontOfSize(fontSize: CGFloat) -> UIFont {
-//        return UIFont(name: "PTSans-Regular", size: fontSize)
-//    }
-//
-//    class func boldSystemFontOfSize(fontSize: CGFloat) -> UIFont {
-//        return UIFont(name: "PTSans-Bold", size: fontSize)
-//    }
-//
-//    class func italicSystemFontOfSize(fontSize: CGFloat) -> UIFont {
-//        return UIFont(name: "PTSans-Italic", size: fontSize)
-//    }
+    class func systemFontOfSize(fontSize: CGFloat) -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: fontSize)
+    }
+
+    class func boldSystemFontOfSize(fontSize: CGFloat) -> UIFont {
+        return UIFont(name: "PTSans-Bold", size: fontSize)
+    }
+
+    class func italicSystemFontOfSize(fontSize: CGFloat) -> UIFont {
+        return UIFont(name: "PTSans-Italic", size: fontSize)
+    }
 
     class func HTWExtraLargeFont() -> UIFont {
         return UIFont(name: "PT Sans", size: 25)

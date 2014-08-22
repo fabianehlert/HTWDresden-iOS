@@ -17,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
-        ANZ_PORTRAIT = 7
+        
+        UITabBar.appearance().barTintColor = UIColor.HTWBlueColor()
+        UITabBar.appearance().selectedImageTintColor = UIColor.HTWGrayColor()
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.HTWWhiteColor()], forState: .Normal)
+        
+        UINavigationBar.appearance().barStyle = .BlackTranslucent
+        UINavigationBar.appearance().barTintColor = UIColor.HTWBlueColor()
+        UINavigationBar.appearance().tintColor = UIColor.HTWWhiteColor()
+        
+        
+        ANZ_PORTRAIT = 7*4
+        
         
         return true
     }
