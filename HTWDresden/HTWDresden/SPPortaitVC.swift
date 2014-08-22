@@ -11,6 +11,8 @@ import UIKit
 
 class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     
+    private let PixelPerMin: CGFloat = 0.5
+    
     @IBOutlet weak var scrollView: UIScrollView!
     var model: SPPortraitModel!
     let myAlert = HTWAlert()
@@ -19,6 +21,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     
     // MARK: - UI Elemente
     var tageView: UIView!
+    var zeitenView: UIView!
     
     // MARK: - ViewController Lifecycle
     override func viewDidLoad() {
@@ -34,6 +37,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         scrollView.directionalLockEnabled = true
         scrollView.delegate = self
         loadDayLabels()
+        loadTimeLabels()
         
         // Noch nie angemeldet
         if CURR_MATRNR == nil {
@@ -114,7 +118,40 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     }
     
     func loadTimeLabels() {
+        let today = currentDate.getDayOnly()
+        zeitenView = UIView(frame: CGRect(x: scrollView.contentOffset.x, y: -350, width: 40, height: scrollView.contentSize.height+700))
+        zeitenView.backgroundColor = UIColor.HTWDarkGrayColor()
         
+        let vonStrings = ["07:30", "09:20", "11:10", "13:10", "15:00", "16:50", "18:30"]
+        let bisStrings = ["09:00", "10:50", "12:40", "14:40", "16:30", "18:20", "20:00"]
+        let stundenZeiten = [today.dateByAddingTimeInterval(60*60*7+60*30),
+                            today.dateByAddingTimeInterval(60*60*9+60*20),
+                            today.dateByAddingTimeInterval(60*60*11+60*10),
+                            today.dateByAddingTimeInterval(60*60*13+60*10),
+                            today.dateByAddingTimeInterval(60*60*15+60*00),
+                            today.dateByAddingTimeInterval(60*60*16+60*50),
+                            today.dateByAddingTimeInterval(60*60*18+60*30) ]
+        for var i = 0; i < stundenZeiten.count; i++ {
+            let y = 54 + CGFloat(stundenZeiten[i].timeIntervalSinceDate(today.dateByAddingTimeInterval(7*60*60+30*60))) / 60 * PixelPerMin + 350
+            let vonBisView = UIView(frame: CGRect(x: 5, y: y, width: 30, height: 90*PixelPerMin))
+            let von = UILabel(frame: CGRect(x: 0, y: 0, width: vonBisView.frame.size.width, height: vonBisView.frame.size.height/2))
+            von.text = vonStrings[i]
+            von.font = UIFont.HTWSmallestFont()
+            von.textColor = UIColor.HTWWhiteColor()
+            vonBisView.addSubview(von)
+            let bis = UILabel(frame: CGRect(x: 0, y: vonBisView.frame.size.height/2, width: vonBisView.frame.size.width, height: vonBisView.frame.size.height/2))
+            bis.text = vonStrings[i]
+            bis.font = UIFont.HTWSmallestFont()
+            bis.textColor = UIColor.HTWWhiteColor()
+            vonBisView.addSubview(bis)
+            let strich = UIView(frame:CGRect(x: vonBisView.frame.size.width*0.25, y: von.frame.size.height, width: vonBisView.frame.size.width/2, height: 1))
+            strich.backgroundColor = UIColor.HTWWhiteColor()
+            vonBisView.addSubview(strich)
+            
+            zeitenView.addSubview(vonBisView)
+        }
+        
+        scrollView.addSubview(zeitenView)
     }
     
     // MARK: - ScrollView Delegate
@@ -123,6 +160,8 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
     }
     
     func orderViews(scrollView: UIScrollView) {
+        zeitenView.frame = CGRect(x: scrollView.contentOffset.x, y: zeitenView.frame.origin.y, width: zeitenView.frame.size.width, height: zeitenView.frame.size.height)
+        scrollView.bringSubviewToFront(zeitenView)
         tageView.frame = CGRect(x: -scrollView.contentSize.width, y: scrollView.contentOffset.y+64, width: scrollView.contentSize.width*3, height: 40)
         scrollView.bringSubviewToFront(tageView)
     }
