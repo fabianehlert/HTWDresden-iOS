@@ -9,20 +9,28 @@
 import Foundation
 import UIKit
 
-class SPPortraitModel {
+class SPPortraitModel: NSObject {
 
     var user: User!
-    var stunden: [[String:Stunde]]!
+    var stunden: [Stunde]!
+    
+    var handler: (() -> Void)?
     
     var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
     
-    init(matrnr: String) {
+    // MARK: - Initialiser
+    init(matrnr: String, currentDate: NSDate, handler: () -> Void) {
+        super.init()
+        self.handler = handler
         var getUser = userByMatrnr(matrnr)
         if getUser.exists {
             user = getUser.user
-            stunden = [[String:Stunde]]()
+            stunden = [Stunde]()
             for stunde in user.stunden.allObjects as [Stunde] {
-                stunden.append([stunde.ident:stunde])
+                if stunde.anfang.inRange(currentDate.getDayOnly(), date2: currentDate.getDayOnly().addDays(ANZ_PORTRAIT)) {
+                    stunden.append(stunde)
+                }
+                
             }
             println("== User \(user.matrnr) erfolgreich geladen")
         }
@@ -34,9 +42,21 @@ class SPPortraitModel {
                 if success {
                     println("== Stunden erfolgreich geladen.")
                     self.user = self.userByMatrnr(matrnr).user
+                    self.stunden = [Stunde]()
+                    for stunde in self.user.stunden.allObjects as [Stunde] {
+                        if stunde.anfang.inRange(currentDate.getDayOnly(), date2: currentDate.getDayOnly().addDays(ANZ_PORTRAIT)) {
+                            self.stunden.append(stunde)
+                        }
+                        
+                    }
+                    println("== User \(self.user.matrnr) erfolgreich geladen")
                 }
             }
         }
+    }
+    
+    func start() {
+        handler?()
     }
     
     func reloadStunden() {

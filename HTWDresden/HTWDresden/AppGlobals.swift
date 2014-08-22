@@ -10,12 +10,17 @@ import UIKit
 import Foundation
 
 let SUITNAME_NSUSERDEFAULTS = "group.HTW.TodayExtensionSharingDefaults"
+let userDefaults = NSUserDefaults(suiteName: SUITNAME_NSUSERDEFAULTS)
 
+let DIFF_QUEUE = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+let MAIN_QUEUE = dispatch_get_main_queue()
 
 func setNetworkIndicator(on: Bool) {
     UIApplication.sharedApplication().networkActivityIndicatorVisible = on
 }
 
+
+// MARK: - Alert that works on iOS 7 and 8
 class HTWAlert: NSObject, UIAlertViewDelegate {
     
     var actions: [(title: String,action: (() -> Void)?)]!

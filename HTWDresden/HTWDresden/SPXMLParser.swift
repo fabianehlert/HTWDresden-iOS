@@ -26,11 +26,13 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
     var currentItem: String!
     var stundeDic: [String:String]!
     
+    // MARK: - Initialisers
     init(kennung: String, raum: Bool) {
         self.kennung = kennung
         self.raum = raum
     }
     
+    // MARK: - Start the Parser
     func parseWithCompletion(handler: (success: Bool, error: String!) -> Void ) -> Void {
         completion = handler
         
@@ -45,44 +47,44 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
             response, data, error in
             
-//            if let errorMessage = error {
-//                self.completion(success: false, error: "Verbindung fehlgeschlagen.")
-//                return
-//            }
+            if data == nil {
+                self.completion(success: false, error: "Verbindung fehlgeschlagen.")
+                return
+            }
             
             var html: String = NSString(data: data, encoding: NSASCIIStringEncoding)
-//            var html = String(data)
-            setNetworkIndicator(false)
-//            if (html as String).contains("Stundenplan im csv-Format erstellen") || (html as String).contains("Es wurden keine Daten gefunden") {
-//                self.completion(success: false, error: "Falsche Kennung")
-//            }
+            if html.contains("Stundenplan im csv-Format erstellen") || html.contains("Es wurden keine Daten gefunden") {
+                self.completion(success: false, error: "Falsche Kennung")
+            }
             
             // Aktuelles Semester
-//            var semester = html.substringFromIndex(html.rangeOfString("</h3><h2>").location + "</h3><h2>".length)
-            let htmlForSemester: String = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php"), encoding: NSASCIIStringEncoding, error: nil)
-            let index = htmlForSemester.indexOf("<h2>")
-            var semester = htmlForSemester[index + "<h2>".length...index + 50]
-
-            
-            let teile = semester.componentsSeparatedByString(" ")
-            semester = NSString(format: "%@ %@", teile[0], teile[1])
-            
-            CURR_SEMESTER = semester
-            
-            let startIndex = html.indexOf("<Stunde")
-            var dataAfterHtml = html.subString(startIndex, length: html.lengthAfterIndex(startIndex))
-            dataAfterHtml = dataAfterHtml.subString(0, length: dataAfterHtml.indexOf("<br>"))
-            var formattedXML = "<data>\(dataAfterHtml)</data>"
-            formattedXML.replace("&", withString: " und ")
-            
-            var retData = formattedXML.dataUsingEncoding(NSUTF8StringEncoding)!
-            
-            var parser = NSXMLParser(data: retData)
-            parser.delegate = self
-            parser.parse()
+            dispatch_async(DIFF_QUEUE) {
+                let htmlForSemester: String = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php"), encoding: NSASCIIStringEncoding, error: nil)
+                setNetworkIndicator(false)
+                let index = htmlForSemester.indexOf("<h2>")
+                var semester = htmlForSemester[index + "<h2>".length...index + 50]
+                
+                let teile = semester.componentsSeparatedByString(" ")
+                semester = NSString(format: "%@ %@", teile[0], teile[1])
+                
+                CURR_SEMESTER = semester
+                
+                let startIndex = html.indexOf("<Stunde")
+                var dataAfterHtml = html.subString(startIndex, length: html.lengthAfterIndex(startIndex))
+                dataAfterHtml = dataAfterHtml.subString(0, length: dataAfterHtml.indexOf("<br>"))
+                var formattedXML = "<data>\(dataAfterHtml)</data>"
+                formattedXML.replace("&", withString: " und ")
+                
+                var retData = formattedXML.dataUsingEncoding(NSUTF8StringEncoding)!
+                
+                var parser = NSXMLParser(data: retData)
+                parser.delegate = self
+                parser.parse()
+            }
         })
     }
     
+    // MARK: - Parser Delegates
     func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError!) {
         completion(success: false, error: parseError.localizedDescription)
     }

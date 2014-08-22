@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
 
@@ -185,12 +186,107 @@ extension NSDate {
         return dateF.dateFromString(string)!
     }
 
-    func weekDay() -> Int {
+    class func weekDay() -> Int {
         var weekday = (NSCalendar.currentCalendar().components(.WeekCalendarUnit, fromDate: NSDate())).weekday
         if weekday == -1 {
             weekday = 6
         }
         return weekday
     }
+
+    func weekDay() -> Int {
+        var weekday = (NSCalendar.currentCalendar().components(.WeekCalendarUnit, fromDate: self)).weekday
+        if weekday == -1 {
+            weekday = 6
+        }
+        return weekday
+    }
+
+    func getDayOnly() -> NSDate {
+        let dateF = NSDateFormatter()
+        dateF.dateFormat = "dd.MM.yyyy"
+        return dateF.dateFromString(dateF.stringFromDate(self))!
+    }
     
+    class func isSameDayWithDate1(date1: NSDate, andDate2 date2: NSDate) -> Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let comp1 = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date1)
+        let comp2 = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date2)
+        return comp1.day == comp2.day && comp1.month == comp2.month && comp1.year == comp2.year
+    }
+
+    class func specificDate(day: Int, month: Int, year: Int) -> NSDate {
+        var comps = NSDateComponents()
+        comps.day = day
+        comps.month = month
+        comps.year = year
+        return NSCalendar.currentCalendar().dateFromComponents(comps)!
+    }
+
+    func inRange(date1: NSDate, date2: NSDate) -> Bool {
+        if NSCalendar.currentCalendar().compareDate(self, toDate: date1, toUnitGranularity: .DayCalendarUnit) == NSComparisonResult.OrderedAscending {
+            return false
+        }
+        if NSCalendar.currentCalendar().compareDate(self, toDate: date2, toUnitGranularity: .DayCalendarUnit) == NSComparisonResult.OrderedDescending {
+            return false
+        }
+        return true
+    }
+
+    func addDays(days: Int) -> NSDate {
+        var dayComponent = NSDateComponents()
+        dayComponent.day = days
+        var theCalendar = NSCalendar.currentCalendar()
+        return theCalendar.dateByAddingComponents(dayComponent, toDate: self, options: .allZeros)
+    }
 }
+
+extension UIColor {
+	
+	class func HTWBlueColor() -> UIColor {
+		return UIColor(red: 58.0/255.0, green: 121.0/255.0, blue: 162.0/255.0, alpha: 1)
+	}
+
+	class func HTWRedColor() -> UIColor {
+		return UIColor(red: 197.0/255.0, green: 79.0/255.0, blue: 52.0/255.0, alpha: 1)
+	}
+
+	class func HTWDarkGrayColor() -> UIColor {
+		return UIColor(red: 115.0/255.0, green: 113.0/255.0, blue: 111.0/255.0, alpha: 1)
+	}
+
+	class func HTWGrayColor() -> UIColor {
+		return UIColor(red: 181.0/255.0, green: 178.0/255.0, blue: 175.0/255.0, alpha: 1)
+	}
+
+	class func HTWSandColor() -> UIColor {
+		return UIColor(red: 247.0/255.0, green: 244.0/255.0, blue: 239.0/255.0, alpha: 1)
+	}
+
+	class func HTWWhiteColor() -> UIColor {
+		return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1)
+	}
+
+	class func HTWDarkBlueColor() -> UIColor {
+		return UIColor(red: 65.0/255.0, green: 104.0/255.0, blue: 111.0/255.0, alpha: 1)
+	}
+
+	class func HTWGreenColor() -> UIColor {
+		return UIColor(red: 115.0/255.0, green: 145.0/255.0, blue: 51.0/255.0, alpha: 1)
+	}
+
+	class func HTWBackgroundColor() -> UIColor {
+		return HTWSandColor()
+	}
+
+	class func HTWTextColor() -> UIColor {
+		return HTWDarkGrayColor()
+	}
+
+	class func HTWTextInactiveColor() -> UIColor {
+		return HTWGrayColor()
+	}
+
+}
+
+
