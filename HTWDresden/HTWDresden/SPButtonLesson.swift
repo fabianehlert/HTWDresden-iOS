@@ -122,11 +122,22 @@ class SPButtonLesson: UIButton {
         kurzel?.text = stunde.kurzel.componentsSeparatedByString(" ")[0]
         kurzel?.textAlignment = .Left
         kurzel?.textColor = UIColor.HTWDarkGrayColor()
+        kurzel?.font = portrait ? UIFont.HTWLargeFont() : UIFont.HTWBaseFont()
         
         raum = UILabel(frame: CGRect(x: x+CELL_PADDING, y: y+(height*0.5), width: width*0.98, height: height*0.4))
         raum?.text = stunde.raum
         raum?.textAlignment = .Left
         raum?.textColor = UIColor.HTWGrayColor()
+        raum?.font = portrait ? UIFont.HTWSmallFont() : UIFont.HTWSmallestFont()
+        
+        if stunde.kurzel.componentsSeparatedByString(" ").count > 1 {
+            typ = UILabel(frame: CGRect(x: x, y: y+(height*0.5), width: width-6, height: height*0.4))
+            typ?.text = stunde.kurzel.componentsSeparatedByString(" ").last
+            typ?.font = portrait ? UIFont.HTWSmallFont() : UIFont.HTWVerySmallFont()
+            typ?.textAlignment = .Right
+            typ?.textColor = UIColor.HTWGrayColor()
+            addSubview(typ!)
+        }
         
         bounds = frame
         addSubview(kurzel!)

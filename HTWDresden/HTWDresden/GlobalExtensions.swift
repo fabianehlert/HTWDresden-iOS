@@ -186,8 +186,14 @@ extension NSDate {
         return dateF.dateFromString(string)!
     }
 
+    func stringFromDate(format: String) -> String {
+        let dateF = NSDateFormatter()
+        dateF.dateFormat = format
+        return dateF.stringFromDate(self)
+    }
+
     class func weekDay() -> Int {
-        var weekday = (NSCalendar.currentCalendar().components(.WeekCalendarUnit, fromDate: NSDate())).weekday
+        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: NSDate())).weekday
         if weekday == -1 {
             weekday = 6
         }
@@ -195,7 +201,7 @@ extension NSDate {
     }
 
     func weekDay() -> Int {
-        var weekday = (NSCalendar.currentCalendar().components(.WeekCalendarUnit, fromDate: self)).weekday
+        var weekday = (NSCalendar.currentCalendar().components(.WeekdayCalendarUnit, fromDate: self)).weekday
         if weekday == -1 {
             weekday = 6
         }
@@ -224,10 +230,10 @@ extension NSDate {
     }
 
     func inRange(date1: NSDate, date2: NSDate) -> Bool {
-        if NSCalendar.currentCalendar().compareDate(self, toDate: date1, toUnitGranularity: .DayCalendarUnit) == NSComparisonResult.OrderedAscending {
+        if NSCalendar.currentCalendar().compareDate(self, toDate: date1, toUnitGranularity: .HourCalendarUnit) == NSComparisonResult.OrderedAscending {
             return false
         }
-        if NSCalendar.currentCalendar().compareDate(self, toDate: date2, toUnitGranularity: .DayCalendarUnit) == NSComparisonResult.OrderedDescending {
+        if NSCalendar.currentCalendar().compareDate(self, toDate: date2, toUnitGranularity: .HourCalendarUnit) == NSComparisonResult.OrderedDescending {
             return false
         }
         return true
@@ -290,3 +296,65 @@ extension UIColor {
 }
 
 
+
+extension UIFont {
+    
+//    class func systemFontOfSize(fontSize: CGFloat) -> UIFont {
+//        return UIFont(name: "PTSans-Regular", size: fontSize)
+//    }
+//
+//    class func boldSystemFontOfSize(fontSize: CGFloat) -> UIFont {
+//        return UIFont(name: "PTSans-Bold", size: fontSize)
+//    }
+//
+//    class func italicSystemFontOfSize(fontSize: CGFloat) -> UIFont {
+//        return UIFont(name: "PTSans-Italic", size: fontSize)
+//    }
+
+    class func HTWExtraLargeFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 25)
+    }
+    class func HTWLargeFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 21)
+    }
+    class func HTWBaseFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 17)
+    }
+    class func HTWSmallFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 14)
+    }
+    class func HTWVerySmallFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 12)
+    }
+    class func HTWSmallestFont() -> UIFont {
+        return UIFont(name: "PTSans-Regular", size: 10)
+    }
+
+    class func HTWSmallBoldFont() -> UIFont {
+        return UIFont(name: "PTSans-Bold", size: 14)
+    }
+    class func HTWBaseBoldFont() -> UIFont {
+        return UIFont(name: "PTSans-Bold", size: 17)
+    }
+    class func HTWLargeBoldFont() -> UIFont {
+        return UIFont(name: "PTSans-Bold", size: 21)
+    }
+
+    class func HTWSmallItalicFont() -> UIFont {
+        return UIFont(name: "PTSans-Italic", size: 14)
+    }
+    class func HTWBaseItalicFont() -> UIFont {
+        return UIFont(name: "PTSans-Italic", size: 17)
+    }
+    class func HTWLargeItalicFont() -> UIFont {
+        return UIFont(name: "PTSans-Italic", size: 21)
+    }
+
+    class func HTWSmallItalicBoldFont() -> UIFont {
+    	return UIFont(name: "PTSans-BoldItalic", size: 14)
+    }
+
+    class func HTWTableViewCellFont() -> UIFont {
+    	return HTWBaseFont()
+    }
+}

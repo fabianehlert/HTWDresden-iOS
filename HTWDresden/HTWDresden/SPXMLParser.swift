@@ -156,7 +156,8 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
         case "Stunde":
             var stunde = Stunde(entity: NSEntityDescription.entityForName("Stunde", inManagedObjectContext: context), insertIntoManagedObjectContext: context)
             stunde.titel = stundeDic["titel"]
-            stunde.kurzel = stundeDic["kuerzel"]
+            var tempKuerzel = stundeDic["kuerzel"]?.componentsSeparatedByString("/")[0]
+            stunde.kurzel = tempKuerzel?.length >= 1 ? tempKuerzel?.subString(0, length: tempKuerzel!.length-1) : tempKuerzel
             stunde.raum = stundeDic["raum"]
             stunde.dozent = stundeDic["dozent"]
             let datum = stundeDic["datum"]!
@@ -178,7 +179,9 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
     }
     
     func parserDidEndDocument(parser: NSXMLParser) {
-        completion(success: true, error: nil)
+        dispatch_async(MAIN_QUEUE) {
+            self.completion(success: true, error: nil)
+        }
     }
     
     func isStunde(stunde: Stunde, inCollection: [Stunde]) -> Bool {
