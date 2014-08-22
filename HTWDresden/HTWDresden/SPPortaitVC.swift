@@ -84,7 +84,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
             temp.textAlignment = .Center
             temp.tag = -1
             temp.textColor = UIColor.HTWGrayColor()
-            temp.font = UIFont.HTWVerySmallFont()
+            temp.font = UIFont.HTWLargeFont()
             temp.text = wochentage[wochentagePointer]
             
             var thisDate = UILabel(frame: CGRect(x: temp.frame.origin.x+temp.frame.size.width/4, y: temp.frame.origin.y-9, width: temp.frame.size.width/2, height: 15))

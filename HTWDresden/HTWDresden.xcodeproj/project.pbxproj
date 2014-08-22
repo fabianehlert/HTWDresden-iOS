@@ -22,11 +22,11 @@
 		E0208D5619A6225700B7FE0D /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5519A6225700B7FE0D /* Note.m */; };
 		E0208D5919A6225700B7FE0D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5819A6225700B7FE0D /* User.m */; };
 		E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */; };
+		E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */; };
+		E0B581BA19A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */; };
+		E0B581BB19A7A71700C967EF /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */; };
+		E0B581BC19A7A71700C967EF /* PT_Sans-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B819A7A71700C967EF /* PT_Sans-Web-Regular.ttf */; };
 		E0B8364F19A7690B009520C4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364A19A7690B009520C4 /* OFL.txt */; };
-		E0B8365019A7690B009520C4 /* PT_Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364B19A7690B009520C4 /* PT_Sans-Bold.ttf */; };
-		E0B8365119A7690B009520C4 /* PT_Sans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364C19A7690B009520C4 /* PT_Sans-BoldItalic.ttf */; };
-		E0B8365219A7690B009520C4 /* PT_Sans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364D19A7690B009520C4 /* PT_Sans-Italic.ttf */; };
-		E0B8365319A7690B009520C4 /* PT_Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364E19A7690B009520C4 /* PT_Sans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +64,11 @@
 		E0208D5819A6225700B7FE0D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
 		E03C2AF019A6A295002F135A /* HTWDresden.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HTWDresden.entitlements; sourceTree = "<group>"; };
+		E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
+		E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Italic.ttf"; sourceTree = "<group>"; };
+		E0B581B819A7A71700C967EF /* PT_Sans-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Regular.ttf"; sourceTree = "<group>"; };
 		E0B8364A19A7690B009520C4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
-		E0B8364B19A7690B009520C4 /* PT_Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Bold.ttf"; sourceTree = "<group>"; };
-		E0B8364C19A7690B009520C4 /* PT_Sans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E0B8364D19A7690B009520C4 /* PT_Sans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Italic.ttf"; sourceTree = "<group>"; };
-		E0B8364E19A7690B009520C4 /* PT_Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,10 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				E0B8364A19A7690B009520C4 /* OFL.txt */,
-				E0B8364B19A7690B009520C4 /* PT_Sans-Bold.ttf */,
-				E0B8364C19A7690B009520C4 /* PT_Sans-BoldItalic.ttf */,
-				E0B8364D19A7690B009520C4 /* PT_Sans-Italic.ttf */,
-				E0B8364E19A7690B009520C4 /* PT_Sans-Regular.ttf */,
+				E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */,
+				E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */,
+				E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */,
+				E0B581B819A7A71700C967EF /* PT_Sans-Web-Regular.ttf */,
 			);
 			name = PT_Sans;
 			sourceTree = "<group>";
@@ -290,11 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B8365119A7690B009520C4 /* PT_Sans-BoldItalic.ttf in Resources */,
-				E0B8365319A7690B009520C4 /* PT_Sans-Regular.ttf in Resources */,
+				E0B581BA19A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf in Resources */,
+				E0B581BC19A7A71700C967EF /* PT_Sans-Web-Regular.ttf in Resources */,
 				E0B8364F19A7690B009520C4 /* OFL.txt in Resources */,
-				E0B8365219A7690B009520C4 /* PT_Sans-Italic.ttf in Resources */,
-				E0B8365019A7690B009520C4 /* PT_Sans-Bold.ttf in Resources */,
+				E0B581BB19A7A71700C967EF /* PT_Sans-Web-Italic.ttf in Resources */,
+				E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */,
 				E0208D2219A615FD00B7FE0D /* Main.storyboard in Resources */,
 				E0208D2419A615FD00B7FE0D /* Images.xcassets in Resources */,
 			);

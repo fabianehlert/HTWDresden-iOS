@@ -312,46 +312,46 @@ extension UIFont {
 //    }
 
     class func HTWExtraLargeFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 25)
+        return UIFont(name: "PT Sans", size: 25)
     }
     class func HTWLargeFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 21)
+        return UIFont(name: "PT Sans", size: 21)
     }
     class func HTWBaseFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 17)
+        return UIFont(name: "PT Sans", size: 17)
     }
     class func HTWSmallFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 14)
+        return UIFont(name: "PT Sans", size: 14)
     }
     class func HTWVerySmallFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 12)
+        return UIFont(name: "PT Sans", size: 12)
     }
     class func HTWSmallestFont() -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: 10)
+        return UIFont(name: "PT Sans", size: 10)
     }
 
     class func HTWSmallBoldFont() -> UIFont {
-        return UIFont(name: "PTSans-Bold", size: 14)
+        return UIFont(name: "PT Sans Bold", size: 14)
     }
     class func HTWBaseBoldFont() -> UIFont {
-        return UIFont(name: "PTSans-Bold", size: 17)
+        return UIFont(name: "PT Sans Bold", size: 17)
     }
     class func HTWLargeBoldFont() -> UIFont {
-        return UIFont(name: "PTSans-Bold", size: 21)
+        return UIFont(name: "PT Sans Bold", size: 21)
     }
 
     class func HTWSmallItalicFont() -> UIFont {
-        return UIFont(name: "PTSans-Italic", size: 14)
+        return UIFont(name: "PT Sans Italic", size: 14)
     }
     class func HTWBaseItalicFont() -> UIFont {
-        return UIFont(name: "PTSans-Italic", size: 17)
+        return UIFont(name: "PT Sans Italic", size: 17)
     }
     class func HTWLargeItalicFont() -> UIFont {
-        return UIFont(name: "PTSans-Italic", size: 21)
+        return UIFont(name: "PT Sans Italic", size: 21)
     }
 
     class func HTWSmallItalicBoldFont() -> UIFont {
-    	return UIFont(name: "PTSans-BoldItalic", size: 14)
+    	return UIFont(name: "PT Sans Bold Italic", size: 14)
     }
 
     class func HTWTableViewCellFont() -> UIFont {

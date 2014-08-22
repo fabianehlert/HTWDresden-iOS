@@ -19,18 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ANZ_PORTRAIT = 7
         
-        for family: AnyObject in UIFont.familyNames() {
-            
-            println("\(family)")
-            
-            for font: AnyObject in UIFont.fontNamesForFamilyName(family as NSString) {
-                
-                println(" \(font)")
-                
-            }
-            
-        }
-        
         return true
     }
 
