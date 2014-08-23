@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
+class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, SPPortraitDetailPhoneDelegate {
     
     private let PixelPerMin: CGFloat = 0.5
     
@@ -66,17 +66,15 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-
-    }
-    
     func SPPortraitModelfinishedLoading(model: SPPortraitModel) {
         dispatch_async(MAIN_QUEUE) {
             self.getButtons()
         }
+    }
+    
+    func deletedStundeAtIndex(index: Int) {
+        (buttons[index] as SPButtonLesson).removeFromSuperview()
+        buttons.removeAtIndex(index)
     }
     
     // MARK: - set up the Interface
@@ -217,6 +215,8 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
             let title = (sender as SPButtonLesson).stunde.titel
             println("detailPhone \(title)")
             (segue.destinationViewController as SPPortraitDetailPhoneTVC).stunde = (sender as SPButtonLesson).stunde
+            (segue.destinationViewController as SPPortraitDetailPhoneTVC).index = find(buttons, sender as SPButtonLesson)
+            (segue.destinationViewController as SPPortraitDetailPhoneTVC).delegate = self
         default:
             break
         }
