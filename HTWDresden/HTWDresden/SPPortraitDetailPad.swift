@@ -23,8 +23,8 @@ class SPPortraitDetailPad: NibView, UITextViewDelegate {
             self.proxyView().dozentLabel.text = stunde?.dozent
             self.proxyView().typLabel.text = stunde?.kurzel.componentsSeparatedByString(" ").last
             self.proxyView().semesterLabel.text = stunde?.semester
-            self.proxyView().anfangLabel.text = "\(stunde?.anfang)"
-            self.proxyView().endeLabel.text = "\(stunde?.ende)"
+            self.proxyView().anfangLabel.text = formattedDate(stunde?.anfang)
+            self.proxyView().endeLabel.text = formattedDate(stunde?.ende)
             self.proxyView().bemerkungenTextView.text = stunde?.bemerkungen
         }
     }
@@ -77,6 +77,7 @@ class SPPortraitDetailPad: NibView, UITextViewDelegate {
         
     }
     
+    // MARK: - TextView Delegate
     func textViewDidBeginEditing(textView: UITextView!) {
         UIView.animateWithDuration(0.2) {
             self.frame.origin.y -= 264
@@ -88,6 +89,14 @@ class SPPortraitDetailPad: NibView, UITextViewDelegate {
         UIView.animateWithDuration(0.2) {
             self.frame.origin.y += 264
         }
+    }
+    
+    // MARK: - Hilfsfunktionen
+    func formattedDate(date: NSDate!) -> String {
+        if date == nil { return "" }
+        let wochentag = date.weekdayString()
+        let uhrzeit = date.stringFromDate("HH:mm")
+        return "\(wochentag) - \(uhrzeit) Uhr"
     }
 }
 
