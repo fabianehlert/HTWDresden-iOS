@@ -22,6 +22,7 @@
 		E0208D5619A6225700B7FE0D /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5519A6225700B7FE0D /* Note.m */; };
 		E0208D5919A6225700B7FE0D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5819A6225700B7FE0D /* User.m */; };
 		E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */; };
+		E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */; };
 		E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */; };
 		E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */; };
 		E0B581BA19A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */; };
@@ -66,6 +67,7 @@
 		E0208D5719A6225700B7FE0D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		E0208D5819A6225700B7FE0D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
+		E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPhoneTVC.swift; sourceTree = "<group>"; };
 		E03C2AF019A6A295002F135A /* HTWDresden.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HTWDresden.entitlements; sourceTree = "<group>"; };
 		E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCustomViewFromXib.swift; sourceTree = "<group>"; };
 		E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				E0208D4919A6202F00B7FE0D /* SPGlobals.swift */,
 				E0208D4519A61E1800B7FE0D /* SPPortaitVC.swift */,
+				E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */,
 				E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */,
 				E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */,
 				E0208D4719A61E6000B7FE0D /* SPPortraitModel.swift */,
@@ -334,6 +337,7 @@
 			files = (
 				E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */,
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
+				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
 				E0208D4A19A6202F00B7FE0D /* SPGlobals.swift in Sources */,
 				E0208D4619A61E1800B7FE0D /* SPPortaitVC.swift in Sources */,

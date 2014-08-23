@@ -37,10 +37,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         }
         
         title = "Stunden"
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        
         scrollView.frame = view.frame
         scrollView.contentSize = CGSize(width: CGFloat(60+116*ANZ_PORTRAIT), height: CGFloat(459 + UINavigationBar.appearance().frame.size.height))
         scrollView.directionalLockEnabled = true
@@ -61,12 +58,18 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
                 self.model.start()
             }), (title: "Abbrechen", action: nil)])
         }
-        // aktueller Nutzer existiert
+            // aktueller Nutzer existiert
         else {
             // Model lädt aus DB oder (falls nicht vorhanden), lädt neu herunter
             self.model = SPPortraitModel(matrnr: CURR_MATRNR!, currentDate: currentDate, delegate: self)
             self.model.start()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
 
     }
     
@@ -87,6 +90,9 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
                 self.selectedButton = button
                 button.select = true
                 self.detailView?.stunde = button.stunde
+                if device() == .Phone {
+                    self.performSegueWithIdentifier("detailPhone", sender: button)
+                }
             }
             if button.isNow() {
                 button.now = true
@@ -201,6 +207,18 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate {
         if device() == .Pad {
             detailView?.frame.origin.x = scrollView.contentOffset.x
             scrollView.bringSubviewToFront(detailView!)
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        switch segue.identifier {
+        case "detailPhone":
+            let title = (sender as SPButtonLesson).stunde.titel
+            println("detailPhone \(title)")
+            (segue.destinationViewController as SPPortraitDetailPhoneTVC).stunde = (sender as SPButtonLesson).stunde
+        default:
+            break
         }
     }
     

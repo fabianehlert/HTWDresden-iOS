@@ -208,6 +208,20 @@ extension NSDate {
         return weekday
     }
 
+    func weekdayString() -> String {
+        switch self.weekDay() {
+            case 0: return "Montag"
+            case 1: return "Dienstag"
+            case 2: return "Mittwoch"
+            case 3: return "Donnerstag"
+            case 4: return "Freitag"
+            case 5: return "Samstag"
+            case 6: return "Sonntag"
+                
+            default: return ""
+        }
+    }
+
     func getDayOnly() -> NSDate {
         let dateF = NSDateFormatter()
         dateF.dateFormat = "dd.MM.yyyy"
