@@ -10,7 +10,7 @@ import UIKit
 
 protocol SPPortraitDetailPhoneDelegate {
     
-    func deletedStundeAtIndex(index: Int)
+    func SPPortraitDetailPhoneDeletedStundeAtIndex(index: Int)
     
 }
 
@@ -223,7 +223,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         var tempStunde = array.first as Stunde
         context.deleteObject(tempStunde)
         context.save(nil)
-        delegate?.deletedStundeAtIndex(index)
+        delegate?.SPPortraitDetailPhoneDeletedStundeAtIndex(index)
     }
     
     // MARK: - Hilfsfunktionen
