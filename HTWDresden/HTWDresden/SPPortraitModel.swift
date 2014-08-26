@@ -86,11 +86,11 @@ class SPPortraitModel: NSObject {
         }
     }
     
-    func refreshStunde(stunde: Stunde, titel: String, kuerzel: String, dozent: String, bemerkungen: String) {
+    func refreshStunde(stunde: Stunde) -> Stunde {
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde.ident, stunde.student.matrnr, stunde.anfang)
         let tempArray = context.executeFetchRequest(request, error: nil)
-        dump(tempArray)
+        return tempArray.first as Stunde
     }
     
     // DB-request for getting the current user

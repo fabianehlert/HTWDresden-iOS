@@ -2,7 +2,7 @@
 //  Stunde.h
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 21.08.14.
+//  Created by Benjamin Herzog on 26.08.14.
 //  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * raum;
 @property (nonatomic, retain) NSString * semester;
 @property (nonatomic, retain) NSString * titel;
+@property (nonatomic, retain) NSString * typ;
 @property (nonatomic, retain) User *student;
 
 @end

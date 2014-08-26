@@ -158,7 +158,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
         case "Stunde":
             var stunde = Stunde(entity: NSEntityDescription.entityForName("Stunde", inManagedObjectContext: context), insertIntoManagedObjectContext: context)
             stunde.titel = stundeDic["titel"]
-            var tempKuerzel = stundeDic["kuerzel"]?.componentsSeparatedByString("/")[0]
+            var tempKuerzel = stundeDic["kuerzel"]?.componentsSeparatedByString("/").first
             stunde.kurzel = tempKuerzel?.length >= 1 ? tempKuerzel?.subString(0, length: tempKuerzel!.length-1) : tempKuerzel
             stunde.raum = stundeDic["raum"]
             stunde.dozent = stundeDic["dozent"]
@@ -170,6 +170,8 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
             stunde.ident = "\(stunde.kurzel)\(stunde.anfang.weekDay())\(anfangZeit)"
             stunde.anzeigen = NSNumber(bool: true)
             stunde.semester = CURR_SEMESTER
+            stunde.typ = stunde.kurzel.componentsSeparatedByString(" ").last
+            stunde.kurzel = stunde.kurzel.componentsSeparatedByString(" ").first
             
             newUser.addStundenObject(stunde)
             context.save(nil)

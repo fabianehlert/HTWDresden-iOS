@@ -2,7 +2,7 @@
 //  User.h
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 21.08.14.
+//  Created by Benjamin Herzog on 26.08.14.
 //  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
 //
 

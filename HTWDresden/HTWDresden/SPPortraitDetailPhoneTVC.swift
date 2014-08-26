@@ -99,7 +99,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
                 textField.text = stunde?.dozent
             case 4:
                 titleLabel.text = "Typ"
-                textField.text = stunde?.kurzel.componentsSeparatedByString(" ").last
+                textField.text = stunde?.typ
                 textField.userInteractionEnabled = false
             case 5:
                 titleLabel.text = "Semester"

@@ -8,44 +8,57 @@
 
 import UIKit
 
+protocol SPPortraitDetailPadDelegate {
+    
+    func SPDetailPadChangedStundeAtIndex(index: Int)
+    
+}
 
-class SPPortraitDetailPad: NibView, UITextViewDelegate {
+
+
+class SPPortraitDetailPad: UIView, UITextViewDelegate {
     
     private let textColor = UIColor.HTWSandColor()
     private let font = UIFont.HTWBaseFont()
     private let background = UIColor.HTWDarkGrayColor()
+    
+    var delegate: SPPortraitDetailPadDelegate?
 
+    var index: Int?
     var stunde: Stunde? {
         didSet{
-            self.proxyView().titelLabel.text = stunde?.titel
-            self.proxyView().kuerzelLabel.text = stunde?.kurzel.componentsSeparatedByString(" ").first
-            self.proxyView().raumLabel.text = stunde?.raum
-            self.proxyView().dozentLabel.text = stunde?.dozent
-            self.proxyView().typLabel.text = stunde?.kurzel.componentsSeparatedByString(" ").last
-            self.proxyView().semesterLabel.text = stunde?.semester
-            self.proxyView().anfangLabel.text = formattedDate(stunde?.anfang)
-            self.proxyView().endeLabel.text = formattedDate(stunde?.ende)
-            self.proxyView().bemerkungenTextView.text = stunde?.bemerkungen
+            titelLabel.text = stunde?.titel
+            kuerzelLabel.text = stunde?.kurzel
+            raumLabel.text = stunde?.raum
+            dozentLabel.text = stunde?.dozent
+            typLabel.text = stunde?.typ
+            semesterLabel.text = stunde?.semester
+            anfangLabel.text = formattedDate(stunde?.anfang)
+            endeLabel.text = formattedDate(stunde?.ende)
+            bemerkungenTextView.text = stunde?.bemerkungen
         }
     }
     
-    @IBOutlet var titelLabel: UILabel!
-    @IBOutlet var kuerzelLabel: UILabel!
-    @IBOutlet var raumLabel: UILabel!
-    @IBOutlet var dozentLabel: UILabel!
-    @IBOutlet var typLabel: UILabel!
-    @IBOutlet var semesterLabel: UILabel!
-    @IBOutlet var anfangLabel: UILabel!
-    @IBOutlet var endeLabel: UILabel!
+    @IBOutlet var titelLabel: UITextView!
+    @IBOutlet var kuerzelLabel: UITextView!
+    @IBOutlet var raumLabel: UITextView!
+    @IBOutlet var dozentLabel: UITextView!
+    @IBOutlet var typLabel: UITextView!
+    @IBOutlet var semesterLabel: UITextView!
+    @IBOutlet var anfangLabel: UITextView!
+    @IBOutlet var endeLabel: UITextView!
     @IBOutlet var bemerkungenTextView: UITextView!
+    @IBOutlet var bemerkungsCounter: UILabel!
     
-    override func nibName() -> String {
-        return "SPPortraitDetailPad"
-    }
+    @IBOutlet var container: UIView!
     
-    private func proxyView() -> SPPortraitDetailPad {
-        return self.proxyView! as SPPortraitDetailPad
-    }
+//    override func nibName() -> String {
+//        return "SPPortraitDetailPad"
+//    }
+//    
+//    private func proxyView() -> SPPortraitDetailPad {
+//        return self.proxyView! as SPPortraitDetailPad
+//    }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -60,34 +73,51 @@ class SPPortraitDetailPad: NibView, UITextViewDelegate {
     override func awakeFromNib() {
         bemerkungenTextView.delegate = self
         backgroundColor = background
-        for view in subviews {
-            if view is UILabel {
-                (view as UILabel).textColor = textColor
-                (view as UILabel).font = font
-            }
-            else if view is UITextView {
-                (view as UITextView).backgroundColor = background
-                (view as UITextView).font = font
-                (view as UITextView).textColor = textColor
-            }
-        }
+        
     }
     
     private func commonInit() {
+        //Load the contents of the nib
+        let nibName = "SPPortraitDetailPad"
+        let nib = UINib(nibName: nibName, bundle: nil)
+        nib.instantiateWithOwner(self, options: nil)
+        addSubview(container)
+        container.backgroundColor = background
         
+        bemerkungenTextView.backgroundColor = background
+        bemerkungenTextView.font = font
+        bemerkungenTextView.textColor = textColor
+        
+        bemerkungsCounter.textColor = UIColor.HTWGrayColor()
+        bemerkungsCounter.font = UIFont.HTWVerySmallFont()
+        bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
     }
     
     // MARK: - TextView Delegate
     func textViewDidBeginEditing(textView: UITextView!) {
         UIView.animateWithDuration(0.2) {
-            self.frame.origin.y -= 264
+            self.frame.origin.y -= 250
         }
     }
     
+    func textViewDidChange(textView: UITextView!) {
+        if textView.text.length >= 70 {
+            textView.text = textView.text.subString(0, length: 70)
+        }
+        bemerkungsCounter.text = "\(textView.text.length)/70"
+    }
+    
+    func textView(textView: UITextView!, shouldChangeTextInRange range: NSRange, replacementText text: String!) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
+    }
+    
     func textViewDidEndEditing(textView: UITextView!) {
-        println("Want to save bemerkungen... Not implemented yet.. :)")
+        saveChangesInDB()
         UIView.animateWithDuration(0.2) {
-            self.frame.origin.y += 264
+            self.frame.origin.y += 250
         }
     }
     
@@ -97,6 +127,26 @@ class SPPortraitDetailPad: NibView, UITextViewDelegate {
         let wochentag = date.weekdayString()
         let uhrzeit = date.stringFromDate("HH:mm")
         return "\(wochentag) - \(uhrzeit) Uhr"
+    }
+    
+    func saveChangesInDB() {
+        if stunde == nil {
+            return
+        }
+        let request = NSFetchRequest(entityName: "Stunde")
+        request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
+        let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        let tempArray = context.executeFetchRequest(request, error: nil)
+        var newStunde = tempArray.first as Stunde
+        newStunde.titel = titelLabel.text
+        newStunde.kurzel = kuerzelLabel.text
+        newStunde.typ = typLabel.text
+        newStunde.raum = raumLabel.text
+        newStunde.dozent = dozentLabel.text
+        newStunde.bemerkungen = bemerkungenTextView.text
+        self.stunde = newStunde
+        context.save(nil)
+        delegate?.SPDetailPadChangedStundeAtIndex(index!)
     }
 }
 

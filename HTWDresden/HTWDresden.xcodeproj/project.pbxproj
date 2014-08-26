@@ -18,12 +18,14 @@
 		E0208D4C19A6209800B7FE0D /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D4B19A6209800B7FE0D /* AppGlobals.swift */; };
 		E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D4D19A6210F00B7FE0D /* SPXMLParser.swift */; };
 		E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D4F19A6213000B7FE0D /* SPButtonLesson.swift */; };
-		E0208D5319A6225600B7FE0D /* Stunde.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5219A6225600B7FE0D /* Stunde.m */; };
-		E0208D5619A6225700B7FE0D /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5519A6225700B7FE0D /* Note.m */; };
-		E0208D5919A6225700B7FE0D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5819A6225700B7FE0D /* User.m */; };
 		E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */; };
 		E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */; };
 		E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */; };
+		E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09D20F919ACCD0100347896 /* SPPortraitDetailPadLabel.swift */; };
+		E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09D20FB19ACD16200347896 /* SPPortraitDetailPadTextView.swift */; };
+		E09D20FF19ACD59A00347896 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D20FE19ACD59A00347896 /* User.m */; };
+		E09D210219ACD59B00347896 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D210119ACD59B00347896 /* Note.m */; };
+		E09D210519ACD59B00347896 /* Stunde.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D210419ACD59B00347896 /* Stunde.m */; };
 		E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */; };
 		E0B581BA19A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */; };
 		E0B581BB19A7A71700C967EF /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */; };
@@ -60,16 +62,18 @@
 		E0208D4B19A6209800B7FE0D /* AppGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		E0208D4D19A6210F00B7FE0D /* SPXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPXMLParser.swift; sourceTree = "<group>"; };
 		E0208D4F19A6213000B7FE0D /* SPButtonLesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPButtonLesson.swift; sourceTree = "<group>"; };
-		E0208D5119A6225600B7FE0D /* Stunde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stunde.h; sourceTree = "<group>"; };
-		E0208D5219A6225600B7FE0D /* Stunde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stunde.m; sourceTree = "<group>"; };
-		E0208D5419A6225700B7FE0D /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		E0208D5519A6225700B7FE0D /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		E0208D5719A6225700B7FE0D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E0208D5819A6225700B7FE0D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtensions.swift; sourceTree = "<group>"; };
 		E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPhoneTVC.swift; sourceTree = "<group>"; };
 		E03C2AF019A6A295002F135A /* HTWDresden.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HTWDresden.entitlements; sourceTree = "<group>"; };
 		E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCustomViewFromXib.swift; sourceTree = "<group>"; };
+		E09D20F919ACCD0100347896 /* SPPortraitDetailPadLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPadLabel.swift; sourceTree = "<group>"; };
+		E09D20FB19ACD16200347896 /* SPPortraitDetailPadTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPadTextView.swift; sourceTree = "<group>"; };
+		E09D20FD19ACD59A00347896 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E09D20FE19ACD59A00347896 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E09D210019ACD59B00347896 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		E09D210119ACD59B00347896 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		E09D210319ACD59B00347896 /* Stunde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stunde.h; sourceTree = "<group>"; };
+		E09D210419ACD59B00347896 /* Stunde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stunde.m; sourceTree = "<group>"; };
 		E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
 		E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Italic.ttf"; sourceTree = "<group>"; };
@@ -162,13 +166,13 @@
 		E0208D3919A6163700B7FE0D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				E0208D5719A6225700B7FE0D /* User.h */,
-				E0208D5819A6225700B7FE0D /* User.m */,
-				E0208D5419A6225700B7FE0D /* Note.h */,
-				E0208D5519A6225700B7FE0D /* Note.m */,
-				E0208D5119A6225600B7FE0D /* Stunde.h */,
-				E0208D5219A6225600B7FE0D /* Stunde.m */,
 				E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */,
+				E09D210319ACD59B00347896 /* Stunde.h */,
+				E09D210419ACD59B00347896 /* Stunde.m */,
+				E09D210019ACD59B00347896 /* Note.h */,
+				E09D210119ACD59B00347896 /* Note.m */,
+				E09D20FD19ACD59A00347896 /* User.h */,
+				E09D20FE19ACD59A00347896 /* User.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -178,9 +182,7 @@
 			children = (
 				E0208D4919A6202F00B7FE0D /* SPGlobals.swift */,
 				E0208D4519A61E1800B7FE0D /* SPPortaitVC.swift */,
-				E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */,
-				E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */,
-				E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */,
+				E09D20F819ACCCE900347896 /* Detail */,
 				E0208D4719A61E6000B7FE0D /* SPPortraitModel.swift */,
 				E0208D4F19A6213000B7FE0D /* SPButtonLesson.swift */,
 				E0208D4D19A6210F00B7FE0D /* SPXMLParser.swift */,
@@ -194,6 +196,18 @@
 				E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */,
 			);
 			name = "Xib Loading";
+			sourceTree = "<group>";
+		};
+		E09D20F819ACCCE900347896 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E02FE36F19A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift */,
+				E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */,
+				E09D20F919ACCD0100347896 /* SPPortraitDetailPadLabel.swift */,
+				E09D20FB19ACD16200347896 /* SPPortraitDetailPadTextView.swift */,
+				E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		E0B8364719A768E8009520C4 /* Assets */ = {
@@ -339,16 +353,18 @@
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
 				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
+				E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */,
+				E09D20FF19ACD59A00347896 /* User.m in Sources */,
 				E0208D4A19A6202F00B7FE0D /* SPGlobals.swift in Sources */,
+				E09D210219ACD59B00347896 /* Note.m in Sources */,
 				E0208D4619A61E1800B7FE0D /* SPPortaitVC.swift in Sources */,
 				E0208D4C19A6209800B7FE0D /* AppGlobals.swift in Sources */,
-				E0208D5619A6225700B7FE0D /* Note.m in Sources */,
 				E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */,
-				E0208D5919A6225700B7FE0D /* User.m in Sources */,
+				E09D210519ACD59B00347896 /* Stunde.m in Sources */,
+				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
 				E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */,
 				E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */,
-				E0208D5319A6225600B7FE0D /* Stunde.m in Sources */,
 				E0208D4819A61E6000B7FE0D /* SPPortraitModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,15 @@ class SPButtonLesson: UIButton {
     
     private var portrait: Bool
     private var currentDate: NSDate
-    var stunde: Stunde
+    var stunde: Stunde {
+        didSet{
+            kurzel?.text = stunde.kurzel
+            raum?.text = stunde.raum
+            if stunde.typ != nil {
+                typ?.text = stunde.typ
+            }
+        }
+    }
     
     private var width: CGFloat = 0
     private var height: CGFloat = 0
@@ -147,9 +155,9 @@ class SPButtonLesson: UIButton {
         raum?.textColor = UIColor.HTWGrayColor()
         raum?.font = portrait ? UIFont.HTWSmallFont() : UIFont.HTWSmallestFont()
         
-        if stunde.kurzel.componentsSeparatedByString(" ").count > 1 {
+        if stunde.typ != nil {
             typ = UILabel(frame: CGRect(x: x, y: y+(height*0.5), width: width-6, height: height*0.4))
-            typ?.text = stunde.kurzel.componentsSeparatedByString(" ").last
+            typ?.text = stunde.typ
             typ?.font = portrait ? UIFont.HTWSmallFont() : UIFont.HTWVerySmallFont()
             typ?.textAlignment = .Right
             typ?.textColor = UIColor.HTWGrayColor()

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, SPPortraitDetailPhoneDelegate {
+class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, SPPortraitDetailPhoneDelegate, SPPortraitDetailPadDelegate {
     
     private let PixelPerMin: CGFloat = 0.5
     
@@ -33,6 +33,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
         if device() == .Pad {
             detailView = SPPortraitDetailPad(frame: CGRect(x: 0, y: view.frame.size.height/2 - 70, width: view.frame.size.width, height: view.frame.size.height/2))
             detailView!.stunde = nil
+            detailView!.delegate = self
             scrollView.addSubview(detailView!)
         }
         
@@ -72,9 +73,13 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
         }
     }
     
-    func deletedStundeAtIndex(index: Int) {
+    func SPPortraitDetailPhoneDeletedStundeAtIndex(index: Int) {
         (buttons[index] as SPButtonLesson).removeFromSuperview()
         buttons.removeAtIndex(index)
+    }
+    
+    func SPDetailPadChangedStundeAtIndex(index: Int) {
+        buttons[index].stunde = model.refreshStunde(buttons[index].stunde)
     }
     
     // MARK: - set up the Interface
@@ -87,9 +92,15 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
                 self.selectedButton?.select = false
                 self.selectedButton = button
                 button.select = true
-                self.detailView?.stunde = button.stunde
+                
+                
                 if device() == .Phone {
                     self.performSegueWithIdentifier("detailPhone", sender: button)
+                }
+                else if device() == .Pad {
+                    self.detailView?.stunde = button.stunde
+                    self.detailView?.index = find(self.buttons,button)!
+                    self.scrollView.bringSubviewToFront(self.detailView!)
                 }
             }
             if button.isNow() {
