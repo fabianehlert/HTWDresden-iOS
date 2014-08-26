@@ -67,6 +67,15 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if device() == .Phone {
+            selectedButton?.select = false
+            selectedButton = nil
+        }
+    }
+    
+    // MARK: - SPDetailDelegates
     func SPPortraitModelfinishedLoading(model: SPPortraitModel) {
         dispatch_async(MAIN_QUEUE) {
             self.getButtons()
@@ -76,6 +85,10 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
     func SPPortraitDetailPhoneDeletedStundeAtIndex(index: Int) {
         (buttons[index] as SPButtonLesson).removeFromSuperview()
         buttons.removeAtIndex(index)
+    }
+    
+    func SPPortraitDetailPhoneChangedStundeAtIndex(index: Int) {
+        buttons[index].stunde = model.refreshStunde(buttons[index].stunde)
     }
     
     func SPDetailPadChangedStundeAtIndex(index: Int) {

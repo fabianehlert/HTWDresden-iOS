@@ -52,14 +52,6 @@ class SPPortraitDetailPad: UIView, UITextViewDelegate {
     
     @IBOutlet var container: UIView!
     
-//    override func nibName() -> String {
-//        return "SPPortraitDetailPad"
-//    }
-//    
-//    private func proxyView() -> SPPortraitDetailPad {
-//        return self.proxyView! as SPPortraitDetailPad
-//    }
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()

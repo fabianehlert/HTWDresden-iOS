@@ -11,7 +11,7 @@ import UIKit
 protocol SPPortraitDetailPhoneDelegate {
     
     func SPPortraitDetailPhoneDeletedStundeAtIndex(index: Int)
-    
+    func SPPortraitDetailPhoneChangedStundeAtIndex(index: Int)
 }
 
 
@@ -100,7 +100,6 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
             case 4:
                 titleLabel.text = "Typ"
                 textField.text = stunde?.typ
-                textField.userInteractionEnabled = false
             case 5:
                 titleLabel.text = "Semester"
                 textField.text = stunde?.semester
@@ -156,7 +155,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        getFirstResponder()?.resignFirstResponder()
+//        getFirstResponder()?.resignFirstResponder()
         if indexPath.section == 2 {
             myAlert.alertInViewController(self, title: "Warnung", message: "Wollen Sie die Stunde wirklich löschen?", numberOfTextFields: 0, actions: [("Ja",{
                 self.deleteStunde()
@@ -207,12 +206,15 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
             tempStunde.dozent = aenderung
         case "Bemerkung":
             tempStunde.bemerkungen = aenderung
+        case "Typ":
+            tempStunde.typ = aenderung
         default:
             break
         }
         context.save(nil)
         stunde = tempStunde
         tableView.reloadData()
+        delegate?.SPPortraitDetailPhoneChangedStundeAtIndex(index)
     }
     
     func deleteStunde() {
