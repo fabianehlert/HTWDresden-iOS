@@ -23,6 +23,18 @@ class SPButtonLesson: UIButton {
             if stunde.typ != nil {
                 typ?.text = stunde.typ
             }
+            if stunde.bemerkungen == nil || stunde.bemerkungen == "" {
+                circle?.hidden = true
+            }
+            else {
+                circle?.hidden = false
+                if select || now {
+                    circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() :UIColor.HTWWhiteColor()
+                }
+                else {
+                    circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() :UIColor.HTWTextColor()
+                }
+            }
         }
     }
     
@@ -30,6 +42,8 @@ class SPButtonLesson: UIButton {
     private var height: CGFloat = 0
     private var x: CGFloat = 0
     private var y: CGFloat = 0
+    
+    private var circle: UIView?
     
     private var PixelPerMin: CGFloat = 0.0
     
@@ -55,7 +69,6 @@ class SPButtonLesson: UIButton {
     var kurzel: UILabel?
     var raum: UILabel?
     var typ: UILabel?
-    var circle: UIView?
     
     // MARK: - Initialisers
     
@@ -164,6 +177,25 @@ class SPButtonLesson: UIButton {
             addSubview(typ!)
         }
         
+        circle = UIView()
+        if portrait {
+            circle?.frame = CGRect(x: x+(width*6/7)+2,y: y+3,width: 10,height: 10)
+        }
+        else {
+            circle?.frame = CGRect(x: x+(width*6/7)+2,y: y+3,width: 7,height: 7)
+        }
+        circle?.hidden = true
+        circle?.layer.cornerRadius = circle!.frame.size.height/2;
+        self.addSubview(circle!)
+        
+        if stunde.bemerkungen != nil && stunde.bemerkungen != ""
+        {
+            // Bemerkung ist vorhanden, muss im Button bemerkbar sein..
+            circle?.hidden = false
+            circle?.backgroundColor = UIColor.HTWTextColor()
+            circle?.tag = -9;
+        }
+        
         bounds = frame
         addSubview(kurzel!)
         addSubview(raum!)
@@ -177,7 +209,7 @@ class SPButtonLesson: UIButton {
                 kurzel?.textColor = UIColor.HTWWhiteColor()
                 raum?.textColor = UIColor.HTWWhiteColor()
                 typ?.textColor = UIColor.HTWWhiteColor()
-                circle?.backgroundColor = UIColor.HTWWhiteColor()
+                circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() : UIColor.HTWWhiteColor()
             }
         }
     }
@@ -189,14 +221,14 @@ class SPButtonLesson: UIButton {
                 kurzel?.textColor = UIColor.HTWWhiteColor()
                 raum?.textColor = UIColor.HTWWhiteColor()
                 typ?.textColor = UIColor.HTWWhiteColor()
-                circle?.backgroundColor = UIColor.HTWWhiteColor()
+                circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() :UIColor.HTWWhiteColor()
             }
             else {
                 backgroundColor = UIColor.HTWWhiteColor()
                 kurzel?.textColor = UIColor.HTWDarkGrayColor()
                 raum?.textColor = UIColor.HTWGrayColor()
                 typ?.textColor = UIColor.HTWGrayColor()
-                circle?.backgroundColor = UIColor.HTWTextColor()
+                circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() :UIColor.HTWTextColor()
             }
         }
     }
@@ -219,7 +251,7 @@ class SPButtonLesson: UIButton {
         kurzel?.textColor = UIColor.HTWDarkGrayColor()
         raum?.textColor = UIColor.HTWGrayColor()
         typ?.textColor = UIColor.HTWGrayColor()
-        circle?.backgroundColor = UIColor.HTWTextColor()
+        circle?.backgroundColor = circle!.hidden ? UIColor.clearColor() :UIColor.HTWTextColor()
     }
     
     func isNow() -> Bool {

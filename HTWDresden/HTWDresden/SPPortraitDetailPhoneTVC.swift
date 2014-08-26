@@ -234,26 +234,6 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         let uhrzeit = date.stringFromDate("HH:mm")
         return "\(wochentag) - \(uhrzeit) Uhr"
     }
-
-    func getFirstResponder() -> UIView? {
-        
-        for var i = 0; i < 2; i++ {
-            let grenzeJ = i == 0 ? 4 : 1
-            for var j = 0; j < grenzeJ; j++ {
-                let currentCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: j, inSection: i))
-                if currentCell == nil {
-                    continue
-                }
-                for tempView in currentCell.contentView.subviews as [UIView] {
-                    if tempView.isFirstResponder() {
-                        return tempView
-                    }
-                }
-            }
-
-        }
-        return nil
-    }
 }
 
 class myTextView: UITextView {
