@@ -36,6 +36,7 @@ class SPPortraitDetailPad: UIView, UITextViewDelegate {
             anfangLabel.text = formattedDate(stunde?.anfang)
             endeLabel.text = formattedDate(stunde?.ende)
             bemerkungenTextView.text = stunde?.bemerkungen
+            bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
         }
     }
     

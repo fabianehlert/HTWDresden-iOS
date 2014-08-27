@@ -9,6 +9,12 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="versuch" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="Speise" representedClassName="Speise" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mensa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Stunde" representedClassName="Stunde" syncable="YES">
         <attribute name="anfang" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="anzeigen" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -35,5 +41,6 @@
         <element name="Note" positionX="205" positionY="219" width="128" height="150"/>
         <element name="Stunde" positionX="-27" positionY="-36" width="128" height="225"/>
         <element name="User" positionX="207" positionY="18" width="128" height="133"/>
+        <element name="Speise" positionX="90" positionY="117" width="128" height="105"/>
     </elements>
 </model>

@@ -5,3 +5,4 @@
 #import "Note.h"
 #import "Stunde.h"
 #import "User.h"
+#import "Speise.h"

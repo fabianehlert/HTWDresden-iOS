@@ -33,7 +33,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
     }
     
     // MARK: - Start the Parser
-    func parseWithCompletion(handler: (success: Bool, error: String!) -> Void ) -> Void {
+    func parseWithCompletion(handler: (success: Bool, error: String!) -> Void ) {
         completion = handler
         
         println("== Lade Daten von \(kennung)")

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E007C59C19AE2C8000C0AFDE /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E007C59B19AE2C8000C0AFDE /* Speise.m */; };
+		E007C59E19AE2CA600C0AFDE /* MPMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */; };
+		E007C5A019AE2D5F00C0AFDE /* MPMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */; };
+		E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */; };
+		E007C5A419AE2F0700C0AFDE /* MPGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */; };
+		E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */; };
 		E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1919A615FD00B7FE0D /* AppDelegate.swift */; };
 		E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */; };
 		E0208D2219A615FD00B7FE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0208D2019A615FD00B7FE0D /* Main.storyboard */; };
@@ -46,6 +52,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E007C59A19AE2C8000C0AFDE /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
+		E007C59B19AE2C8000C0AFDE /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
+		E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainTVC.swift; sourceTree = "<group>"; };
+		E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainCell.swift; sourceTree = "<group>"; };
+		E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainModel.swift; sourceTree = "<group>"; };
+		E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGlobals.swift; sourceTree = "<group>"; };
+		E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainXMLParser.swift; sourceTree = "<group>"; };
 		E0208D1419A615FD00B7FE0D /* HTWDresden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTWDresden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0208D1819A615FD00B7FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0208D1919A615FD00B7FE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +144,7 @@
 				E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */,
 				E0B8364719A768E8009520C4 /* Assets */,
 				E0208D4419A61DFC00B7FE0D /* Stundenplan */,
-				E0B8E64419AD05FD0022D297 /* Noten */,
+				E0B8E64419AD05FD0022D297 /* Mensa */,
 				E0208D3919A6163700B7FE0D /* CoreData */,
 				E0208D1719A615FD00B7FE0D /* Supporting Files */,
 			);
@@ -168,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */,
+				E007C59A19AE2C8000C0AFDE /* Speise.h */,
+				E007C59B19AE2C8000C0AFDE /* Speise.m */,
 				E09D210319ACD59B00347896 /* Stunde.h */,
 				E09D210419ACD59B00347896 /* Stunde.m */,
 				E09D210019ACD59B00347896 /* Note.h */,
@@ -239,11 +254,16 @@
 			name = PT_Sans;
 			sourceTree = "<group>";
 		};
-		E0B8E64419AD05FD0022D297 /* Noten */ = {
+		E0B8E64419AD05FD0022D297 /* Mensa */ = {
 			isa = PBXGroup;
 			children = (
+				E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */,
+				E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */,
+				E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */,
+				E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */,
+				E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */,
 			);
-			name = Noten;
+			name = Mensa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,10 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E007C59E19AE2CA600C0AFDE /* MPMainTVC.swift in Sources */,
 				E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */,
+				E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */,
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
+				E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */,
 				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
+				E007C59C19AE2C8000C0AFDE /* Speise.m in Sources */,
 				E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */,
 				E09D20FF19ACD59A00347896 /* User.m in Sources */,
 				E0208D4A19A6202F00B7FE0D /* SPGlobals.swift in Sources */,
@@ -372,8 +396,10 @@
 				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
 				E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */,
+				E007C5A019AE2D5F00C0AFDE /* MPMainCell.swift in Sources */,
 				E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */,
 				E0208D4819A61E6000B7FE0D /* SPPortraitModel.swift in Sources */,
+				E007C5A419AE2F0700C0AFDE /* MPGlobals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
