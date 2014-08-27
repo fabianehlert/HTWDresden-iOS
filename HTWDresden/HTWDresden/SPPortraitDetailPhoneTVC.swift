@@ -78,87 +78,8 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         }
     }
 
-    // MARK: - Table view data source
-    
-//    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-//        var cell = UITableViewCell()
-//        
-//        if indexPath.section == 0 {
-//            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-//            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
-//            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as UITextView
-//            switch indexPath.row {
-//            case 0:
-//                titleLabel.text = "Titel"
-//                textField.text = stunde?.titel
-//            case 1:
-//                titleLabel.text = "Kürzel"
-//                textField.text = stunde?.kurzel
-//            case 2:
-//                titleLabel.text = "Raum"
-//                textField.text = stunde?.raum
-//            case 3:
-//                titleLabel.text = "Dozent"
-//                textField.text = stunde?.dozent
-//            case 4:
-//                titleLabel.text = "Typ"
-//                textField.text = stunde?.typ
-//            case 5:
-//                titleLabel.text = "Semester"
-//                textField.text = stunde?.semester
-//                textField.userInteractionEnabled = false
-//            case 6:
-//                titleLabel.text = "Anfang"
-//                textField.text = formattedDate(stunde?.anfang)
-//                textField.userInteractionEnabled = false
-//            case 7:
-//                titleLabel.text = "Ende"
-//                textField.text = formattedDate(stunde?.ende)
-//                textField.userInteractionEnabled = false
-//            default:
-//                titleLabel.text = ""
-//                textField.text = ""
-//                textField.userInteractionEnabled = false
-//            }
-//            titleLabel.textColor = TEXT_COLOR
-//            titleLabel.font = TEXT_FONT
-//            textField.textColor = TEXT_COLOR
-//            textField.font = TEXT_FONT
-//            textField.desc = titleLabel.text
-//        }
-//        else if indexPath.section == 1 {
-//            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-//            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
-//            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as UITextView
-//            titleLabel.text = "Bemerkung"
-//            textField.text = stunde?.bemerkungen
-//            if bemerkungsCounter != nil { bemerkungsCounter.removeFromSuperview() }
-//            bemerkungsCounter = nil
-//            bemerkungsCounter = UILabel(frame: CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height + 20, width: 40, height: 15))
-//            bemerkungsCounter.textColor = UIColor.HTWGrayColor()
-//            bemerkungsCounter.font = UIFont.HTWVerySmallFont()
-//            bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
-//            cell.contentView.addSubview(bemerkungsCounter)
-//            
-//            titleLabel.textColor = TEXT_COLOR
-//            titleLabel.font = TEXT_FONT
-//            textField.textColor = TEXT_COLOR
-//            textField.font = TEXT_FONT
-//            textField.desc = titleLabel.text
-//        }
-//        else {
-//            cell = tableView.dequeueReusableCellWithIdentifier("LoeschenCell") as UITableViewCell
-//            cell.textLabel.textColor = UIColor.HTWWhiteColor()
-//            cell.contentView.backgroundColor = UIColor.HTWRedColor()
-//            cell.textLabel.font = UIFont.HTWBaseBoldFont()
-//            cell.textLabel.backgroundColor = UIColor.HTWRedColor()
-//        }
-//
-//        return cell
-//    }
-    
+    // MARK: - TableView Delegate
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-//        getFirstResponder()?.resignFirstResponder()
         if indexPath.section == 0  {
             switch indexPath.row {
             case 0:
