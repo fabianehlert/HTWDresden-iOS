@@ -93,6 +93,15 @@ class SPPortraitModel: NSObject {
         return tempArray.first as Stunde
     }
     
+    func deleteStunde(stunde: Stunde) {
+        let request = NSFetchRequest(entityName: "Stunde")
+        request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde.ident, stunde.student.matrnr, stunde.anfang)
+        let array = context.executeFetchRequest(request, error: nil)
+        var tempStunde = array.first as Stunde
+        context.deleteObject(tempStunde)
+        context.save(nil)
+    }
+    
     // DB-request for getting the current user
     func userByMatrnr(matrnr: String) -> (exists: Bool, user: User!) {
         let request = NSFetchRequest(entityName: "User")

@@ -219,9 +219,17 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     // MARK: - Actions
     func deleteOniPad(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
-            let senderButton = sender.view
+            let senderButton = sender.view as SPButtonLesson
             // TODO: - Unvollständig
-            
+            let alert = UIAlertController(title: "Warnung", message: "Wollen sie die Stunde \(senderButton.stunde.titel) wirklich löschen?", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ja", style: .Default, handler: {
+                action in
+                let index = find(self.buttons, senderButton)
+                self.model.deleteStunde(senderButton.stunde)
+                self.SPPortraitDetailPhoneDeletedStundeAtIndex(index!)
+            }))
+            alert.addAction(UIAlertAction(title: "Nein", style: .Cancel, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -259,6 +267,9 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             break
         }
     }
+    
+    // MARK: - Hilfsfunktionen
+    
     
     // MARK: - NOT IN FINAL RELEASE
     func deleteAllInDB() {
