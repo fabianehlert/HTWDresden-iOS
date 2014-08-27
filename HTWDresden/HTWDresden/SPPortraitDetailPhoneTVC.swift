@@ -18,19 +18,27 @@ protocol SPPortraitDetailPhoneDelegate {
 class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     
     private let TEXT_FONT = UIFont.HTWBaseFont()
-    private let TEXT_COLOR = UIColor.HTWTextColor()
     private let VIEW_BACKGROUND = UIColor.HTWSandColor()
     private let CELL_BACKGROUND = UIColor.HTWWhiteColor()
     
     var delegate: SPPortraitDetailPhoneDelegate?
     
-    private let TAG_LABEL = 1
-    private let TAG_TEXTVIEW = 2
-    
     var stunde: Stunde?
     var index: Int!
     
-    var bemerkungsCounter: UILabel!
+    @IBOutlet var bemerkungsCounter: UILabel!
+    @IBOutlet weak var titelTextView: UITextView!
+    @IBOutlet weak var kuerzelTextView: UITextView!
+    @IBOutlet weak var raumTextView: UITextView!
+    @IBOutlet weak var dozentTextView: UITextView!
+    @IBOutlet weak var typTextView: UITextView!
+    @IBOutlet weak var semesterTextView: UITextView!
+    @IBOutlet weak var anfangTextView: UITextView!
+    @IBOutlet weak var endeTextView: UITextView!
+    @IBOutlet weak var bemerkungTextView: UITextView!
+    
+    @IBOutlet var labels: [UILabel]!
+    
     
     lazy var myAlert = HTWAlert()
 
@@ -41,122 +49,135 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         tableView.backgroundColor = VIEW_BACKGROUND
         view.backgroundColor = VIEW_BACKGROUND
         
+        title = stunde?.kurzel
+        
+        titelTextView.text = stunde?.titel
+        kuerzelTextView.text = stunde?.kurzel
+        raumTextView.text = stunde?.raum
+        dozentTextView.text = stunde?.dozent
+        typTextView.text = stunde?.typ
+        semesterTextView.text = stunde?.semester
+        anfangTextView.text = formattedDate(stunde?.anfang)
+        endeTextView.text = formattedDate(stunde?.ende)
+        bemerkungTextView.text = stunde?.bemerkungen
+        bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
+        
+        titelTextView.font = TEXT_FONT
+        kuerzelTextView.font = TEXT_FONT
+        raumTextView.font = TEXT_FONT
+        dozentTextView.font = TEXT_FONT
+        typTextView.font = TEXT_FONT
+        semesterTextView.font = TEXT_FONT
+        anfangTextView.font = TEXT_FONT
+        endeTextView.font = TEXT_FONT
+        bemerkungTextView.font = UIFont.HTWSmallFont()
+        bemerkungsCounter.font = UIFont.HTWVerySmallFont()
+        
+        for label in labels {
+            label.font = TEXT_FONT
+        }
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return 3
-    }
-
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 8
-        case 1, 2:
-            return 1
-        default:
-            return 0
-        }
-    }
-
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        switch indexPath.section {
-        case 0,1:
-            if indexPath.row == 0 {
-                return 90
-            }
-            else {
-                return 50
-            }
-        case 2:
-            return 50
-        default:
-            return 0
-        }
-        
-    }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell = UITableViewCell()
-        
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
-            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as myTextView
-            switch indexPath.row {
-            case 0:
-                titleLabel.text = "Titel"
-                textField.text = stunde?.titel
-            case 1:
-                titleLabel.text = "Kürzel"
-                textField.text = stunde?.kurzel
-            case 2:
-                titleLabel.text = "Raum"
-                textField.text = stunde?.raum
-            case 3:
-                titleLabel.text = "Dozent"
-                textField.text = stunde?.dozent
-            case 4:
-                titleLabel.text = "Typ"
-                textField.text = stunde?.typ
-            case 5:
-                titleLabel.text = "Semester"
-                textField.text = stunde?.semester
-                textField.userInteractionEnabled = false
-            case 6:
-                titleLabel.text = "Anfang"
-                textField.text = formattedDate(stunde?.anfang)
-                textField.userInteractionEnabled = false
-            case 7:
-                titleLabel.text = "Ende"
-                textField.text = formattedDate(stunde?.ende)
-                textField.userInteractionEnabled = false
-            default:
-                titleLabel.text = ""
-                textField.text = ""
-                textField.userInteractionEnabled = false
-            }
-            titleLabel.textColor = TEXT_COLOR
-            titleLabel.font = TEXT_FONT
-            textField.textColor = TEXT_COLOR
-            textField.font = TEXT_FONT
-            textField.desc = titleLabel.text
-        }
-        else if indexPath.section == 1 {
-            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
-            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as myTextView
-            titleLabel.text = "Bemerkung"
-            textField.text = stunde?.bemerkungen
-            if bemerkungsCounter != nil { bemerkungsCounter.removeFromSuperview() }
-            bemerkungsCounter = nil
-            bemerkungsCounter = UILabel(frame: CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height + 20, width: 40, height: 15))
-            bemerkungsCounter.textColor = UIColor.HTWGrayColor()
-            bemerkungsCounter.font = UIFont.HTWVerySmallFont()
-            bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
-            cell.contentView.addSubview(bemerkungsCounter)
-            
-            titleLabel.textColor = TEXT_COLOR
-            titleLabel.font = TEXT_FONT
-            textField.textColor = TEXT_COLOR
-            textField.font = TEXT_FONT
-            textField.desc = titleLabel.text
-        }
-        else {
-            cell = tableView.dequeueReusableCellWithIdentifier("LoeschenCell") as UITableViewCell
-            cell.textLabel.textColor = UIColor.HTWWhiteColor()
-            cell.contentView.backgroundColor = UIColor.HTWRedColor()
-            cell.textLabel.font = UIFont.HTWBaseBoldFont()
-            cell.textLabel.backgroundColor = UIColor.HTWRedColor()
-        }
-
-        return cell
-    }
+//    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+//        var cell = UITableViewCell()
+//        
+//        if indexPath.section == 0 {
+//            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+//            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
+//            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as UITextView
+//            switch indexPath.row {
+//            case 0:
+//                titleLabel.text = "Titel"
+//                textField.text = stunde?.titel
+//            case 1:
+//                titleLabel.text = "Kürzel"
+//                textField.text = stunde?.kurzel
+//            case 2:
+//                titleLabel.text = "Raum"
+//                textField.text = stunde?.raum
+//            case 3:
+//                titleLabel.text = "Dozent"
+//                textField.text = stunde?.dozent
+//            case 4:
+//                titleLabel.text = "Typ"
+//                textField.text = stunde?.typ
+//            case 5:
+//                titleLabel.text = "Semester"
+//                textField.text = stunde?.semester
+//                textField.userInteractionEnabled = false
+//            case 6:
+//                titleLabel.text = "Anfang"
+//                textField.text = formattedDate(stunde?.anfang)
+//                textField.userInteractionEnabled = false
+//            case 7:
+//                titleLabel.text = "Ende"
+//                textField.text = formattedDate(stunde?.ende)
+//                textField.userInteractionEnabled = false
+//            default:
+//                titleLabel.text = ""
+//                textField.text = ""
+//                textField.userInteractionEnabled = false
+//            }
+//            titleLabel.textColor = TEXT_COLOR
+//            titleLabel.font = TEXT_FONT
+//            textField.textColor = TEXT_COLOR
+//            textField.font = TEXT_FONT
+//            textField.desc = titleLabel.text
+//        }
+//        else if indexPath.section == 1 {
+//            cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+//            var titleLabel = cell.contentView.viewWithTag(TAG_LABEL) as UILabel
+//            var textField = cell.contentView.viewWithTag(TAG_TEXTVIEW) as UITextView
+//            titleLabel.text = "Bemerkung"
+//            textField.text = stunde?.bemerkungen
+//            if bemerkungsCounter != nil { bemerkungsCounter.removeFromSuperview() }
+//            bemerkungsCounter = nil
+//            bemerkungsCounter = UILabel(frame: CGRect(x: titleLabel.frame.origin.x, y: titleLabel.frame.origin.y + titleLabel.frame.size.height + 20, width: 40, height: 15))
+//            bemerkungsCounter.textColor = UIColor.HTWGrayColor()
+//            bemerkungsCounter.font = UIFont.HTWVerySmallFont()
+//            bemerkungsCounter.text = stunde?.bemerkungen != nil ? "\(stunde!.bemerkungen.length)/70" : "0/70"
+//            cell.contentView.addSubview(bemerkungsCounter)
+//            
+//            titleLabel.textColor = TEXT_COLOR
+//            titleLabel.font = TEXT_FONT
+//            textField.textColor = TEXT_COLOR
+//            textField.font = TEXT_FONT
+//            textField.desc = titleLabel.text
+//        }
+//        else {
+//            cell = tableView.dequeueReusableCellWithIdentifier("LoeschenCell") as UITableViewCell
+//            cell.textLabel.textColor = UIColor.HTWWhiteColor()
+//            cell.contentView.backgroundColor = UIColor.HTWRedColor()
+//            cell.textLabel.font = UIFont.HTWBaseBoldFont()
+//            cell.textLabel.backgroundColor = UIColor.HTWRedColor()
+//        }
+//
+//        return cell
+//    }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
 //        getFirstResponder()?.resignFirstResponder()
-        if indexPath.section == 2 {
+        if indexPath.section == 0  {
+            switch indexPath.row {
+            case 0:
+                titelTextView.becomeFirstResponder()
+            case 1:
+                kuerzelTextView.becomeFirstResponder()
+            case 2:
+                raumTextView.becomeFirstResponder()
+            case 3:
+                dozentTextView.becomeFirstResponder()
+            case 4:
+                typTextView.becomeFirstResponder()
+            default: break
+            }
+        }
+        else if indexPath.section == 1 {
+            bemerkungTextView.becomeFirstResponder()
+        }
+        else if indexPath.section == 2 {
             myAlert.alertInViewController(self, title: "Warnung", message: "Wollen Sie die Stunde wirklich löschen?", numberOfTextFields: 0, actions: [("Ja",{
                 self.deleteStunde()
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -177,43 +198,53 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     }
     
     func textViewDidChange(textView: UITextView!) {
-        if textView.text.length >= 70 {
-            textView.text = textView.text.subString(0, length: 70)
+        
+        var max: Int = 0
+        switch textView {
+        case titelTextView, bemerkungTextView:
+            max = 70
+        case kuerzelTextView, raumTextView, dozentTextView, typTextView:
+            max = 20
+        default:
+            max = 0
         }
-        bemerkungsCounter.text = "\(textView.text.length)/70"
+        if textView.text.length >= max {
+            textView.text = textView.text.subString(0, length: max)
+        }
+        if textView == bemerkungTextView {
+            bemerkungsCounter.text = "\(textView.text.length)/70"
+        }
     }
     
     func textViewDidEndEditing(textView: UITextView!) {
-        saveStunde((textView as myTextView).desc, aenderung: textView.text)
+        saveStunde(textView)
     }
     
     // MARK: - DB Arbeit
-    func saveStunde(was: String?, aenderung: String!) {
-        if was == nil { return }
+    func saveStunde(sender: UITextView) {
         let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let array = context.executeFetchRequest(request, error: nil)
         var tempStunde = array.first as Stunde
-        switch was! {
-        case "Titel":
-            tempStunde.titel = aenderung
-        case "Kürzel":
-            tempStunde.kurzel = aenderung
-        case "Raum":
-            tempStunde.raum = aenderung
-        case "Dozent":
-            tempStunde.dozent = aenderung
-        case "Bemerkung":
-            tempStunde.bemerkungen = aenderung
-        case "Typ":
-            tempStunde.typ = aenderung
+        switch sender {
+        case titelTextView:
+            tempStunde.titel = sender.text
+        case kuerzelTextView:
+            tempStunde.kurzel = sender.text
+        case raumTextView:
+            tempStunde.raum = sender.text
+        case dozentTextView:
+            tempStunde.dozent = sender.text
+        case bemerkungTextView:
+            tempStunde.bemerkungen = sender.text
+        case typTextView:
+            tempStunde.typ = sender.text
         default:
             break
         }
         context.save(nil)
         stunde = tempStunde
-        tableView.reloadData()
         delegate?.SPPortraitDetailPhoneChangedStundeAtIndex(index)
     }
     
@@ -234,8 +265,4 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         let uhrzeit = date.stringFromDate("HH:mm")
         return "\(wochentag) - \(uhrzeit) Uhr"
     }
-}
-
-class myTextView: UITextView {
-    var desc: String?
 }

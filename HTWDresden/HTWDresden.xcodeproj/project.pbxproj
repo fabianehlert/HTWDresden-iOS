@@ -131,6 +131,7 @@
 				E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */,
 				E0B8364719A768E8009520C4 /* Assets */,
 				E0208D4419A61DFC00B7FE0D /* Stundenplan */,
+				E0B8E64419AD05FD0022D297 /* Noten */,
 				E0208D3919A6163700B7FE0D /* CoreData */,
 				E0208D1719A615FD00B7FE0D /* Supporting Files */,
 			);
@@ -236,6 +237,13 @@
 				E0B581B819A7A71700C967EF /* PT_Sans-Web-Regular.ttf */,
 			);
 			name = PT_Sans;
+			sourceTree = "<group>";
+		};
+		E0B8E64419AD05FD0022D297 /* Noten */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Noten;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

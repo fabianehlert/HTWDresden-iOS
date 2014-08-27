@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, SPPortraitDetailPhoneDelegate, SPPortraitDetailPadDelegate {
+class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate, SPPortraitDelegate, SPPortraitDetailPhoneDelegate, SPPortraitDetailPadDelegate {
     
     private let PixelPerMin: CGFloat = 0.5
     
@@ -122,6 +122,11 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
                 detailView?.stunde = selectedButton?.stunde
                 scrollView.bringSubviewToFront(detailView!)
             }
+            if device() == .Pad {
+                let longPress = UILongPressGestureRecognizer(target: self, action: "deleteOniPad:")
+                longPress.minimumPressDuration = 0.5
+                button.addGestureRecognizer(longPress)
+            }
             buttons += [button]
             scrollView.addSubview(button)
         }
@@ -209,6 +214,15 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, SPPortraitDelegate, S
         }
         
         scrollView.addSubview(zeitenView)
+    }
+    
+    // MARK: - Actions
+    func deleteOniPad(sender: UILongPressGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Began {
+            let senderButton = sender.view
+            // TODO: - Unvollständig
+            
+        }
     }
     
     // MARK: - ScrollView Delegate
