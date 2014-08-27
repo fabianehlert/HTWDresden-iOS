@@ -90,6 +90,7 @@ class MPMainXMLParser: NSObject, NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser) {
         dispatch_async(MAIN_QUEUE) {
+            setNetworkIndicator(false)
             MENSA_LAST_REFRESH = NSDate()
             self.completion(success: true, error: nil)
         }

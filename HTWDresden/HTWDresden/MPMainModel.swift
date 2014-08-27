@@ -10,12 +10,14 @@ import UIKit
 
 class MPMainModel: NSObject {
     
+    var mensenTitel = [String]()
     var mensen = [String:[Speise]]()
     
     var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
     
     override init() {
         super.init()
+        
     }
     
     init(test: Bool) {
@@ -44,13 +46,32 @@ class MPMainModel: NSObject {
         }
     }
     
+    func refresh(start: () -> Void, end: () -> Void) {
+        mensen = [String:[Speise]]()
+        start()
+        let parser = MPMainXMLParser()
+        parser.parseWithCompletion {
+            success, error in
+            if error != nil || !success {
+                println("Parsen fehlgeschlagen")
+                return
+            }
+            self.getData()
+            end()
+        }
+    }
+    
     
     func getData() {
+        mensen = [String:[Speise]]()
         let request = NSFetchRequest(entityName: "Speise")
         let array = context.executeFetchRequest(request, error: nil) as [Speise]
         for speise in array {
             if mensen[speise.mensa] == nil {
                 mensen[speise.mensa] = [Speise]()
+                if !contains(mensenTitel, speise.mensa) {
+                    mensenTitel.append(speise.mensa)
+                }
             }
             mensen[speise.mensa]?.append(speise)
         }
@@ -61,8 +82,8 @@ class MPMainModel: NSObject {
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        if let thisMensa = mensen[CURR_MENSA] {
-            return thisMensa.count
+        if CURR_MENSA != nil {
+            return mensen[CURR_MENSA]?.count ?? 0
         }
         else {
             return 0

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E007C59C19AE2C8000C0AFDE /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E007C59B19AE2C8000C0AFDE /* Speise.m */; };
 		E007C59E19AE2CA600C0AFDE /* MPMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */; };
 		E007C5A019AE2D5F00C0AFDE /* MPMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */; };
 		E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */; };
 		E007C5A419AE2F0700C0AFDE /* MPGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */; };
 		E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */; };
+		E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E020839A19AE4BD700DF3BA1 /* MPListTVC.swift */; };
 		E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1919A615FD00B7FE0D /* AppDelegate.swift */; };
 		E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */; };
 		E0208D2219A615FD00B7FE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0208D2019A615FD00B7FE0D /* Main.storyboard */; };
@@ -39,6 +39,7 @@
 		E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */; };
 		E0B581C019A7C45700C967EF /* SPPortraitDetailPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */; };
 		E0B8364F19A7690B009520C4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364A19A7690B009520C4 /* OFL.txt */; };
+		E0EF0E1C19AE596E0047DB70 /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EF0E1B19AE596E0047DB70 /* Speise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E007C59A19AE2C8000C0AFDE /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
-		E007C59B19AE2C8000C0AFDE /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
 		E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainTVC.swift; sourceTree = "<group>"; };
 		E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainCell.swift; sourceTree = "<group>"; };
 		E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainModel.swift; sourceTree = "<group>"; };
 		E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPGlobals.swift; sourceTree = "<group>"; };
 		E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainXMLParser.swift; sourceTree = "<group>"; };
+		E020839A19AE4BD700DF3BA1 /* MPListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPListTVC.swift; sourceTree = "<group>"; };
 		E0208D1419A615FD00B7FE0D /* HTWDresden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTWDresden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0208D1819A615FD00B7FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0208D1919A615FD00B7FE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +94,8 @@
 		E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPad.swift; sourceTree = "<group>"; };
 		E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPPortraitDetailPad.xib; sourceTree = "<group>"; };
 		E0B8364A19A7690B009520C4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E0EF0E1A19AE596E0047DB70 /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
+		E0EF0E1B19AE596E0047DB70 /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E020839819AE4BB700DF3BA1 /* MPMain */ = {
+			isa = PBXGroup;
+			children = (
+				E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */,
+				E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */,
+				E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */,
+				E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */,
+			);
+			name = MPMain;
+			sourceTree = "<group>";
+		};
+		E020839919AE4BBE00DF3BA1 /* MPList */ = {
+			isa = PBXGroup;
+			children = (
+				E020839A19AE4BD700DF3BA1 /* MPListTVC.swift */,
+			);
+			name = MPList;
+			sourceTree = "<group>";
+		};
 		E0208D0B19A615FD00B7FE0D = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */,
-				E007C59A19AE2C8000C0AFDE /* Speise.h */,
-				E007C59B19AE2C8000C0AFDE /* Speise.m */,
+				E0EF0E1A19AE596E0047DB70 /* Speise.h */,
+				E0EF0E1B19AE596E0047DB70 /* Speise.m */,
 				E09D210319ACD59B00347896 /* Stunde.h */,
 				E09D210419ACD59B00347896 /* Stunde.m */,
 				E09D210019ACD59B00347896 /* Note.h */,
@@ -258,10 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */,
-				E007C59D19AE2CA600C0AFDE /* MPMainTVC.swift */,
-				E007C59F19AE2D5F00C0AFDE /* MPMainCell.swift */,
-				E007C5A119AE2E8A00C0AFDE /* MPMainModel.swift */,
-				E007C5A519AE302100C0AFDE /* MPMainXMLParser.swift */,
+				E020839819AE4BB700DF3BA1 /* MPMain */,
+				E020839919AE4BBE00DF3BA1 /* MPList */,
 			);
 			name = Mensa;
 			sourceTree = "<group>";
@@ -381,10 +400,10 @@
 				E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */,
 				E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */,
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
+				E0EF0E1C19AE596E0047DB70 /* Speise.m in Sources */,
 				E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */,
 				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
-				E007C59C19AE2C8000C0AFDE /* Speise.m in Sources */,
 				E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */,
 				E09D20FF19ACD59A00347896 /* User.m in Sources */,
 				E0208D4A19A6202F00B7FE0D /* SPGlobals.swift in Sources */,
@@ -393,6 +412,7 @@
 				E0208D4C19A6209800B7FE0D /* AppGlobals.swift in Sources */,
 				E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */,
 				E09D210519ACD59B00347896 /* Stunde.m in Sources */,
+				E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */,
 				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
 				E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */,

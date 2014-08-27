@@ -12,9 +12,10 @@
 
 @interface Speise : NSManagedObject
 
-@property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * mensa;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSData * bild;
 
 @end

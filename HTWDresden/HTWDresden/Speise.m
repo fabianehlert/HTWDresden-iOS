@@ -11,9 +11,10 @@
 
 @implementation Speise
 
-@dynamic title;
 @dynamic desc;
 @dynamic link;
 @dynamic mensa;
+@dynamic title;
+@dynamic bild;
 
 @end

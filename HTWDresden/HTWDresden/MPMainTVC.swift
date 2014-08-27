@@ -23,9 +23,18 @@ class MPMainTVC: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        title = CURR_MENSA
         model.start() {
             self.tableView.reloadData()
         }
+    }
+    
+    @IBAction func refreshButtonPressed(sender: AnyObject) {
+        model.refresh({
+            self.tableView.reloadData()
+            }, end: {
+            self.tableView.reloadData()
+        })
     }
 
     // MARK: - Table view data source
@@ -39,14 +48,15 @@ class MPMainTVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
-        return 90
+        return 120
     }
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell = tableView.dequeueReusableCellWithIdentifier("MPMainCell", forIndexPath: indexPath) as MPMainCell
 
         cell.speise = model.speiseForIndexPath(indexPath)
-
+        cell.getImage()
+        
         return cell
     }
 
@@ -86,14 +96,15 @@ class MPMainTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showList" {
+            (segue.destinationViewController as MPListTVC).mensen = model.mensenTitel
+        }
     }
-    */
+    
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 var CURR_MENSA: String! {
-    get{ return NSUserDefaults.standardUserDefaults().objectForKey("CURR_MENSA") as String! }
+    get{ return userDefaults.objectForKey("CURR_MENSA") as String! }
     set{
         if newValue != nil {
             userDefaults.setObject(newValue, forKey: "CURR_MENSA")
