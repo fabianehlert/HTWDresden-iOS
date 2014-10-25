@@ -12,6 +12,8 @@
 	<dict>
 		<key>06BFDF58040416173F54D5121FBDF5D91C129A41</key>
 		<string>github.com:BenchR267/HTWDresden</string>
+		<key>94EFF98CF46A8F57A43AF6C9A5B707C1A4B16007</key>
+		<string>https://github.com/thii/FontAwesome.swift</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>HTWDresden/HTWDresden.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>06BFDF58040416173F54D5121FBDF5D91C129A41</key>
 		<string>../../..</string>
+		<key>94EFF98CF46A8F57A43AF6C9A5B707C1A4B16007</key>
+		<string>../../../FontAwesome.swift/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:BenchR267/HTWDresden</string>
@@ -28,6 +32,14 @@
 	<string>06BFDF58040416173F54D5121FBDF5D91C129A41</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>94EFF98CF46A8F57A43AF6C9A5B707C1A4B16007</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FontAwesome.swift</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

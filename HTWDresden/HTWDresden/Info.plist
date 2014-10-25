@@ -24,6 +24,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>FontAwesome.otf</string>
 		<string>PT_Sans-Web-Italic.ttf</string>
 		<string>PT_Sans-Web-Regular.ttf</string>
 		<string>PT_Sans-Web-Bold.ttf</string>
