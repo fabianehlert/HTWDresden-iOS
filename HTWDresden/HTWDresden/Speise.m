@@ -2,7 +2,7 @@
 //  Speise.m
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 27.08.14.
+//  Created by Benjamin Herzog on 25.10.14.
 //  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
 //
 
@@ -15,6 +15,5 @@
 @dynamic link;
 @dynamic mensa;
 @dynamic title;
-@dynamic bild;
 
 @end

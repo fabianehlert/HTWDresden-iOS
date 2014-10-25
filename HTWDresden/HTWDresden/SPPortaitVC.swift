@@ -18,7 +18,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     let myAlert = HTWAlert()
     var buttons = [SPButtonLesson]()
     var selectedButton: SPButtonLesson?
-    var currentDate = NSDate.specificDate(06, month: 10, year: 2014)
+    var currentDate = NSDate()
     
     // MARK: - UI Elemente
     var tageView: UIView!
@@ -77,9 +77,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     
     // MARK: - SPDetailDelegates
     func SPPortraitModelfinishedLoading(model: SPPortraitModel) {
-        dispatch_async(MAIN_QUEUE) {
-            self.getButtons()
-        }
+        self.getButtons()
     }
     
     func SPPortraitDetailPhoneDeletedStundeAtIndex(index: Int) {
@@ -100,27 +98,12 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
         
         for stunde in self.model.stunden {
             let button = SPButtonLesson(stunde: stunde, portrait: true, currentDate: currentDate)
-            button.tapHandler = {
-                button in
-                self.selectedButton?.select = false
-                self.selectedButton = button
-                button.select = true
-                
-                
-                if device() == .Phone {
-                    self.performSegueWithIdentifier("detailPhone", sender: button)
-                }
-                else if device() == .Pad {
-                    self.detailView?.stunde = button.stunde
-                    self.detailView?.index = find(self.buttons,button)!
-                    self.scrollView.bringSubviewToFront(self.detailView!)
-                }
-            }
+            button.tapHandler = buttonHandler
             if button.isNow() {
                 button.now = true
                 selectedButton = button
                 detailView?.stunde = selectedButton?.stunde
-                scrollView.bringSubviewToFront(detailView!)
+                if detailView != nil { scrollView.bringSubviewToFront(detailView!) }
             }
             if device() == .Pad {
                 let longPress = UILongPressGestureRecognizer(target: self, action: "deleteOniPad:")
@@ -128,10 +111,28 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
                 button.addGestureRecognizer(longPress)
             }
             buttons += [button]
-            scrollView.addSubview(button)
+            dispatch_async(MAIN_QUEUE) {
+                self.scrollView.addSubview(button)
+            }
         }
         
         if device() == .Pad { self.view.bringSubviewToFront(self.detailView!) }
+    }
+    
+    func buttonHandler(button: SPButtonLesson) {
+        self.selectedButton?.select = false
+        self.selectedButton = button
+        button.select = true
+        
+        
+        if device() == .Phone {
+            self.performSegueWithIdentifier("detailPhone", sender: button)
+        }
+        else if device() == .Pad {
+            self.detailView?.stunde = button.stunde
+            self.detailView?.index = find(self.buttons,button)!
+            self.scrollView.bringSubviewToFront(self.detailView!)
+        }
     }
     
     func loadDayLabels() {

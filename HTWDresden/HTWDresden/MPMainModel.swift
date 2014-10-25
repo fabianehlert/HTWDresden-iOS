@@ -24,7 +24,6 @@ class MPMainModel: NSObject, NSXMLParserDelegate {
         super.init()
         let request = NSFetchRequest(entityName: "Speise")
         let array = context.executeFetchRequest(request, error: nil) as [Speise]
-        //        dump(array)
     }
     
     func start(completion: () -> Void) {
@@ -74,69 +73,6 @@ class MPMainModel: NSObject, NSXMLParserDelegate {
                 }
             }
             mensen[speise.mensa]?.append(speise)
-        }
-    }
-    
-    private var indexPath = NSIndexPath()
-    private var imagesHandler: ((indexPath: NSIndexPath) -> Void)!
-    func getImages(handler: (indexPath: NSIndexPath) -> Void) {
-        imagesHandler = handler
-        dispatch_async(DIFF_QUEUE) {
-            for var i = 0; i < self.numberOfRowsInSection(0); i++ {
-                self.indexPath = NSIndexPath(forRow: i, inSection: 0)
-                if self.speiseForIndexPath(self.indexPath)?.bild != nil {
-                    return
-                }
-                
-                setNetworkIndicator(true)
-                var request = NSURLRequest(URL: NSURL(string: self.speiseForIndexPath(self.indexPath)!.link)!)
-                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
-                    response, data, error in
-                    if data == nil {
-                        self.speiseForIndexPath(self.indexPath)?.bild = nil
-                    }
-                    dispatch_async(DIFF_QUEUE) {
-                        setNetworkIndicator(false)
-                        let html: String = NSString(data: data, encoding: NSUTF8StringEncoding)!
-                        let start = html.indexOf("<div id=\"spalterechtsnebenmenue\">")
-                        var dataAfterHtml = html.subString(start, length: html.lengthAfterIndex(start))
-                        dataAfterHtml = dataAfterHtml.subString(0, length: dataAfterHtml.indexOf("<div id=\"speiseplaninfos\">"))
-                        dataAfterHtml.replace("&", withString: " und")
-                        dataAfterHtml += "</div>"
-                        
-                        let parser = NSXMLParser(data: dataAfterHtml.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-                        parser.delegate = self
-                        parser.parse()
-                    }
-                })
-            }
-        }
-    }
-    
-    // MARK: - XMLParserDelegate
-    var inEssenBild = false
-    func parser(parser: NSXMLParser, didStartElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!, attributes attributeDict: [NSObject : AnyObject]!) {
-        let attributes = attributeDict as? [String: String]
-        if elementName == "div" && attributes != nil && attributes?["id"] != nil && attributes?["id"]! == "essenbild" {
-            inEssenBild = true
-        }
-        if elementName == "a" && inEssenBild {
-            loadImageFromURL(attributes!["href"])
-            parser.abortParsing()
-        }
-    }
-    
-    func loadImageFromURL(string: String?) {
-        if string == nil {
-            println("Kein Bild gefunden..")
-            return
-        }
-        let image = UIImage(data: NSData(contentsOfURL: NSURL(string: string!)!)!)
-//        dump(image)
-        if speiseForIndexPath(self.indexPath) != nil { speiseForIndexPath(self.indexPath)!.bild = UIImagePNGRepresentation(image) }
-        dispatch_async(MAIN_QUEUE) {
-            self.imagesHandler(indexPath: self.indexPath)
-            (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext?.save(nil)
         }
     }
     

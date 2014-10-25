@@ -2,7 +2,7 @@
 //  Speise.h
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 27.08.14.
+//  Created by Benjamin Herzog on 25.10.14.
 //  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
 //
 
@@ -16,6 +16,5 @@
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * mensa;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSData * bild;
 
 @end

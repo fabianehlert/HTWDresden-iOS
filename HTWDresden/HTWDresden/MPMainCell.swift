@@ -14,12 +14,9 @@ class MPMainCell: UITableViewCell, NSXMLParserDelegate {
         didSet{
             MPTitleLabel.text = speise.title
             MPDescLabel.text = speise.desc
-            if speise.bild != nil { MPImageView.image = UIImage(data: speise.bild) }
-            else { MPImageView.image = nil }
         }
     }
     
-    @IBOutlet weak var MPImageView: UIImageView!
     @IBOutlet weak var MPTitleLabel: UILabel!
     @IBOutlet weak var MPDescLabel: UILabel!
     

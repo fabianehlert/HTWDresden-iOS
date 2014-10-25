@@ -42,14 +42,7 @@ class SPPortraitModel: NSObject {
         var getUser = userByMatrnr(matrnr)
         if getUser.exists {
             user = getUser.user
-            stunden = [Stunde]()
-            for stunde in user.stunden.allObjects as [Stunde] {
-                if stunde.anfang.inRange(currentDate.getDayOnly(), date2: currentDate.getDayOnly().addDays(ANZ_PORTRAIT)) {
-//                    println("Stunde \(stunde.titel) Anfang: \(stunde.anfang) ist im Bereich \(self.currentDate.getDayOnly()) bis \(self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))")
-                    stunden.append(stunde)
-                }
-                
-            }
+            self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
             println("== User \(user.matrnr) erfolgreich geladen")
             self.delegate?.SPPortraitModelfinishedLoading(self)
         }
@@ -61,13 +54,7 @@ class SPPortraitModel: NSObject {
                 if success {
                     println("== Stunden erfolgreich geladen.")
                     self.user = self.userByMatrnr(self.matrnr).user
-                    self.stunden = [Stunde]()
-                    for stunde in self.user.stunden.allObjects as [Stunde] {
-                        if stunde.anfang.inRange(self.currentDate.getDayOnly(), date2: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT)) {
-//                            println("Stunde \(stunde.titel) Anfang: \(stunde.anfang) ist im Bereich \(self.currentDate.getDayOnly()) bis \(self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))")
-                            self.stunden.append(stunde)
-                        }
-                    }
+                    self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
                     println("== User \(self.user.matrnr) erfolgreich geladen")
                     self.delegate?.SPPortraitModelfinishedLoading(self)
                 }
@@ -82,6 +69,7 @@ class SPPortraitModel: NSObject {
             if success {
                 println("== Stunden erfolgreich aktualisiert")
                 self.user = self.userByMatrnr(self.user.matrnr).user
+                self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
             }
         }
     }
@@ -100,6 +88,20 @@ class SPPortraitModel: NSObject {
         var tempStunde = array!.first as Stunde
         context.deleteObject(tempStunde)
         context.save(nil)
+    }
+    
+    func getStundenFromUser(user: User, startDate: NSDate, endDate: NSDate) -> [Stunde] {
+        var erg = [Stunde]()
+        
+        let request = NSFetchRequest(entityName: "Stunde")
+        request.predicate = NSPredicate(format: "student = %@ && anfang >= %@ && anfang <= %@", user, startDate, endDate)
+        var error: NSError?
+        let array = context.executeFetchRequest(request, error: &error)
+        if error != nil || array?.count == 0 {
+            return erg
+        }
+        
+        return array as [Stunde]
     }
     
     // DB-request for getting the current user
