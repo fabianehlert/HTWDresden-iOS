@@ -65,8 +65,8 @@
 		E6EEAACC19FC56A600582FA9 /* mensen.json in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAACB19FC56A600582FA9 /* mensen.json */; };
 		E6EEAACE19FC59F100582FA9 /* zeltmensa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAACD19FC59F100582FA9 /* zeltmensa.jpg */; };
 		E6EEAAD019FC5F7E00582FA9 /* MPListExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAACF19FC5F7E00582FA9 /* MPListExtensions.swift */; };
-		E6EEAAD519FC608600582FA9 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAAD419FC608600582FA9 /* FontAwesome.swift */; };
-		E6EEAAD719FC609300582FA9 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAAD619FC609300582FA9 /* FontAwesome.otf */; };
+		E6EEAAD919FC63D000582FA9 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAAD819FC63D000582FA9 /* FontAwesome.swift */; };
+		E6EEAADB19FC63DE00582FA9 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAADA19FC63DE00582FA9 /* FontAwesome.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,8 +148,8 @@
 		E6EEAACB19FC56A600582FA9 /* mensen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mensen.json; sourceTree = "<group>"; };
 		E6EEAACD19FC59F100582FA9 /* zeltmensa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zeltmensa.jpg; sourceTree = "<group>"; };
 		E6EEAACF19FC5F7E00582FA9 /* MPListExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPListExtensions.swift; sourceTree = "<group>"; };
-		E6EEAAD419FC608600582FA9 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = ../../FontAwesome.swift/Classes/FontAwesome.swift; sourceTree = "<group>"; };
-		E6EEAAD619FC609300582FA9 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../../FontAwesome.swift/Resources/FontAwesome.otf; sourceTree = "<group>"; };
+		E6EEAAD819FC63D000582FA9 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		E6EEAADA19FC63DE00582FA9 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,8 +376,8 @@
 		E6EEAAD119FC605F00582FA9 /* FontAwesome */ = {
 			isa = PBXGroup;
 			children = (
-				E6EEAAD419FC608600582FA9 /* FontAwesome.swift */,
-				E6EEAAD619FC609300582FA9 /* FontAwesome.otf */,
+				E6EEAAD819FC63D000582FA9 /* FontAwesome.swift */,
+				E6EEAADA19FC63DE00582FA9 /* FontAwesome.otf */,
 			);
 			name = FontAwesome;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				E6EEAAC519FC569200582FA9 /* pillnitz.jpg in Resources */,
 				E6EEAAB919FC569200582FA9 /* goerlitz.jpg in Resources */,
 				E6EEAAC319FC569200582FA9 /* noavailablemensaimage.jpg in Resources */,
-				E6EEAAD719FC609300582FA9 /* FontAwesome.otf in Resources */,
+				E6EEAADB19FC63DE00582FA9 /* FontAwesome.otf in Resources */,
 				E0B581BC19A7A71700C967EF /* PT_Sans-Web-Regular.ttf in Resources */,
 				E6EEAABE19FC569200582FA9 /* mensa-siedepunkt.jpg in Resources */,
 				E0B8364F19A7690B009520C4 /* OFL.txt in Resources */,
@@ -542,7 +542,7 @@
 				E007C5A019AE2D5F00C0AFDE /* MPMainCell.swift in Sources */,
 				E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */,
 				E0208D4819A61E6000B7FE0D /* SPPortraitModel.swift in Sources */,
-				E6EEAAD519FC608600582FA9 /* FontAwesome.swift in Sources */,
+				E6EEAAD919FC63D000582FA9 /* FontAwesome.swift in Sources */,
 				E007C5A419AE2F0700C0AFDE /* MPGlobals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
