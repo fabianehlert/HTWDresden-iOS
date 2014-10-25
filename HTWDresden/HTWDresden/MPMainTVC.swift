@@ -26,6 +26,10 @@ class MPMainTVC: UITableViewController {
         title = CURR_MENSA
         model.start() {
             self.tableView.reloadData()
+            self.model.getImages() {
+                indexPath in
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
         }
     }
     
@@ -39,23 +43,23 @@ class MPMainTVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return model.numberOfSections()
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.numberOfRowsInSection(section)
     }
 
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 120
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MPMainCell", forIndexPath: indexPath) as MPMainCell
 
         cell.speise = model.speiseForIndexPath(indexPath)
-        cell.getImage()
+//        cell.getImage()
         
         return cell
     }
@@ -100,7 +104,7 @@ class MPMainTVC: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showList" {
             (segue.destinationViewController as MPListTVC).mensen = model.mensenTitel
         }

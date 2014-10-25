@@ -34,7 +34,7 @@ class MPMainXMLParser: NSObject, NSXMLParserDelegate {
     func parseWithCompletion(handler: (success: Bool, error: String?) -> Void) {
         completion = handler
         println("== Lade Mensenfeed...")
-        let request = NSURLRequest(URL: NSURL(string: MENSA_URL))
+        let request = NSURLRequest(URL: NSURL(string: MENSA_URL)!)
         setNetworkIndicator(true)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {
             response, data, error in

@@ -79,7 +79,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     }
 
     // MARK: - TableView Delegate
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0  {
             switch indexPath.row {
             case 0:
@@ -102,7 +102,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
             myAlert.alertInViewController(self, title: "Warnung", message: "Wollen Sie die Stunde wirklich löschen?", numberOfTextFields: 0, actions: [("Ja",{
                 self.deleteStunde()
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                self.navigationController.popViewControllerAnimated(true)
+                self.navigationController?.popViewControllerAnimated(true)
             }), ("Nein", {
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             })])
@@ -147,7 +147,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let array = context.executeFetchRequest(request, error: nil)
-        var tempStunde = array.first as Stunde
+        var tempStunde = array?.first as Stunde
         switch sender {
         case titelTextView:
             tempStunde.titel = sender.text
@@ -174,7 +174,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let array = context.executeFetchRequest(request, error: nil)
-        var tempStunde = array.first as Stunde
+        var tempStunde = array?.first as Stunde
         context.deleteObject(tempStunde)
         context.save(nil)
         delegate?.SPPortraitDetailPhoneDeletedStundeAtIndex(index)

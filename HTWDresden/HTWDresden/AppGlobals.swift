@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 let SUITNAME_NSUSERDEFAULTS = "group.HTW.TodayExtensionSharingDefaults"
-let userDefaults = NSUserDefaults(suiteName: SUITNAME_NSUSERDEFAULTS)
+let userDefaults = NSUserDefaults(suiteName: SUITNAME_NSUSERDEFAULTS)!
 
 //let DIFF_QUEUE = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 let DIFF_QUEUE = dispatch_queue_create("de.benchr.HTWDresden.longrunningfunction", nil)
@@ -81,10 +81,10 @@ class HTWAlert: NSObject, UIAlertViewDelegate {
             return nil
         }
         if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0 {
-            return (alert8.textFields[index] as UITextField).text
+            return (alert8.textFields![index] as UITextField).text
         }
         else {
-            return alert7.textFieldAtIndex(index).text
+            return alert7.textFieldAtIndex(index)!.text
         }
     }
     

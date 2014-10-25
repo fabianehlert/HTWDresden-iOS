@@ -40,7 +40,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
         
         let requestString = "matr=\(kennung)&pressme=S+T+A+R+T"
         let requestData = NSData(bytes: (requestString as NSString).UTF8String, length: requestString.length)
-        var request = NSMutableURLRequest(URL: NSURL(string: XML_PARSER_URL), cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
+        var request = NSMutableURLRequest(URL: NSURL(string: XML_PARSER_URL)!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 10)
         request.HTTPMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "content-type")
         request.HTTPBody = requestData
@@ -54,14 +54,14 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
                 return
             }
             
-            var html: String = NSString(data: data, encoding: NSASCIIStringEncoding)
+            var html = NSString(data: data, encoding: NSASCIIStringEncoding) as String
             if html.contains("Stundenplan im csv-Format erstellen") || html.contains("Es wurden keine Daten gefunden") {
                 self.completion(success: false, error: "Falsche Kennung")
             }
             
             // Aktuelles Semester
             dispatch_async(DIFF_QUEUE) {
-                let htmlForSemester: String = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php"), encoding: NSASCIIStringEncoding, error: nil)
+                let htmlForSemester = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php")!, encoding: NSASCIIStringEncoding, error: nil) as String
                 setNetworkIndicator(false)
                 let index = htmlForSemester.indexOf("<h2>")
                 var semester = htmlForSemester[index + "<h2>".length...index + 50]
@@ -132,7 +132,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
             request.entity = NSEntityDescription.entityForName("User", inManagedObjectContext: context)
             request.predicate = NSPredicate(format: "matrnr = %@", kennung)
             let oldObjects = context.executeFetchRequest(request, error: nil)
-            if oldObjects.count == 0 {
+            if oldObjects!.count == 0 {
                 newUser.matrnr = newUser.matrnr.componentsSeparatedByString("+")[0]
                 context.save(nil)
                 let raumString = newUser.raum.boolValue ? "ja" : "nein"
@@ -140,9 +140,9 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
             }
             else {
                 println("== Nutzer vorhanden, Stunden werden aktualisiert")
-                let oldUser = oldObjects[0] as User
+                let oldUser = oldObjects?[0] as User
                 println("== Stunden vorher: \(oldUser.stunden.count)")
-                for stunde in newUser.stunden.allObjects as [Stunde] {
+                for stunde in lazy(newUser.stunden.allObjects as [Stunde]) {
                     if isStunde(stunde, inCollection: oldUser.stunden.allObjects as [Stunde]) {
                         continue
                     }
@@ -156,7 +156,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
             }
             break
         case "Stunde":
-            var stunde = Stunde(entity: NSEntityDescription.entityForName("Stunde", inManagedObjectContext: context), insertIntoManagedObjectContext: context)
+            var stunde = Stunde(entity: NSEntityDescription.entityForName("Stunde", inManagedObjectContext: context)!, insertIntoManagedObjectContext: context)
             stunde.titel = stundeDic["titel"]
             var tempKuerzel = stundeDic["kuerzel"]?.componentsSeparatedByString("/").first
             stunde.kurzel = tempKuerzel?.length >= 1 ? tempKuerzel?.subString(0, length: tempKuerzel!.length-1) : tempKuerzel

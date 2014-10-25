@@ -116,7 +116,7 @@ extension String
     func isMatch(regex: String, options: NSRegularExpressionOptions) -> Bool
     {
         var error: NSError?
-        var exp = NSRegularExpression(pattern: regex, options: options, error: &error)
+        var exp = NSRegularExpression(pattern: regex, options: options, error: &error)!
         
         if let error = error {
             println(error.description)
@@ -128,7 +128,7 @@ extension String
     func getMatches(regex: String, options: NSRegularExpressionOptions) -> [NSTextCheckingResult]
     {
         var error: NSError?
-        var exp = NSRegularExpression(pattern: regex, options: options, error: &error)
+        var exp = NSRegularExpression(pattern: regex, options: options, error: &error)!
         
         if let error = error {
             println(error.description)
@@ -257,7 +257,7 @@ extension NSDate {
         var dayComponent = NSDateComponents()
         dayComponent.day = days
         var theCalendar = NSCalendar.currentCalendar()
-        return theCalendar.dateByAddingComponents(dayComponent, toDate: self, options: .allZeros)
+        return theCalendar.dateByAddingComponents(dayComponent, toDate: self, options: .allZeros)!
     }
 }
 
@@ -314,58 +314,58 @@ extension UIColor {
 extension UIFont {
     
     class func systemFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "PTSans-Regular", size: fontSize)
+        return UIFont(name: "PTSans-Regular", size: fontSize)!
     }
 
     class func boldSystemFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "PTSans-Bold", size: fontSize)
+        return UIFont(name: "PTSans-Bold", size: fontSize)!
     }
 
     class func italicSystemFontOfSize(fontSize: CGFloat) -> UIFont {
-        return UIFont(name: "PTSans-Italic", size: fontSize)
+        return UIFont(name: "PTSans-Italic", size: fontSize)!
     }
 
     class func HTWExtraLargeFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 25)
+        return UIFont(name: "PT Sans", size: 25)!
     }
     class func HTWLargeFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 21)
+        return UIFont(name: "PT Sans", size: 21)!
     }
     class func HTWBaseFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 17)
+        return UIFont(name: "PT Sans", size: 17)!
     }
     class func HTWSmallFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 14)
+        return UIFont(name: "PT Sans", size: 14)!
     }
     class func HTWVerySmallFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 12)
+        return UIFont(name: "PT Sans", size: 12)!
     }
     class func HTWSmallestFont() -> UIFont {
-        return UIFont(name: "PT Sans", size: 10)
+        return UIFont(name: "PT Sans", size: 10)!
     }
 
     class func HTWSmallBoldFont() -> UIFont {
-        return UIFont(name: "PT Sans Bold", size: 14)
+        return UIFont(name: "PT Sans Bold", size: 14)!
     }
     class func HTWBaseBoldFont() -> UIFont {
-        return UIFont(name: "PT Sans Bold", size: 17)
+        return UIFont(name: "PT Sans Bold", size: 17)!
     }
     class func HTWLargeBoldFont() -> UIFont {
-        return UIFont(name: "PT Sans Bold", size: 21)
+        return UIFont(name: "PT Sans Bold", size: 21)!
     }
 
     class func HTWSmallItalicFont() -> UIFont {
-        return UIFont(name: "PT Sans Italic", size: 14)
+        return UIFont(name: "PT Sans Italic", size: 14)!
     }
     class func HTWBaseItalicFont() -> UIFont {
-        return UIFont(name: "PT Sans Italic", size: 17)
+        return UIFont(name: "PT Sans Italic", size: 17)!
     }
     class func HTWLargeItalicFont() -> UIFont {
-        return UIFont(name: "PT Sans Italic", size: 21)
+        return UIFont(name: "PT Sans Italic", size: 21)!
     }
 
     class func HTWSmallItalicBoldFont() -> UIFont {
-    	return UIFont(name: "PT Sans Bold Italic", size: 14)
+    	return UIFont(name: "PT Sans Bold Italic", size: 14)!
     }
 
     class func HTWTableViewCellFont() -> UIFont {

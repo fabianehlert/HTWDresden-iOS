@@ -27,7 +27,7 @@ public class NibView: UIView {
         super.init(coder: aDecoder)
     }
     
-    override public func awakeAfterUsingCoder(aDecoder: NSCoder!) -> AnyObject! {
+    override public func awakeAfterUsingCoder(aDecoder: NSCoder) -> AnyObject {
         if self.subviews.count == 0 {
             var view = self.loadNib()
             view.setTranslatesAutoresizingMaskIntoConstraints(false)

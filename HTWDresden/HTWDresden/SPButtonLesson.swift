@@ -77,7 +77,8 @@ class SPButtonLesson: UIButton {
         self.portrait = portrait
         self.currentDate = currentDate
         PixelPerMin = portrait ? 0.5 : 0.35
-        super.init(frame: configure())
+        super.init(frame: CGRectZero)
+        self.frame = configure()
         farben()
     }
 
@@ -100,7 +101,7 @@ class SPButtonLesson: UIButton {
             var tage = [NSDate]()
             tage.append(today)
             for var i = 1; i < ANZ_PORTRAIT; i++ {
-                tage.append(theCalendar.dateByAddingComponents(dayComponent, toDate: tage[i-1], options: .allZeros))
+                tage.append(theCalendar.dateByAddingComponents(dayComponent, toDate: tage[i-1], options: .allZeros)!)
             }
             for var i = 0; i < tage.count; i++ {
                 if NSDate.isSameDayWithDate1(stunde.anfang, andDate2: tage[i]) {
@@ -125,10 +126,10 @@ class SPButtonLesson: UIButton {
             var zaehler = 0
             for var i = 1; i < ANZ_LANDSCAPE; i++ {
                 if zaehler < 4 {
-                    tage.append(theCalendar.dateByAddingComponents(dayComponent, toDate: tage[i - 1], options: .allZeros))
+                    tage.append(theCalendar.dateByAddingComponents(dayComponent, toDate: tage[i - 1], options: .allZeros)!)
                 }
                 else {
-                    tage.append(theCalendar.dateByAddingComponents(threeDayComponent, toDate: tage[i - 1], options: .allZeros))
+                    tage.append(theCalendar.dateByAddingComponents(threeDayComponent, toDate: tage[i - 1], options: .allZeros)!)
                 }
                 zaehler++
                 if zaehler > 4 {
@@ -139,7 +140,7 @@ class SPButtonLesson: UIButton {
                 if NSDate.isSameDayWithDate1(stunde.anfang, andDate2: tage[i]) {
                     x = 1
                     if i != 0 {
-                        x = CGFloat(1 + i * 103 + 61 * Int(i/5))
+                        x = CGFloat(1 + i * 103 + 61 * UInt8(i/5))
                     }
                     y = CGFloat(45 + CGFloat(stunde.anfang.timeIntervalSinceDate(tage[i].dateByAddingTimeInterval(60*60*7+60*30))) / 60 * PixelPerMin)
                     break

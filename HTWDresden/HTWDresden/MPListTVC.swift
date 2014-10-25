@@ -22,16 +22,16 @@ class MPListTVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mensen?.count ?? 1
     }
 
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
         cell.textLabel.text = mensen[indexPath.row]
@@ -39,9 +39,12 @@ class MPListTVC: UITableViewController {
         return cell
     }
 
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         CURR_MENSA = mensen[indexPath.row]
-        presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+        if device() == .Pad {
+            presentingViewController?.viewWillAppear(true)
+        }
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

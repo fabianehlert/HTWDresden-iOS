@@ -18,7 +18,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     let myAlert = HTWAlert()
     var buttons = [SPButtonLesson]()
     var selectedButton: SPButtonLesson?
-    var currentDate = NSDate.specificDate(21, month: 04, year: 2014)
+    var currentDate = NSDate.specificDate(06, month: 10, year: 2014)
     
     // MARK: - UI Elemente
     var tageView: UIView!
@@ -131,6 +131,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             scrollView.addSubview(button)
         }
         
+        if device() == .Pad { self.view.bringSubviewToFront(self.detailView!) }
     }
     
     func loadDayLabels() {
@@ -255,8 +256,8 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     }
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        switch segue.identifier {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        switch segue.identifier! {
         case "detailPhone":
             let title = (sender as SPButtonLesson).stunde.titel
             println("detailPhone \(title)")

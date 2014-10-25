@@ -130,7 +130,7 @@ class SPPortraitDetailPad: UIView, UITextViewDelegate {
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
         let tempArray = context.executeFetchRequest(request, error: nil)
-        var newStunde = tempArray.first as Stunde
+        var newStunde = tempArray!.first as Stunde
         newStunde.titel = titelLabel.text
         newStunde.kurzel = kuerzelLabel.text
         newStunde.typ = typLabel.text
