@@ -40,6 +40,8 @@
 		E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */; };
 		E0B581C019A7C45700C967EF /* SPPortraitDetailPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */; };
 		E0B8364F19A7690B009520C4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364A19A7690B009520C4 /* OFL.txt */; };
+		E6B6F2F21A014D2A00CE64BB /* NPMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */; };
+		E6B6F2F41A014F1900CE64BB /* NPGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */; };
 		E6EEAA9F19FC50B000582FA9 /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAA9E19FC50B000582FA9 /* Speise.m */; };
 		E6EEAAA119FC549E00582FA9 /* MPListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAAA019FC549E00582FA9 /* MPListCell.swift */; };
 		E6EEAAB719FC569200582FA9 /* altemensa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAAA319FC569200582FA9 /* altemensa.jpg */; };
@@ -122,6 +124,8 @@
 		E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPad.swift; sourceTree = "<group>"; };
 		E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPPortraitDetailPad.xib; sourceTree = "<group>"; };
 		E0B8364A19A7690B009520C4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPMainTVC.swift; sourceTree = "<group>"; };
+		E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPGlobals.swift; sourceTree = "<group>"; };
 		E6EEAA9D19FC50B000582FA9 /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
 		E6EEAA9E19FC50B000582FA9 /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
 		E6EEAAA019FC549E00582FA9 /* MPListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPListCell.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				E0B8364719A768E8009520C4 /* Assets */,
 				E0208D4419A61DFC00B7FE0D /* Stundenplan */,
 				E0B8E64419AD05FD0022D297 /* Mensa */,
+				E6B6F2F01A014CF000CE64BB /* Noten */,
 				E0208D3919A6163700B7FE0D /* CoreData */,
 				E6EEAAD119FC605F00582FA9 /* FontAwesome */,
 				E0208D1719A615FD00B7FE0D /* Supporting Files */,
@@ -342,6 +347,15 @@
 				E020839919AE4BBE00DF3BA1 /* MPList */,
 			);
 			name = Mensa;
+			sourceTree = "<group>";
+		};
+		E6B6F2F01A014CF000CE64BB /* Noten */ = {
+			isa = PBXGroup;
+			children = (
+				E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */,
+				E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */,
+			);
+			name = Noten;
 			sourceTree = "<group>";
 		};
 		E6EEAAA219FC567700582FA9 /* Bilder */ = {
@@ -523,6 +537,7 @@
 				E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */,
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
 				E6EEAA9F19FC50B000582FA9 /* Speise.m in Sources */,
+				E6B6F2F41A014F1900CE64BB /* NPGlobals.swift in Sources */,
 				E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */,
 				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
@@ -535,6 +550,7 @@
 				E0208D4C19A6209800B7FE0D /* AppGlobals.swift in Sources */,
 				E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */,
 				E09D210519ACD59B00347896 /* Stunde.m in Sources */,
+				E6B6F2F21A014D2A00CE64BB /* NPMainTVC.swift in Sources */,
 				E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */,
 				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
