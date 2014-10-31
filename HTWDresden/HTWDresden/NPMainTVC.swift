@@ -19,6 +19,10 @@ class NPMainTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
+        navigationItem.leftBarButtonItem = sideBarButton
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         let request = NSURLRequest(URL: kURL)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             response, data, error in

@@ -30,6 +30,12 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     // MARK: - ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("viewDidLoad")
+        
+        var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
+        navigationItem.leftBarButtonItem = sideBarButton
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         if device() == .Pad {
             detailView = SPPortraitDetailPad(frame: CGRect(x: 0, y: view.frame.size.height/2 - 70, width: view.frame.size.width, height: view.frame.size.height/2))
             detailView!.stunde = nil
