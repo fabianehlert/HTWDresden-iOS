@@ -23,6 +23,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     // MARK: - UI Elemente
     var tageView: UIView!
     var zeitenView: UIView!
+    var panView: UIView! // für das SideMenu als "Anker"
     
     // MARK: - Detail (iPad)
     var detailView: SPPortraitDetailPad?
@@ -32,9 +33,12 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
         super.viewDidLoad()
         println("viewDidLoad")
         
+        panView = UIView(frame: CGRect(x: 0, y: -350, width: 40, height: view.frame.size.height+700))
+        view.addSubview(panView)
+        
         var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
         navigationItem.leftBarButtonItem = sideBarButton
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        panView.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         if device() == .Pad {
             detailView = SPPortraitDetailPad(frame: CGRect(x: 0, y: view.frame.size.height/2 - 70, width: view.frame.size.width, height: view.frame.size.height/2))
@@ -79,6 +83,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             selectedButton?.select = false
             selectedButton = nil
         }
+        view.bringSubviewToFront(panView)
     }
     
     // MARK: - SPDetailDelegates
@@ -260,6 +265,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             detailView?.frame.origin.x = scrollView.contentOffset.x
             scrollView.bringSubviewToFront(detailView!)
         }
+        view.bringSubviewToFront(panView)
     }
     
     // MARK: - Navigation

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Tabbar Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="BHTabbarController" customModule="BHTabbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfK-3o-TK8">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.70196078429999997" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxD-SE-7j5">
+                                <rect key="frame" x="0.0" y="475" width="75" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="W1o-ah-O35"/>
+                                    <constraint firstAttribute="height" constant="50" id="Xke-Ok-nSp"/>
+                                </constraints>
+                                <state key="normal" title="Menü">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ykI-Bu-d0a"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYk-lN-jyO">
+                                <rect key="frame" x="0.0" y="525" width="600" height="75"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-Z6-EXP" userLabel="Tabbar">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1SX-Od-huE"/>
+                                    <constraint firstAttribute="bottom" secondItem="bAZ-Z6-EXP" secondAttribute="bottom" id="88X-CH-sQH"/>
+                                    <constraint firstAttribute="trailing" secondItem="bAZ-Z6-EXP" secondAttribute="trailing" id="Tkk-wK-Mjw"/>
+                                    <constraint firstItem="bAZ-Z6-EXP" firstAttribute="leading" secondItem="ZYk-lN-jyO" secondAttribute="leading" id="gCM-k2-mdU"/>
+                                    <constraint firstItem="bAZ-Z6-EXP" firstAttribute="top" secondItem="ZYk-lN-jyO" secondAttribute="top" id="n4K-uo-4TS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZYk-lN-jyO" secondAttribute="bottom" id="3GM-GZ-MOu"/>
+                            <constraint firstItem="ZYk-lN-jyO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="753-X4-f3e"/>
+                            <constraint firstItem="ZYk-lN-jyO" firstAttribute="top" secondItem="zxD-SE-7j5" secondAttribute="bottom" id="EKm-gv-5SX"/>
+                            <constraint firstItem="zxD-SE-7j5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="PVj-ML-7c7"/>
+                            <constraint firstItem="ZYk-lN-jyO" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="Zox-Mn-62d"/>
+                            <constraint firstItem="ZYk-lN-jyO" firstAttribute="top" secondItem="GfK-3o-TK8" secondAttribute="bottom" constant="-75" id="aGM-Ue-dWE"/>
+                            <constraint firstAttribute="trailing" secondItem="GfK-3o-TK8" secondAttribute="trailing" id="icp-8k-NGt"/>
+                            <constraint firstItem="GfK-3o-TK8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="kTl-xh-RJP"/>
+                            <constraint firstItem="GfK-3o-TK8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ubD-6y-h1i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="GfK-3o-TK8" id="Gow-O3-CBT"/>
+                        <outlet property="menuButton" destination="zxD-SE-7j5" id="r6s-WG-28M"/>
+                        <outlet property="tabbar" destination="bAZ-Z6-EXP" id="hj7-CC-2Fk"/>
+                        <outlet property="tabbarSuperView" destination="ZYk-lN-jyO" id="buK-Px-4vt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="434"/>
+        </scene>
+        <!--StundenplanVC-->
+        <scene sceneID="V4A-RC-3rl">
+            <objects>
+                <viewController storyboardIdentifier="Stundenplan" id="5cJ-l8-BeO" customClass="StundenplanVC" customModule="BHTabbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="THT-mf-Ghc"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9I-uz-VUK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pwB-29-HhE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stundenplan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLE-ZM-ixV">
+                                <rect key="frame" x="251" y="20" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wev-ht-Q3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="53"/>
+        </scene>
+        <!--MensaVC-->
+        <scene sceneID="5yE-Aq-fD0">
+            <objects>
+                <viewController storyboardIdentifier="Mensa" id="NjC-4a-pa4" customClass="MensaVC" customModule="BHTabbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8PS-FN-tM8"/>
+                        <viewControllerLayoutGuide type="bottom" id="kTw-dV-c8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tcx-gC-R9k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-bx-SSd">
+                                <rect key="frame" x="274" y="28" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQQ-AV-qP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="708"/>
+        </scene>
+    </scenes>
+</document>

@@ -40,6 +40,8 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // MARK: - Segue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.isKindOfClass(SWRevealViewControllerSegue) {
@@ -47,8 +49,12 @@ class SideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             swSegue.performBlock = {
                 rvc_segue, svc, dvc in
+                
+// TODO:        // KLAPPT NICHT
+                if (self.revealViewController().frontViewController as UINavigationController).viewControllers.first as UIViewController? == dvc { return }
+                
                 let navController = self.revealViewController().frontViewController as UINavigationController
-                navController.setViewControllers([dvc], animated: true)
+                navController.setViewControllers([dvc], animated: false)
                 self.revealViewController().setFrontViewPosition(FrontViewPositionLeft, animated: true)
             }
         }
