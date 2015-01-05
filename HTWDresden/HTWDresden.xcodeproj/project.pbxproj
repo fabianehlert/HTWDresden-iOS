@@ -47,6 +47,7 @@
 		E649307E1A5B2CD600741184 /* Stundenplan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E649307D1A5B2CD600741184 /* Stundenplan.storyboard */; };
 		E64930801A5B2D2A00741184 /* BHTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649307F1A5B2D2A00741184 /* BHTabbarController.swift */; };
 		E64930821A5B2D5100741184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64930811A5B2D5100741184 /* Main.storyboard */; };
+		E64930851A5B495500741184 /* NPMainTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64930841A5B495500741184 /* NPMainTVCell.swift */; };
 		E6B6F2F21A014D2A00CE64BB /* NPMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */; };
 		E6B6F2F41A014F1900CE64BB /* NPGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */; };
 		E6EEAAA119FC549E00582FA9 /* MPListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAAA019FC549E00582FA9 /* MPListCell.swift */; };
@@ -139,6 +140,7 @@
 		E649307D1A5B2CD600741184 /* Stundenplan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stundenplan.storyboard; sourceTree = "<group>"; };
 		E649307F1A5B2D2A00741184 /* BHTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHTabbarController.swift; sourceTree = "<group>"; };
 		E64930811A5B2D5100741184 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E64930841A5B495500741184 /* NPMainTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPMainTVCell.swift; sourceTree = "<group>"; };
 		E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPMainTVC.swift; sourceTree = "<group>"; };
 		E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPGlobals.swift; sourceTree = "<group>"; };
 		E6EEAAA019FC549E00582FA9 /* MPListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPListCell.swift; sourceTree = "<group>"; };
@@ -375,13 +377,22 @@
 			name = Klassen;
 			sourceTree = "<group>";
 		};
+		E64930831A5B441F00741184 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */,
+				E64930761A5B212300741184 /* NPMainModel.swift */,
+				E64930841A5B495500741184 /* NPMainTVCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		E6B6F2F01A014CF000CE64BB /* Noten */ = {
 			isa = PBXGroup;
 			children = (
 				E64930791A5B2C6B00741184 /* Noten.storyboard */,
 				E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */,
-				E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */,
-				E64930761A5B212300741184 /* NPMainModel.swift */,
+				E64930831A5B441F00741184 /* Main */,
 			);
 			name = Noten;
 			sourceTree = "<group>";
@@ -587,6 +598,7 @@
 				E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */,
 				E649306C1A5B177B00741184 /* Note.m in Sources */,
 				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
+				E64930851A5B495500741184 /* NPMainTVCell.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
 				E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */,
 				E007C5A019AE2D5F00C0AFDE /* MPMainCell.swift in Sources */,

@@ -10,6 +10,10 @@ import UIKit
 
 class NPMainModel {
     
+    
+    private let COURSES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getcourses")!
+    private let GRADES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getgrades")!
+    
     private var completion: (()->())!
     
     init() {
@@ -23,10 +27,26 @@ class NPMainModel {
             downloadeNoten()
         }
     }
+    
+    func refreshNoten(completionHander: ()->()) {
+        completion = completionHander
+        downloadeNoten()
+    }
+    
+    private var noten: [[Note]]?
+    
+    var anzahlNoten: Int {
+        get{
+            var erg = 0
+            for semester in noten! {
+                erg += semester.count
+            }
+            return erg
+        }
+    }
 
     private var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
     
-    private var noten: [[Note]]?
     
     func numberOfSections() -> Int {
         return noten?.count ?? 0
@@ -64,6 +84,7 @@ class NPMainModel {
     
     private func downloadeNoten() {
         löscheAlleNotenVonUser()
+        println("== Downloade neue Noten für Nutzer mit Kennung: \(user.matrnr)")
         
         var postString = "sNummer=\(SNUMMER)&RZLogin=\(RZLOGIN)"
         var postData = postString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
@@ -76,6 +97,7 @@ class NPMainModel {
             
             if error != nil {
                 HTWerror(error.localizedDescription)
+                return
             }
             
             let statusCode = (response as NSHTTPURLResponse).statusCode
@@ -97,13 +119,18 @@ class NPMainModel {
                 
                 var postString = "sNummer=\(SNUMMER)&RZLogin=\(RZLOGIN)&AbschlNr=\(AbschlNr)&StgNr=\(StgNr)&POVersion=\(POVersion)"
                 var postData = postString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-                var request = NSMutableURLRequest(URL: GRADES_URL)
+                var request = NSMutableURLRequest(URL: self.GRADES_URL)
                 request.HTTPMethod = "POST"
                 request.HTTPBody = postData
                 request.timeoutInterval = 10
                 
                 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
                     response, data, error in
+                    
+                    if error != nil {
+                        HTWerror(error.localizedDescription)
+                        return
+                    }
                     
                     switch statusCode {
                     case 401, 402:
@@ -129,6 +156,7 @@ class NPMainModel {
                         neueNote.voDatum = temp["VoDatum"]! != "" ? NSDate.dateFromString(temp["VoDatum"]!, format: "dd.MM.yyyy") : nil
                         user.addNotenObject(neueNote)
                     }
+                    self.context.save(nil)
                     self.ladeNotenAusDB()
                     if self.noten?.count == 0 {
                         HTWwarning("Keine Noten gefunden..")
@@ -172,6 +200,12 @@ class NPMainModel {
         erg.sort {
             semester1, semester2 in
             return semester1[0].semester.componentsSeparatedByString(" ")[1] > semester2[0].semester.componentsSeparatedByString(" ")[1]
+        }
+        erg = erg.map {
+            a in
+            return sorted(a) {
+                $0.name < $1.name
+            }
         }
         
         return erg

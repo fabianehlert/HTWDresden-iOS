@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tabbar Controller-->
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfK-3o-TK8">
-                                <rect key="frame" x="0.0" y="20" width="600" height="520"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.70196078429999997" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-Z6-EXP" userLabel="Tabbar">
@@ -32,6 +33,7 @@
                         <constraints>
                             <constraint firstItem="bAZ-Z6-EXP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4dW-Bv-HVY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GfK-3o-TK8" secondAttribute="bottom" id="9r6-Z5-D59"/>
+                            <constraint firstItem="GfK-3o-TK8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="9xK-pb-shT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bAZ-Z6-EXP" secondAttribute="bottom" id="BjV-7Y-iTj"/>
                             <constraint firstAttribute="trailing" secondItem="bAZ-Z6-EXP" secondAttribute="trailing" id="bHJ-Wi-7vW"/>
                             <constraint firstAttribute="trailing" secondItem="GfK-3o-TK8" secondAttribute="trailing" id="icp-8k-NGt"/>
@@ -41,6 +43,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="kTl-xh-RJP"/>
                                 <exclude reference="9r6-Z5-D59"/>
                             </mask>
                         </variation>

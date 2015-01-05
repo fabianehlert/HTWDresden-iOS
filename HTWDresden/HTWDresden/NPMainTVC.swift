@@ -9,37 +9,31 @@
 import UIKit
 import CoreData
 
-internal let COURSES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getcourses")!
-internal let GRADES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getgrades")!
-
 class NPMainTVC: UITableViewController {
     
     var model: NPMainModel!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
 
     // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        löscheAlleNotenVonUser()
-        
+        refreshButton.enabled = false
         model = NPMainModel()
         model.starte {
+            self.refreshButton.enabled = true
             self.tableView.reloadData()
         }
     }
     
-    func löscheAlleNotenVonUser() {
-        var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
-        let request = NSFetchRequest(entityName: "Note")
-        request.predicate = NSPredicate(format: "user = %@", user)
-        let array = context.executeFetchRequest(request, error: nil) as [Note]
-        for note in array {
-            context.deleteObject(note)
+    @IBAction func refreshButtonPressed(sender: UIBarButtonItem) {
+        refreshButton.enabled = false
+        model.refreshNoten {
+            self.refreshButton.enabled = true
+            self.tableView.reloadData()
         }
-        context.save(nil)
     }
-    
     
     // MARK: - Table view data source
     
@@ -51,18 +45,77 @@ class NPMainTVC: UITableViewController {
         return model.numberOfRowsIn(section: section)
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if selected != indexPath {
+            return 75
+        }
+        else {
+            return 187
+        }
+    }
+    
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return model.semesterNameFor(section: section)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
+        
         let note = model.noteAt(indexPath: indexPath)!
-        cell.textLabel?.text = note.name
-
-        return cell
+        
+        if selected != indexPath {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Standard", forIndexPath: indexPath) as NPStandardMainTVCell
+            
+            cell.note = note
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as NPDetailMainTVCell
+            
+            cell.note = note
+            
+            return cell
+        }
+    }
+    
+    private var selected = NSIndexPath(forRow: -1, inSection: -1)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if selected.row >= 0 {
+            let temp = selected
+            selected = NSIndexPath(forRow: -1, inSection: -1)
+            tableView.reloadRowsAtIndexPaths([temp], withRowAnimation: UITableViewRowAnimation.Fade)
+            if temp == indexPath {
+                return
+            }
+        }
+        selected = indexPath
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

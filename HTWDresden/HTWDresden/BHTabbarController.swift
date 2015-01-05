@@ -78,7 +78,6 @@ class BHTabbarController: UIViewController {
         tabbar.bounces = false
         
         var temp = SIZE * CGFloat(items.count)
-        println("temp: \(temp) width: \(view.frame.size.width)")
         var width = temp < CGFloat(view.frame.size.width) ? CGFloat(view.frame.size.width/CGFloat(items.count)) : CGFloat(SIZE)
         
         
