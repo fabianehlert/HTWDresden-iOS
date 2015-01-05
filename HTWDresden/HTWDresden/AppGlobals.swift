@@ -16,6 +16,8 @@ let userDefaults = NSUserDefaults(suiteName: SUITNAME_NSUSERDEFAULTS)!
 let DIFF_QUEUE = dispatch_queue_create("de.benchr.HTWDresden.longrunningfunction", nil)
 let MAIN_QUEUE = dispatch_get_main_queue()
 
+var user: User!
+
 func setNetworkIndicator(on: Bool) {
     UIApplication.sharedApplication().networkActivityIndicatorVisible = on
 }
@@ -41,7 +43,7 @@ class HTWAlert: NSObject, UIAlertViewDelegate {
         if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0 {
             // iOS 8
             alert8 = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            for var i = 0; i < numberOfTextFields; i++ {
+            for i in 0..<numberOfTextFields {
                 alert8.addTextFieldWithConfigurationHandler(nil)
             }
             for (index,(title, function)) in enumerate(actions) {

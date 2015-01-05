@@ -2,11 +2,12 @@
 //  User.m
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 26.08.14.
-//  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
+//  Created by Benjamin Herzog on 05.01.15.
+//  Copyright (c) 2015 Benjamin Herzog. All rights reserved.
 //
 
 #import "User.h"
+#import "Note.h"
 #import "Stunde.h"
 
 
@@ -18,5 +19,6 @@
 @dynamic name;
 @dynamic raum;
 @dynamic stunden;
+@dynamic noten;
 
 @end

@@ -15,10 +15,6 @@ class MPMainTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
-        navigationItem.leftBarButtonItems?.append(sideBarButton)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
         if CURR_MENSA == nil {
             CURR_MENSA = "Mensa Reichenbachstraße"
         }

@@ -2,8 +2,8 @@
 //  Speise.h
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 25.10.14.
-//  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
+//  Created by Benjamin Herzog on 05.01.15.
+//  Copyright (c) 2015 Benjamin Herzog. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

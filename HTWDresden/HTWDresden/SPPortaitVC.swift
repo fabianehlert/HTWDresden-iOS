@@ -23,7 +23,6 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     // MARK: - UI Elemente
     var tageView: UIView!
     var zeitenView: UIView!
-    var panView: UIView! // für das SideMenu als "Anker"
     
     // MARK: - Detail (iPad)
     var detailView: SPPortraitDetailPad?
@@ -32,13 +31,6 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         println("viewDidLoad")
-        
-        panView = UIView(frame: CGRect(x: 0, y: -350, width: 40, height: view.frame.size.height+700))
-        view.addSubview(panView)
-        
-        var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
-        navigationItem.leftBarButtonItem = sideBarButton
-        panView.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         if device() == .Pad {
             detailView = SPPortraitDetailPad(frame: CGRect(x: 0, y: view.frame.size.height/2 - 70, width: view.frame.size.width, height: view.frame.size.height/2))
@@ -83,7 +75,6 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             selectedButton?.select = false
             selectedButton = nil
         }
-        view.bringSubviewToFront(panView)
     }
     
     // MARK: - SPDetailDelegates
@@ -184,7 +175,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
             labels.append(thisDate)
         }
         
-        tageView = UIView(frame: CGRect(x: -scrollView.contentSize.width, y: scrollView.contentOffset.y+64, width: scrollView.contentSize.width*3, height: 40))
+        tageView = UIView(frame: CGRect(x: -scrollView.contentSize.width, y: -90, width: scrollView.contentSize.width*3, height: 40))
         tageView.backgroundColor = UIColor.HTWDarkGrayColor()
         for label in labels {
             tageView.addSubview(label)
@@ -252,20 +243,19 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     }
     
     func scrollScrollViewToToday() {
-        scrollView.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
     func orderViews(scrollView: UIScrollView) {
         zeitenView.frame = CGRect(x: scrollView.contentOffset.x, y: zeitenView.frame.origin.y, width: zeitenView.frame.size.width, height: zeitenView.frame.size.height)
         scrollView.bringSubviewToFront(zeitenView)
-        tageView.frame = CGRect(x: -scrollView.contentSize.width, y: scrollView.contentOffset.y+64, width: scrollView.contentSize.width*3, height: 40)
+        tageView.frame = CGRect(x: -scrollView.contentSize.width, y: 0, width: scrollView.contentSize.width*3, height: 40)
         scrollView.bringSubviewToFront(tageView)
         
         if device() == .Pad {
             detailView?.frame.origin.x = scrollView.contentOffset.x
             scrollView.bringSubviewToFront(detailView!)
         }
-        view.bringSubviewToFront(panView)
     }
     
     // MARK: - Navigation

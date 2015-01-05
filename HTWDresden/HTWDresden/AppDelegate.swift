@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ANZ_PORTRAIT = 7*4
         
-        
         return true
     }
 

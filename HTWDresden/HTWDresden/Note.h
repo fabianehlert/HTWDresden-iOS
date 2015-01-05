@@ -2,13 +2,14 @@
 //  Note.h
 //  HTWDresden
 //
-//  Created by Benjamin Herzog on 26.08.14.
-//  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
+//  Created by Benjamin Herzog on 05.01.15.
+//  Copyright (c) 2015 Benjamin Herzog. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class User;
 
 @interface Note : NSManagedObject
 
@@ -19,5 +20,10 @@
 @property (nonatomic, retain) NSString * semester;
 @property (nonatomic, retain) NSString * status;
 @property (nonatomic, retain) NSNumber * versuch;
+@property (nonatomic, retain) NSDate * datum;
+@property (nonatomic, retain) NSString * form;
+@property (nonatomic, retain) NSString * vermerk;
+@property (nonatomic, retain) NSDate * voDatum;
+@property (nonatomic, retain) User *user;
 
 @end

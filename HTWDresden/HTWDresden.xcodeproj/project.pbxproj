@@ -15,7 +15,6 @@
 		E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E020839A19AE4BD700DF3BA1 /* MPListTVC.swift */; };
 		E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1919A615FD00B7FE0D /* AppDelegate.swift */; };
 		E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */; };
-		E0208D2219A615FD00B7FE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0208D2019A615FD00B7FE0D /* Main.storyboard */; };
 		E0208D2419A615FD00B7FE0D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0208D2319A615FD00B7FE0D /* Images.xcassets */; };
 		E0208D3019A615FD00B7FE0D /* HTWDresdenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D2F19A615FD00B7FE0D /* HTWDresdenTests.swift */; };
 		E0208D4619A61E1800B7FE0D /* SPPortaitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0208D4519A61E1800B7FE0D /* SPPortaitVC.swift */; };
@@ -30,9 +29,6 @@
 		E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */; };
 		E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09D20F919ACCD0100347896 /* SPPortraitDetailPadLabel.swift */; };
 		E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09D20FB19ACD16200347896 /* SPPortraitDetailPadTextView.swift */; };
-		E09D20FF19ACD59A00347896 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D20FE19ACD59A00347896 /* User.m */; };
-		E09D210219ACD59B00347896 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D210119ACD59B00347896 /* Note.m */; };
-		E09D210519ACD59B00347896 /* Stunde.m in Sources */ = {isa = PBXBuildFile; fileRef = E09D210419ACD59B00347896 /* Stunde.m */; };
 		E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */; };
 		E0B581BA19A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */; };
 		E0B581BB19A7A71700C967EF /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */; };
@@ -40,11 +36,19 @@
 		E0B581BE19A7B27700C967EF /* SPPortraitDetailPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */; };
 		E0B581C019A7C45700C967EF /* SPPortraitDetailPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */; };
 		E0B8364F19A7690B009520C4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B8364A19A7690B009520C4 /* OFL.txt */; };
+		E649305D1A5B0AC900741184 /* HTWAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649305C1A5B0AC900741184 /* HTWAlert.swift */; };
+		E649306C1A5B177B00741184 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = E649306B1A5B177B00741184 /* Note.m */; };
+		E649306F1A5B177B00741184 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E649306E1A5B177B00741184 /* User.m */; };
+		E64930721A5B177B00741184 /* Stunde.m in Sources */ = {isa = PBXBuildFile; fileRef = E64930711A5B177B00741184 /* Stunde.m */; };
+		E64930751A5B177B00741184 /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E64930741A5B177B00741184 /* Speise.m */; };
+		E64930771A5B212300741184 /* NPMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64930761A5B212300741184 /* NPMainModel.swift */; };
+		E649307A1A5B2C6B00741184 /* Noten.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64930791A5B2C6B00741184 /* Noten.storyboard */; };
+		E649307C1A5B2C9E00741184 /* Mensa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E649307B1A5B2C9E00741184 /* Mensa.storyboard */; };
+		E649307E1A5B2CD600741184 /* Stundenplan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E649307D1A5B2CD600741184 /* Stundenplan.storyboard */; };
+		E64930801A5B2D2A00741184 /* BHTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649307F1A5B2D2A00741184 /* BHTabbarController.swift */; };
+		E64930821A5B2D5100741184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64930811A5B2D5100741184 /* Main.storyboard */; };
 		E6B6F2F21A014D2A00CE64BB /* NPMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */; };
 		E6B6F2F41A014F1900CE64BB /* NPGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */; };
-		E6E3191C1A02D13000974F60 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E3191B1A02D13000974F60 /* SWRevealViewController.m */; };
-		E6E3191E1A02D77A00974F60 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3191D1A02D77A00974F60 /* SideMenuVC.swift */; };
-		E6EEAA9F19FC50B000582FA9 /* Speise.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAA9E19FC50B000582FA9 /* Speise.m */; };
 		E6EEAAA119FC549E00582FA9 /* MPListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEAAA019FC549E00582FA9 /* MPListCell.swift */; };
 		E6EEAAB719FC569200582FA9 /* altemensa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAAA319FC569200582FA9 /* altemensa.jpg */; };
 		E6EEAAB819FC569200582FA9 /* biomensa-uboot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6EEAAA419FC569200582FA9 /* biomensa-uboot.jpg */; };
@@ -94,7 +98,6 @@
 		E0208D1819A615FD00B7FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0208D1919A615FD00B7FE0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0208D1C19A615FD00B7FE0D /* HTWDresden.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HTWDresden.xcdatamodel; sourceTree = "<group>"; };
-		E0208D2119A615FD00B7FE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0208D2319A615FD00B7FE0D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E0208D2919A615FD00B7FE0D /* HTWDresdenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTWDresdenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0208D2E19A615FD00B7FE0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,12 +116,6 @@
 		E03FAAE519A7CF230084683F /* PSCustomViewFromXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSCustomViewFromXib.swift; sourceTree = "<group>"; };
 		E09D20F919ACCD0100347896 /* SPPortraitDetailPadLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPadLabel.swift; sourceTree = "<group>"; };
 		E09D20FB19ACD16200347896 /* SPPortraitDetailPadTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPadTextView.swift; sourceTree = "<group>"; };
-		E09D20FD19ACD59A00347896 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		E09D20FE19ACD59A00347896 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		E09D210019ACD59B00347896 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		E09D210119ACD59B00347896 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		E09D210319ACD59B00347896 /* Stunde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stunde.h; sourceTree = "<group>"; };
-		E09D210419ACD59B00347896 /* Stunde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stunde.m; sourceTree = "<group>"; };
 		E0B581B519A7A71700C967EF /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
 		E0B581B619A7A71700C967EF /* PT_Sans-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
 		E0B581B719A7A71700C967EF /* PT_Sans-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Italic.ttf"; sourceTree = "<group>"; };
@@ -126,13 +123,24 @@
 		E0B581BD19A7B27700C967EF /* SPPortraitDetailPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPortraitDetailPad.swift; sourceTree = "<group>"; };
 		E0B581BF19A7C45700C967EF /* SPPortraitDetailPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPPortraitDetailPad.xib; sourceTree = "<group>"; };
 		E0B8364A19A7690B009520C4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		E649305C1A5B0AC900741184 /* HTWAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTWAlert.swift; sourceTree = "<group>"; };
+		E649306A1A5B177B00741184 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		E649306B1A5B177B00741184 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		E649306D1A5B177B00741184 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		E649306E1A5B177B00741184 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		E64930701A5B177B00741184 /* Stunde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stunde.h; sourceTree = "<group>"; };
+		E64930711A5B177B00741184 /* Stunde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stunde.m; sourceTree = "<group>"; };
+		E64930731A5B177B00741184 /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
+		E64930741A5B177B00741184 /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
+		E64930761A5B212300741184 /* NPMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPMainModel.swift; sourceTree = "<group>"; };
+		E64930781A5B296E00741184 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		E64930791A5B2C6B00741184 /* Noten.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Noten.storyboard; sourceTree = "<group>"; };
+		E649307B1A5B2C9E00741184 /* Mensa.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mensa.storyboard; sourceTree = "<group>"; };
+		E649307D1A5B2CD600741184 /* Stundenplan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stundenplan.storyboard; sourceTree = "<group>"; };
+		E649307F1A5B2D2A00741184 /* BHTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHTabbarController.swift; sourceTree = "<group>"; };
+		E64930811A5B2D5100741184 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPMainTVC.swift; sourceTree = "<group>"; };
 		E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPGlobals.swift; sourceTree = "<group>"; };
-		E6E3191A1A02D13000974F60 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		E6E3191B1A02D13000974F60 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		E6E3191D1A02D77A00974F60 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
-		E6EEAA9D19FC50B000582FA9 /* Speise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speise.h; sourceTree = "<group>"; };
-		E6EEAA9E19FC50B000582FA9 /* Speise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speise.m; sourceTree = "<group>"; };
 		E6EEAAA019FC549E00582FA9 /* MPListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPListCell.swift; sourceTree = "<group>"; };
 		E6EEAAA319FC569200582FA9 /* altemensa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = altemensa.jpg; sourceTree = "<group>"; };
 		E6EEAAA419FC569200582FA9 /* biomensa-uboot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "biomensa-uboot.jpg"; sourceTree = "<group>"; };
@@ -222,11 +230,13 @@
 		E0208D1619A615FD00B7FE0D /* HTWDresden */ = {
 			isa = PBXGroup;
 			children = (
+				E64930781A5B296E00741184 /* Playground.playground */,
 				E0208D4B19A6209800B7FE0D /* AppGlobals.swift */,
-				E0208D2019A615FD00B7FE0D /* Main.storyboard */,
+				E64930811A5B2D5100741184 /* Main.storyboard */,
 				E0208D2319A615FD00B7FE0D /* Images.xcassets */,
 				E0208D5A19A623C600B7FE0D /* GlobalExtensions.swift */,
-				E6E319191A02D12300974F60 /* Side Menu */,
+				E649307F1A5B2D2A00741184 /* BHTabbarController.swift */,
+				E649305B1A5B0AB600741184 /* Klassen */,
 				E0B8364719A768E8009520C4 /* Assets */,
 				E0208D4419A61DFC00B7FE0D /* Stundenplan */,
 				E0B8E64419AD05FD0022D297 /* Mensa */,
@@ -272,14 +282,14 @@
 			isa = PBXGroup;
 			children = (
 				E0208D1B19A615FD00B7FE0D /* HTWDresden.xcdatamodeld */,
-				E6EEAA9D19FC50B000582FA9 /* Speise.h */,
-				E6EEAA9E19FC50B000582FA9 /* Speise.m */,
-				E09D210319ACD59B00347896 /* Stunde.h */,
-				E09D210419ACD59B00347896 /* Stunde.m */,
-				E09D210019ACD59B00347896 /* Note.h */,
-				E09D210119ACD59B00347896 /* Note.m */,
-				E09D20FD19ACD59A00347896 /* User.h */,
-				E09D20FE19ACD59A00347896 /* User.m */,
+				E64930731A5B177B00741184 /* Speise.h */,
+				E64930741A5B177B00741184 /* Speise.m */,
+				E64930701A5B177B00741184 /* Stunde.h */,
+				E64930711A5B177B00741184 /* Stunde.m */,
+				E649306D1A5B177B00741184 /* User.h */,
+				E649306E1A5B177B00741184 /* User.m */,
+				E649306A1A5B177B00741184 /* Note.h */,
+				E649306B1A5B177B00741184 /* Note.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 		E0208D4419A61DFC00B7FE0D /* Stundenplan */ = {
 			isa = PBXGroup;
 			children = (
+				E649307D1A5B2CD600741184 /* Stundenplan.storyboard */,
 				E0208D4919A6202F00B7FE0D /* SPGlobals.swift */,
 				E0208D4519A61E1800B7FE0D /* SPPortaitVC.swift */,
 				E09D20F819ACCCE900347896 /* Detail */,
@@ -348,6 +359,7 @@
 		E0B8E64419AD05FD0022D297 /* Mensa */ = {
 			isa = PBXGroup;
 			children = (
+				E649307B1A5B2C9E00741184 /* Mensa.storyboard */,
 				E007C5A319AE2F0700C0AFDE /* MPGlobals.swift */,
 				E020839819AE4BB700DF3BA1 /* MPMain */,
 				E020839919AE4BBE00DF3BA1 /* MPList */,
@@ -355,23 +367,23 @@
 			name = Mensa;
 			sourceTree = "<group>";
 		};
+		E649305B1A5B0AB600741184 /* Klassen */ = {
+			isa = PBXGroup;
+			children = (
+				E649305C1A5B0AC900741184 /* HTWAlert.swift */,
+			);
+			name = Klassen;
+			sourceTree = "<group>";
+		};
 		E6B6F2F01A014CF000CE64BB /* Noten */ = {
 			isa = PBXGroup;
 			children = (
+				E64930791A5B2C6B00741184 /* Noten.storyboard */,
 				E6B6F2F31A014F1900CE64BB /* NPGlobals.swift */,
 				E6B6F2F11A014D2A00CE64BB /* NPMainTVC.swift */,
+				E64930761A5B212300741184 /* NPMainModel.swift */,
 			);
 			name = Noten;
-			sourceTree = "<group>";
-		};
-		E6E319191A02D12300974F60 /* Side Menu */ = {
-			isa = PBXGroup;
-			children = (
-				E6E3191A1A02D13000974F60 /* SWRevealViewController.h */,
-				E6E3191B1A02D13000974F60 /* SWRevealViewController.m */,
-				E6E3191D1A02D77A00974F60 /* SideMenuVC.swift */,
-			);
-			name = "Side Menu";
 			sourceTree = "<group>";
 		};
 		E6EEAAA219FC567700582FA9 /* Bilder */ = {
@@ -519,15 +531,18 @@
 				E6EEAAB819FC569200582FA9 /* biomensa-uboot.jpg in Resources */,
 				E6EEAAC219FC569200582FA9 /* neuemensa.jpg in Resources */,
 				E0B581BB19A7A71700C967EF /* PT_Sans-Web-Italic.ttf in Resources */,
+				E64930821A5B2D5100741184 /* Main.storyboard in Resources */,
 				E6EEAACE19FC59F100582FA9 /* zeltmensa.jpg in Resources */,
 				E6EEAAC819FC569200582FA9 /* tellerrandt.jpg in Resources */,
 				E6EEAACC19FC56A600582FA9 /* mensen.json in Resources */,
 				E0B581B919A7A71700C967EF /* PT_Sans-Web-Bold.ttf in Resources */,
+				E649307A1A5B2C6B00741184 /* Noten.storyboard in Resources */,
 				E6EEAACA19FC569200582FA9 /* zittau.jpg in Resources */,
-				E0208D2219A615FD00B7FE0D /* Main.storyboard in Resources */,
 				E6EEAAC019FC569200582FA9 /* mensasport.jpg in Resources */,
+				E649307E1A5B2CD600741184 /* Stundenplan.storyboard in Resources */,
 				E032D94119CFFE0900EF15A5 /* LaunchScreen.xib in Resources */,
 				E0208D2419A615FD00B7FE0D /* Images.xcassets in Resources */,
+				E649307C1A5B2C9E00741184 /* Mensa.storyboard in Resources */,
 				E6EEAAC619FC569200582FA9 /* reichenbachstrasse.jpg in Resources */,
 				E6EEAAC119FC569200582FA9 /* mensologie.jpg in Resources */,
 			);
@@ -548,28 +563,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				E007C59E19AE2CA600C0AFDE /* MPMainTVC.swift in Sources */,
-				E6E3191E1A02D77A00974F60 /* SideMenuVC.swift in Sources */,
 				E03FAAE619A7CF230084683F /* PSCustomViewFromXib.swift in Sources */,
 				E6EEAAD019FC5F7E00582FA9 /* MPListExtensions.swift in Sources */,
 				E007C5A619AE302100C0AFDE /* MPMainXMLParser.swift in Sources */,
+				E64930751A5B177B00741184 /* Speise.m in Sources */,
 				E0208D1A19A615FD00B7FE0D /* AppDelegate.swift in Sources */,
-				E6EEAA9F19FC50B000582FA9 /* Speise.m in Sources */,
 				E6B6F2F41A014F1900CE64BB /* NPGlobals.swift in Sources */,
 				E007C5A219AE2E8A00C0AFDE /* MPMainModel.swift in Sources */,
 				E02FE37019A8A79F0044A84D /* SPPortraitDetailPhoneTVC.swift in Sources */,
+				E649306F1A5B177B00741184 /* User.m in Sources */,
+				E64930721A5B177B00741184 /* Stunde.m in Sources */,
 				E0208D4E19A6210F00B7FE0D /* SPXMLParser.swift in Sources */,
+				E649305D1A5B0AC900741184 /* HTWAlert.swift in Sources */,
+				E64930801A5B2D2A00741184 /* BHTabbarController.swift in Sources */,
 				E09D20FC19ACD16200347896 /* SPPortraitDetailPadTextView.swift in Sources */,
-				E09D20FF19ACD59A00347896 /* User.m in Sources */,
+				E64930771A5B212300741184 /* NPMainModel.swift in Sources */,
 				E6EEAAA119FC549E00582FA9 /* MPListCell.swift in Sources */,
 				E0208D4A19A6202F00B7FE0D /* SPGlobals.swift in Sources */,
-				E09D210219ACD59B00347896 /* Note.m in Sources */,
 				E0208D4619A61E1800B7FE0D /* SPPortaitVC.swift in Sources */,
 				E0208D4C19A6209800B7FE0D /* AppGlobals.swift in Sources */,
-				E6E3191C1A02D13000974F60 /* SWRevealViewController.m in Sources */,
 				E0208D5B19A623C600B7FE0D /* GlobalExtensions.swift in Sources */,
-				E09D210519ACD59B00347896 /* Stunde.m in Sources */,
 				E6B6F2F21A014D2A00CE64BB /* NPMainTVC.swift in Sources */,
 				E020839B19AE4BD700DF3BA1 /* MPListTVC.swift in Sources */,
+				E649306C1A5B177B00741184 /* Note.m in Sources */,
 				E09D20FA19ACCD0100347896 /* SPPortraitDetailPadLabel.swift in Sources */,
 				E0208D1D19A615FD00B7FE0D /* HTWDresden.xcdatamodeld in Sources */,
 				E0208D5019A6213000B7FE0D /* SPButtonLesson.swift in Sources */,
@@ -598,17 +614,6 @@
 			targetProxy = E0208D2A19A615FD00B7FE0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E0208D2019A615FD00B7FE0D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0208D2119A615FD00B7FE0D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E0208D3119A615FD00B7FE0D /* Debug */ = {

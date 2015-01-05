@@ -1,0 +1,181 @@
+//
+//  NPMainModel.swift
+//  HTWDresden
+//
+//  Created by Benjamin Herzog on 05.01.15.
+//  Copyright (c) 2015 Benjamin Herzog. All rights reserved.
+//
+
+import UIKit
+
+class NPMainModel {
+    
+    private var completion: (()->())!
+    
+    init() {
+        
+    }
+    
+    func starte(completionHander: ()->()) {
+        completion = completionHander
+        ladeNotenAusDB()
+        if noten?.count == 0 {
+            downloadeNoten()
+        }
+    }
+
+    private var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    
+    private var noten: [[Note]]?
+    
+    func numberOfSections() -> Int {
+        return noten?.count ?? 0
+    }
+    
+    func numberOfRowsIn(#section: Int) -> Int {
+        return noten?[section].count ?? 0
+    }
+    
+    func semesterNameFor(#section: Int) -> String {
+        return noten?[section].first!.semester ?? ""
+    }
+    
+    func noteAt(#indexPath: NSIndexPath) -> Note? {
+        return noten?[indexPath.section][indexPath.row]
+    }
+    
+    private func ladeNotenAusDB() {
+        let request = NSFetchRequest(entityName: "Note")
+        request.predicate = NSPredicate(format: "user = %@", user)
+        let array = context.executeFetchRequest(request, error: nil) as [Note]
+        noten = groupBySemester(daten: array)
+        completion()
+    }
+    
+    private func löscheAlleNotenVonUser() {
+        let request = NSFetchRequest(entityName: "Note")
+        request.predicate = NSPredicate(format: "user = %@", user)
+        let array = context.executeFetchRequest(request, error: nil) as [Note]
+        for note in array {
+            context.deleteObject(note)
+        }
+        context.save(nil)
+    }
+    
+    private func downloadeNoten() {
+        löscheAlleNotenVonUser()
+        
+        var postString = "sNummer=\(SNUMMER)&RZLogin=\(RZLOGIN)"
+        var postData = postString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        var request = NSMutableURLRequest(URL: COURSES_URL)
+        request.HTTPMethod = "POST"
+        request.HTTPBody = postData
+        request.timeoutInterval = 10
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+            response, data, error in
+            
+            if error != nil {
+                HTWerror(error.localizedDescription)
+            }
+            
+            let statusCode = (response as NSHTTPURLResponse).statusCode
+            
+            switch statusCode {
+            case 401, 402:
+                HTWwarning("Login fehlgeschlagen.")
+                return
+            default:
+                break
+            }
+            
+            let studienGänge = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [[String:String]]
+            
+            for studiengang in studienGänge {
+                let AbschlNr = studiengang["AbschlNr"]!
+                let StgNr = studiengang["StgNr"]!
+                let POVersion = studiengang["POVersion"]!
+                
+                var postString = "sNummer=\(SNUMMER)&RZLogin=\(RZLOGIN)&AbschlNr=\(AbschlNr)&StgNr=\(StgNr)&POVersion=\(POVersion)"
+                var postData = postString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+                var request = NSMutableURLRequest(URL: GRADES_URL)
+                request.HTTPMethod = "POST"
+                request.HTTPBody = postData
+                request.timeoutInterval = 10
+                
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                    response, data, error in
+                    
+                    switch statusCode {
+                    case 401, 402:
+                        HTWwarning("Login fehlgeschlagen.")
+                        return
+                    default:
+                        break
+                    }
+                    
+                    let noten = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as [[String: NSString]]
+                    for temp in noten {
+                        var neueNote = NSEntityDescription.insertNewObjectForEntityForName("Note", inManagedObjectContext: self.context) as Note
+                        neueNote.credits = NSNumber(double: temp["EctsCredits"]!.doubleValue)
+                        neueNote.name = temp["PrTxt"]!
+                        neueNote.note = NSNumber(double: temp["PrNote"]!.doubleValue/100)
+                        neueNote.nr = NSNumber(double: temp["PrNr"]!.doubleValue)
+                        neueNote.semester = self.ausformuliertesSemesterVon(temp["Semester"]!)
+                        neueNote.status = temp["Status"]!
+                        neueNote.versuch = temp["Versuch"]!.doubleValue
+                        neueNote.datum = temp["PrDatum"]! != "" ? NSDate.dateFromString(temp["PrDatum"]!, format: "dd.MM.yyyy") : nil
+                        neueNote.form = temp["PrForm"]!
+                        neueNote.vermerk = temp["Vermerk"]!
+                        neueNote.voDatum = temp["VoDatum"]! != "" ? NSDate.dateFromString(temp["VoDatum"]!, format: "dd.MM.yyyy") : nil
+                        user.addNotenObject(neueNote)
+                    }
+                    self.ladeNotenAusDB()
+                    if self.noten?.count == 0 {
+                        HTWwarning("Keine Noten gefunden..")
+                    }
+                }
+            }
+        }
+    }
+    
+    private func ausformuliertesSemesterVon(semester: String) -> String {
+        let jahr = semester[0...4]
+        let typ = "\(semester[4])"
+        
+        switch typ.toInt()! {
+        case 1:
+            return "Sommersemester \(jahr)"
+        case 2:
+            return "Wintersemester \(jahr)/\(jahr.toInt()! + 1)"
+        default:
+            break
+        }
+        
+        return ""
+    }
+    
+    private func groupBySemester(#daten: [Note]) -> [[Note]] {
+        var erg = [[Note]]()
+        var bekannteSemester = [String:Int]()
+        
+        for temp in daten {
+            var tempCopy = temp
+//            tempCopy.semester = ausformuliertesSemesterVon(tempCopy.semester)
+            var semester = tempCopy.semester
+            if bekannteSemester[semester] == nil {
+                bekannteSemester[semester] = erg.count
+                erg.append([Note]())
+            }
+            erg[bekannteSemester[semester]!].append(tempCopy)
+        }
+        
+        erg.sort {
+            semester1, semester2 in
+            return semester1[0].semester.componentsSeparatedByString(" ")[1] > semester2[0].semester.componentsSeparatedByString(" ")[1]
+        }
+        
+        return erg
+    }
+
+
+}

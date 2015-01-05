@@ -7,93 +7,62 @@
 //
 
 import UIKit
+import CoreData
 
-let kURL = NSURL(string: "http://www.benchr.de/Noten/GetGrade.json")!
+internal let COURSES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getcourses")!
+internal let GRADES_URL = NSURL(string: "https://wwwqis.htw-dresden.de/appservice/getgrades")!
 
 class NPMainTVC: UITableViewController {
     
-    var notenDaten = [[[String:String]]]()
+    var model: NPMainModel!
 
     // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var sideBarButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .Bordered, target: self.revealViewController(), action: Selector("revealToggle:"))
-        navigationItem.leftBarButtonItem = sideBarButton
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        SNUMMER = "s68311"
+        RZLOGIN = "HD5rdf92"
         
-        let request = NSURLRequest(URL: kURL)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-            response, data, error in
-            if data == nil || error != nil {
-                println("error")
-                return
-            }
-            let tempDaten = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as [[String:String]]
-            self.notenDaten = self.groupBySemester(daten: tempDaten)
+        löscheAlleNotenVonUser()
+        
+        model = NPMainModel()
+        model.starte {
             self.tableView.reloadData()
-            
         }
-        
     }
     
-    func groupBySemester(#daten: [[String:String]]) -> [[[String:String]]] {
-        var erg = [[[String:String]]]()
-        var bekannteSemester = [String:Int]()
-        
-        for temp in daten {
-            var tempCopy = temp
-            tempCopy["Semester"] = semesterStringToSemester(string: tempCopy["Semester"]!)
-            var semester = tempCopy["Semester"]!
-            if bekannteSemester[semester] == nil {
-                bekannteSemester[semester] = erg.count
-                erg.append([[String:String]]())
-            }
-            erg[bekannteSemester[semester]!].append(tempCopy)
+    func löscheAlleNotenVonUser() {
+        var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        let request = NSFetchRequest(entityName: "Note")
+        request.predicate = NSPredicate(format: "user = %@", user)
+        let array = context.executeFetchRequest(request, error: nil) as [Note]
+        for note in array {
+            context.deleteObject(note)
         }
-        
-        erg.sort {
-            semester1, semester2 in
-            return semester1[0]["Semester"]?.componentsSeparatedByString(" ")[1] > semester2[0]["Semester"]?.componentsSeparatedByString(" ")[1]
-        }
-        
-        return erg
+        context.save(nil)
     }
     
-    func semesterStringToSemester(#string: String) -> String? {
-        if string.length != 5 { return nil }
-        var erg: String
-        var jahr = string.subString(0, length: 4)
-        if string.subString(4, length: 1) == "1" {
-            // Sommersemester
-            erg = "Sommersemester \(jahr)"
-        }
-        else {
-            // Wintersemester
-            erg = "Wintersemester \(jahr)/\(jahr.toInt()!+1-2000)"
-        }
-        return erg
-    }
-
+    
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return notenDaten.count
+        return model.numberOfSections()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notenDaten[section].count
+        return model.numberOfRowsIn(section: section)
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return notenDaten[section][0]["Semester"]
+        return model.semesterNameFor(section: section)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel.text = notenDaten[indexPath.section][indexPath.row]["PrTxt"]
+        let note = model.noteAt(indexPath: indexPath)!
+        cell.textLabel?.text = note.name
 
         return cell
     }

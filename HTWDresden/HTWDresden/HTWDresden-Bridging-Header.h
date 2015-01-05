@@ -3,7 +3,6 @@
 //
 
 // Side Menu
-#import "SWRevealViewController.h"
 
 // Core Data -> (wenn diese in Swift generiert werden können, bitte löschen)
 #import "Note.h"

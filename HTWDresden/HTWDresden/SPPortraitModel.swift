@@ -20,7 +20,7 @@ class SPPortraitModel: NSObject {
 
     var delegate: SPPortraitDelegate?
     
-    var user: User!
+//    var user: User!
     var stunden: [Stunde]!
     
     var matrnr: String
@@ -42,7 +42,7 @@ class SPPortraitModel: NSObject {
         var getUser = userByMatrnr(matrnr)
         if getUser.exists {
             user = getUser.user
-            self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
+            self.stunden = self.getStundenFromUser(user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
             println("== User \(user.matrnr) erfolgreich geladen")
             self.delegate?.SPPortraitModelfinishedLoading(self)
         }
@@ -53,9 +53,9 @@ class SPPortraitModel: NSObject {
                 success, error in
                 if success {
                     println("== Stunden erfolgreich geladen.")
-                    self.user = self.userByMatrnr(self.matrnr).user
-                    self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
-                    println("== User \(self.user.matrnr) erfolgreich geladen")
+                    user = self.userByMatrnr(self.matrnr).user
+                    self.stunden = self.getStundenFromUser(user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
+                    println("== User \(user.matrnr) erfolgreich geladen")
                     self.delegate?.SPPortraitModelfinishedLoading(self)
                 }
             }
@@ -68,8 +68,8 @@ class SPPortraitModel: NSObject {
             success, error in
             if success {
                 println("== Stunden erfolgreich aktualisiert")
-                self.user = self.userByMatrnr(self.user.matrnr).user
-                self.stunden = self.getStundenFromUser(self.user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
+                user = self.userByMatrnr(user.matrnr).user
+                self.stunden = self.getStundenFromUser(user, startDate: self.currentDate.getDayOnly(), endDate: self.currentDate.getDayOnly().addDays(ANZ_PORTRAIT))
             }
         }
     }
