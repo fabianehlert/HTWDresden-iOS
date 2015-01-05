@@ -21,9 +21,6 @@ class NPMainTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SNUMMER = "s68311"
-        RZLOGIN = "HD5rdf92"
-        
         löscheAlleNotenVonUser()
         
         model = NPMainModel()
