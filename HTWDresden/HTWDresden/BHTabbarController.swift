@@ -23,14 +23,15 @@ class TabViewController {
 class BHTabbarController: UIViewController {
 
     
-    let SIZE = CGFloat(60)
+    private let SIZE = CGFloat(60)
+    private let MIN_WIDTH = CGFloat(75)
     
-    var items = [TabViewController]()
+    private var items = [TabViewController]()
 
-    @IBOutlet weak var tabbarSuperView: UIView!
-    @IBOutlet weak var tabbar: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet private weak var tabbarSuperView: UIView!
+    @IBOutlet private weak var tabbar: UIScrollView!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var menuButton: UIButton!
     
     var visible: Bool = true {
         willSet{
@@ -72,13 +73,13 @@ class BHTabbarController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    func configureTabBar() {
+    private func configureTabBar() {
         tabbar.contentSize = CGSize(width: CGFloat(items.count) * SIZE, height: SIZE)
         tabbar.showsHorizontalScrollIndicator = false
         tabbar.bounces = false
         
-        var temp = SIZE * CGFloat(items.count)
-        var width = temp < CGFloat(view.frame.size.width) ? CGFloat(view.frame.size.width/CGFloat(items.count)) : CGFloat(SIZE)
+        var temp = MIN_WIDTH * CGFloat(items.count)
+        var width = temp < CGFloat(view.frame.size.width) ? CGFloat(view.frame.size.width/CGFloat(items.count)) : MIN_WIDTH
         
         
         for (i, item) in enumerate(items) {
