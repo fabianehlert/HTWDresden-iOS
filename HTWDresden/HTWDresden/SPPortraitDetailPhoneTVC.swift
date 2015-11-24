@@ -143,7 +143,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     
     // MARK: - DB Arbeit
     func saveStunde(sender: UITextView) {
-        let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let array = context.executeFetchRequest(request, error: nil)
@@ -170,7 +170,7 @@ class SPPortraitDetailPhoneTVC: UITableViewController, UITextViewDelegate {
     }
     
     func deleteStunde() {
-        let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         let request = NSFetchRequest(entityName: "Stunde")
         request.predicate = NSPredicate(format: "ident = %@ && student.matrnr = %@ && anfang = %@", stunde!.ident, stunde!.student.matrnr, stunde!.anfang)
         let array = context.executeFetchRequest(request, error: nil)

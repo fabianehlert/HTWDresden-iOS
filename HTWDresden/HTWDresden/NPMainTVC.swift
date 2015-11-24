@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class NPMainTVC: UITableViewController {
     
@@ -21,6 +22,9 @@ class NPMainTVC: UITableViewController {
         
         refreshButton.enabled = false
         model = NPMainModel()
+        
+        model.downloadeNoten()
+        
         model.starte {
             self.refreshButton.enabled = true
             self.tableView.reloadData()
@@ -63,14 +67,14 @@ class NPMainTVC: UITableViewController {
         let note = model.noteAt(indexPath: indexPath)!
         
         if selected != indexPath {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Standard", forIndexPath: indexPath) as NPStandardMainTVCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Standard", forIndexPath: indexPath) as! NPStandardMainTVCell
             
             cell.note = note
             
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as NPDetailMainTVCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Detail", forIndexPath: indexPath) as! NPDetailMainTVCell
             
             cell.note = note
             

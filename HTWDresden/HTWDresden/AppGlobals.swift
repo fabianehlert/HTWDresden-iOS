@@ -83,7 +83,7 @@ class HTWAlert: NSObject, UIAlertViewDelegate {
             return nil
         }
         if (UIDevice.currentDevice().systemVersion as NSString).floatValue >= 8.0 {
-            return (alert8.textFields![index] as UITextField).text
+            return (alert8.textFields![index] as! UITextField).text
         }
         else {
             return alert7.textFieldAtIndex(index)!.text

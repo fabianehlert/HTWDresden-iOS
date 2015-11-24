@@ -53,7 +53,7 @@ class MPMainTVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MPMainCell", forIndexPath: indexPath) as MPMainCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MPMainCell", forIndexPath: indexPath) as! MPMainCell
 
         cell.speise = model.speiseForIndexPath(indexPath)
         
@@ -63,7 +63,7 @@ class MPMainTVC: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showList" {
-            (segue.destinationViewController as MPListTVC).mensen = model.mensenTitel
+            (segue.destinationViewController as! MPListTVC).mensen = model.mensenTitel
         }
     }
     

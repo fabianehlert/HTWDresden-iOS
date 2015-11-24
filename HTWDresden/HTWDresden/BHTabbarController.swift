@@ -56,9 +56,9 @@ class BHTabbarController: UIViewController {
         super.viewDidLoad()
         
         // ViewController erstellen und items hinzufügen (über class TabViewController)
-        var stundenPlanVC = UIStoryboard(name: "Stundenplan", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as UINavigationController
-        var mensaVC = UIStoryboard(name: "Mensa", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as UINavigationController
-        var notenVC = UIStoryboard(name: "Noten", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as UINavigationController
+        var stundenPlanVC = UIStoryboard(name: "Stundenplan", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as! UINavigationController
+        var mensaVC = UIStoryboard(name: "Mensa", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as! UINavigationController
+        var notenVC = UIStoryboard(name: "Noten", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as! UINavigationController
         
         items.append(TabViewController(name: "Stundenplan", picture: UIImage(), viewController: stundenPlanVC))
         items.append(TabViewController(name: "Mensa", picture: UIImage(), viewController: mensaVC))
@@ -82,7 +82,7 @@ class BHTabbarController: UIViewController {
         var width = temp < CGFloat(view.frame.size.width) ? CGFloat(view.frame.size.width/CGFloat(items.count)) : MIN_WIDTH
         
         
-        for (i, item) in enumerate(items) {
+        for (i, item) in items.enumerate() {
             let view = UIView(frame: CGRect(x: CGFloat(i) * width, y: CGFloat(0), width: width, height: SIZE))
             view.backgroundColor = UIColor.random()
             view.tag = i
@@ -115,11 +115,11 @@ class BHTabbarController: UIViewController {
         activateItemAt(index: sender.tag)
     }
     
-    func activateItemAt(#index: Int) {
+    func activateItemAt(index index: Int) {
         let item = items[index]
         if item.viewController === tempVC { return }
         item.viewController.view.frame = self.contentView.bounds
-        for view in self.contentView.subviews { (view as UIView).removeFromSuperview() }
+        for view in self.contentView.subviews { (view as! UIView).removeFromSuperview() }
         self.contentView.addSubview(item.viewController.view)
         self.addChildViewController(item.viewController)
         item.viewController.didMoveToParentViewController(self)
@@ -133,25 +133,25 @@ class BHTabbarController: UIViewController {
 
 class StundenplanVC : UIViewController {
     override func viewDidLoad() {
-        println("StundenplanVC --- viewDidLoad:")
+        print("StundenplanVC --- viewDidLoad:")
     }
     override func viewWillAppear(animated: Bool) {
-        println("StundenplanVC --- viewWillAppear:")
+        print("StundenplanVC --- viewWillAppear:")
     }
     override func viewWillDisappear(animated: Bool) {
-        println("StundenplanVC --- viewWillDisappear")
+        print("StundenplanVC --- viewWillDisappear")
     }
 }
 
 class MensaVC : UIViewController {
     override func viewDidLoad() {
-        println("MensaVC       --- viewDidLoad:")
+        print("MensaVC       --- viewDidLoad:")
     }
     override func viewWillAppear(animated: Bool) {
-        println("MensaVC       --- viewWillAppear:")
+        print("MensaVC       --- viewWillAppear:")
     }
     override func viewWillDisappear(animated: Bool) {
-        println("MensaVC       --- viewWillDisappear")
+        print("MensaVC       --- viewWillDisappear")
     }
 }
 

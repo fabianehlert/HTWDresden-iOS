@@ -13,7 +13,7 @@ class MPMainModel: NSObject, NSXMLParserDelegate {
     var mensenTitel = [String]()
     var mensen = [String:[Speise]]()
     
-    var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     override init() {
         super.init()

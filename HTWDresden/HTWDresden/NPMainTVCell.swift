@@ -13,7 +13,7 @@ class NPStandardMainTVCell: UITableViewCell {
     var note: Note! {
         didSet{
             fachLabel.text = note.name
-            noteLabel.text = NSString(format: "%.1f", note.note.floatValue)
+            noteLabel.text = NSString(format: "%.1f", note.note.floatValue) as String
         }
     }
     
@@ -28,11 +28,11 @@ class NPDetailMainTVCell: UITableViewCell {
     var note: Note! {
         didSet{
             fachLabel.text = note.name
-            noteLabel.text = NSString(format: "%.1f", note.note.floatValue)
+            noteLabel.text = NSString(format: "%.1f", note.note.floatValue) as String
             versuchLabel.text = "\(note.versuch)"
             nrLabel.text = "\(note.nr)"
             statusLabel.text = note.status
-            creditsLabel.text = NSString(format: "%.1f", note.credits.floatValue)
+            creditsLabel.text = NSString(format: "%.1f", note.credits.floatValue) as String
             datumLabel.text = note.datum != nil ? note.datum.stringFromDate("dd.MM.yyyy") : ""
             voDatumLabel.text = note.voDatum != nil ? note.voDatum.stringFromDate("dd.MM.yyyy") : ""
         }

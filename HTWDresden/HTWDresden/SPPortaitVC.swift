@@ -142,7 +142,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
         var wochentagePointer = currentDate.weekDay()
         
         var labels = [UILabel]()
-        var cDate = currentDate.copy() as NSDate
+        var cDate = currentDate.copy() as! NSDate
         
         for var i: CGFloat = 0; i < CGFloat(ANZ_PORTRAIT); i++ {
             let x = CGFloat(i*116+50+scrollView.contentSize.width)
@@ -223,7 +223,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     // MARK: - Actions
     func deleteOniPad(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
-            let senderButton = sender.view as SPButtonLesson
+            let senderButton = sender.view as! SPButtonLesson
             // TODO: - Unvollständig
             let alert = UIAlertController(title: "Warnung", message: "Wollen sie die Stunde \(senderButton.stunde.titel) wirklich löschen?", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ja", style: .Default, handler: {
@@ -262,11 +262,11 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         switch segue.identifier! {
         case "detailPhone":
-            let title = (sender as SPButtonLesson).stunde.titel
+            let title = (sender as! SPButtonLesson).stunde.titel
             println("detailPhone \(title)")
-            (segue.destinationViewController as SPPortraitDetailPhoneTVC).stunde = (sender as SPButtonLesson).stunde
-            (segue.destinationViewController as SPPortraitDetailPhoneTVC).index = find(buttons, sender as SPButtonLesson)
-            (segue.destinationViewController as SPPortraitDetailPhoneTVC).delegate = self
+            (segue.destinationViewController as! SPPortraitDetailPhoneTVC).stunde = (sender as! SPButtonLesson).stunde
+            (segue.destinationViewController as! SPPortraitDetailPhoneTVC).index = find(buttons, sender as! SPButtonLesson)
+            (segue.destinationViewController as! SPPortraitDetailPhoneTVC).delegate = self
         default:
             break
         }
@@ -277,7 +277,7 @@ class SPPortaitVC: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate
     
     // MARK: - NOT IN FINAL RELEASE
     func deleteAllInDB() {
-        var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+        var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
         let request = NSFetchRequest(entityName: "User")
         let tempArray = context.executeFetchRequest(request, error: nil) as [User]
         for tempUser in tempArray {

@@ -15,7 +15,7 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
     var name: String?
     var raum: Bool
     
-    var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     var newUser: User!
     
@@ -54,14 +54,14 @@ class SPXMLParser: NSObject, NSXMLParserDelegate {
                 return
             }
             
-            var html = NSString(data: data, encoding: NSASCIIStringEncoding) as String
+            var html = NSString(data: data, encoding: NSASCIIStringEncoding) as! String
             if html.contains("Stundenplan im csv-Format erstellen") || html.contains("Es wurden keine Daten gefunden") {
                 self.completion(success: false, error: "Falsche Kennung")
             }
             
             // Aktuelles Semester
             dispatch_async(DIFF_QUEUE) {
-                let htmlForSemester = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php")!, encoding: NSASCIIStringEncoding, error: nil) as String
+                let htmlForSemester = NSString(contentsOfURL: NSURL(string:"http://www2.htw-dresden.de/~rawa/cgi-bin/auf/raiplan_app.php")!, encoding: NSASCIIStringEncoding, error: nil) as! String
                 setNetworkIndicator(false)
                 let index = htmlForSemester.indexOf("<h2>")
                 var semester = htmlForSemester[index + "<h2>".length...index + 50]

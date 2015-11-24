@@ -22,7 +22,7 @@ class MPListTVC: UITableViewController {
         }
         
         let mensaMetaData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("mensen", ofType: "json")!)!
-        mensaMeta = NSJSONSerialization.JSONObjectWithData(mensaMetaData, options: .MutableContainers, error: nil) as [[String:String]]
+        mensaMeta = NSJSONSerialization.JSONObjectWithData(mensaMetaData, options: .MutableContainers, error: nil) as! [[String:String]]
         for mensa in mensen {
             mensaDic[mensa] = UIImage(named: mensaImageNameForMensa(mensa))?.resizeToBoundingSquare(boundingSquareSideLength: 90)
         }
@@ -49,7 +49,7 @@ class MPListTVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MPListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MPListCell
 
         cell.mensaName = mensen[indexPath.row]
         cell.mensaBild = mensaDic[cell.mensaName]

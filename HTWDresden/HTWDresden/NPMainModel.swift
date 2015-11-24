@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NPMainModel {
     
@@ -45,22 +46,22 @@ class NPMainModel {
         }
     }
 
-    private var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    private var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     
     func numberOfSections() -> Int {
         return noten?.count ?? 0
     }
     
-    func numberOfRowsIn(#section: Int) -> Int {
+    func numberOfRowsIn(section section: Int) -> Int {
         return noten?[section].count ?? 0
     }
     
-    func semesterNameFor(#section: Int) -> String {
+    func semesterNameFor(section section: Int) -> String {
         return noten?[section].first!.semester ?? ""
     }
     
-    func noteAt(#indexPath: NSIndexPath) -> Note? {
+    func noteAt(indexPath indexPath: NSIndexPath) -> Note? {
         return noten?[indexPath.section][indexPath.row]
     }
     
@@ -82,7 +83,7 @@ class NPMainModel {
         context.save(nil)
     }
     
-    private func downloadeNoten() {
+    internal func downloadeNoten() {
         löscheAlleNotenVonUser()
         println("== Downloade neue Noten für Nutzer mit Kennung: \(user.matrnr)")
         
@@ -92,6 +93,50 @@ class NPMainModel {
         request.HTTPMethod = "POST"
         request.HTTPBody = postData
         request.timeoutInterval = 10
+        
+        /*Alamofire.request(request)
+            .responseJSON { _, response, json, error in
+                
+                
+                if let studienGänge = json as? [[String:String]] {
+                    
+                    for studiengang in studienGänge {
+                        
+                        let AbschlNr = studiengang["AbschlNr"]!
+                        let StgNr = studiengang["StgNr"]!
+                        let POVersion = studiengang["POVersion"]!
+                        
+                        
+                        var postString2 = "sNummer=s68311&RZLogin=HD5rdf92&AbschlNr=\(AbschlNr)&StgNr=\(StgNr)&POVersion=\(POVersion)"
+                        var postData2 = postString2.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+                        var request2 = NSMutableURLRequest(URL: self.GRADES_URL)
+                        request2.HTTPMethod = "POST"
+                        request2.HTTPBody = postData2
+                        request2.timeoutInterval = 10
+                        
+                        Alamofire.request(request2)
+                        .responseJSON({ (_, _, json2, _) -> Void in
+                            
+                            if let fächer = json2 as? [[String:String]] {
+                                
+                                var fächerSortiert = fächer.sorted { $0["PrNote"]! < $1["PrNote"]! }
+                                
+                                for fach in fächerSortiert {
+                                    
+                                    //println((fach["PrTxt"] ?? "") + " " + (fach["PrNote"] ?? ""))
+                                    
+                                }
+                                
+                            }
+                            
+                        })
+                    }
+                    
+                }
+                
+                
+            }*/
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             response, data, error in
             
@@ -100,7 +145,7 @@ class NPMainModel {
                 return
             }
             
-            let statusCode = (response as NSHTTPURLResponse).statusCode
+            let statusCode = (response as! NSHTTPURLResponse).statusCode
             
             switch statusCode {
             case 401, 402:
@@ -110,7 +155,7 @@ class NPMainModel {
                 break
             }
             
-            let studienGänge = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as [[String:String]]
+            let studienGänge = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! [[String:String]]
             
             for studiengang in studienGänge {
                 let AbschlNr = studiengang["AbschlNr"]!

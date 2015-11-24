@@ -10,7 +10,7 @@ import UIKit
 
 class MPMainXMLParser: NSObject, NSXMLParserDelegate {
     
-    var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     var completion: ((success: Bool, error: String!) -> Void)!
     

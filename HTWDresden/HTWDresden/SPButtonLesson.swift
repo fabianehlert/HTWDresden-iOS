@@ -239,10 +239,10 @@ class SPButtonLesson: UIButton {
         
         for view in subviews {
             if view is UILabel {
-                (view as UILabel).textColor = UIColor.HTWWhiteColor()
+                (view as! UILabel).textColor = UIColor.HTWWhiteColor()
             }
             else if view.tag == -9 {
-                (view as UIView).backgroundColor = UIColor.HTWWhiteColor()
+                (view as! UIView).backgroundColor = UIColor.HTWWhiteColor()
             }
         }
     }

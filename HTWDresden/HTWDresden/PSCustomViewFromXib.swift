@@ -42,7 +42,7 @@ public class NibView: UIView {
     
     private func loadNib() -> NibView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        return bundle.loadNibNamed(self.nibName(), owner: nil, options: nil)[0] as NibView
+        return bundle.loadNibNamed(self.nibName(), owner: nil, options: nil)[0] as! NibView
     }
     
     public func nibName() -> String {

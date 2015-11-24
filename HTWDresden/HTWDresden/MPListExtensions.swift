@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage
 {
-    func resizeToBoundingSquare(#boundingSquareSideLength : CGFloat) -> UIImage
+    func resizeToBoundingSquare(boundingSquareSideLength boundingSquareSideLength : CGFloat) -> UIImage
     {
         let imgScale = self.size.width > self.size.height ? boundingSquareSideLength / self.size.width : boundingSquareSideLength / self.size.height
         let newWidth = self.size.width * imgScale

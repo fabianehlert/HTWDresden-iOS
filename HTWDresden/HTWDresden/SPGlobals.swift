@@ -12,7 +12,7 @@ import Foundation
 let CURR_MATRNR_KEY = "Matrikelnummer"
 var CURR_MATRNR: String! {
     get {
-        return userDefaults.objectForKey(CURR_MATRNR_KEY) as String!
+        return userDefaults.objectForKey(CURR_MATRNR_KEY) as! String!
     }
     set {
         if newValue != nil {
@@ -28,7 +28,7 @@ var CURR_MATRNR: String! {
 let CURR_SEMESTER_KEY = "Semester"
 var CURR_SEMESTER: String {
 get {
-    return userDefaults.objectForKey(CURR_SEMESTER_KEY) as String
+    return userDefaults.objectForKey(CURR_SEMESTER_KEY) as! String
 }
 set {
     userDefaults.setObject(newValue, forKey: CURR_SEMESTER_KEY)

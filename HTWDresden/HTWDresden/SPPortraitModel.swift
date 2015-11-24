@@ -12,7 +12,6 @@ import UIKit
 protocol SPPortraitDelegate {
     
     func SPPortraitModelfinishedLoading(model: SPPortraitModel)
-    
 }
 
 
@@ -27,7 +26,7 @@ class SPPortraitModel: NSObject {
     var currentDate: NSDate
     
     
-    var context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     // MARK: - Initialiser
     init(matrnr: String, currentDate: NSDate, delegate: SPPortraitDelegate?) {

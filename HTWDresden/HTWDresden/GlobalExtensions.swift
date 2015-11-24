@@ -35,7 +35,7 @@ extension String
 {
     var length: Int {
         get {
-            return countElements(self)
+            return count(self)
         }
     }
     
@@ -134,7 +134,7 @@ extension String
             println(error.description)
         }
         var matches = exp.matchesInString(self, options: nil, range: NSMakeRange(0, self.length))
-        return matches as [NSTextCheckingResult]
+        return matches as! [NSTextCheckingResult]
     }
     
     private var vowels: [String]

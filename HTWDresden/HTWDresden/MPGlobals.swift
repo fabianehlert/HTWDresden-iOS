@@ -9,7 +9,7 @@
 import Foundation
 
 var CURR_MENSA: String! {
-    get{ return userDefaults.objectForKey("CURR_MENSA") as String! }
+    get{ return userDefaults.objectForKey("CURR_MENSA") as! String! }
     set{
         if newValue != nil {
             userDefaults.setObject(newValue, forKey: "CURR_MENSA")
@@ -22,7 +22,7 @@ var CURR_MENSA: String! {
 }
 
 var MENSA_LAST_REFRESH: NSDate! {
-    get{ return userDefaults.objectForKey("MENSA_LAST_REFRESH") as NSDate! }
+    get{ return userDefaults.objectForKey("MENSA_LAST_REFRESH") as! NSDate! }
     set{ if newValue != nil {
             userDefaults.setObject(newValue, forKey: "MENSA_LAST_REFRESH")
         }
