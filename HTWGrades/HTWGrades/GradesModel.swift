@@ -20,7 +20,7 @@ class GradesModel {
 	}
 	
 	func start(completion: ([Grade] -> Void)? = nil) {
-		
+        
 		loadCourses { success, data in
 			
 			if !success {

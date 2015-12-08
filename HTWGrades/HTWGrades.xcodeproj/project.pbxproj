@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280D33471C174D0B00AF7B7A /* GradeExtendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280D33451C174D0B00AF7B7A /* GradeExtendedCell.swift */; };
+		280D33481C174D0B00AF7B7A /* GradeExtendedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280D33461C174D0B00AF7B7A /* GradeExtendedCell.xib */; };
 		B51D45D71C038B9A003585D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D45D61C038B9A003585D8 /* AppDelegate.swift */; };
 		B51D45DE1C038B9A003585D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51D45DD1C038B9A003585D8 /* Assets.xcassets */; };
 		B51D45E11C038B9A003585D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51D45DF1C038B9A003585D8 /* LaunchScreen.storyboard */; };
@@ -14,8 +16,8 @@
 		B51D45F71C038B9A003585D8 /* HTWGradesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D45F61C038B9A003585D8 /* HTWGradesUITests.swift */; };
 		B51D46061C038E2D003585D8 /* GradesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D46041C038E2D003585D8 /* GradesListViewController.swift */; };
 		B51D46071C038E2D003585D8 /* GradesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51D46051C038E2D003585D8 /* GradesListViewController.xib */; };
-		B51D460A1C03915C003585D8 /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D46081C03915C003585D8 /* GradeCell.swift */; };
-		B51D460B1C03915C003585D8 /* GradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51D46091C03915C003585D8 /* GradeCell.xib */; };
+		B51D460A1C03915C003585D8 /* GradeCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D46081C03915C003585D8 /* GradeCompactCell.swift */; };
+		B51D460B1C03915C003585D8 /* GradeCompactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51D46091C03915C003585D8 /* GradeCompactCell.xib */; };
 		B51D460D1C03948C003585D8 /* GradesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D460C1C03948C003585D8 /* GradesModel.swift */; };
 		B51D460F1C0396A5003585D8 /* USERNAME.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51D460E1C0396A5003585D8 /* USERNAME.swift */; };
 		B51D46111C03A2A5003585D8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B51D46101C03A2A5003585D8 /* Podfile */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280D33451C174D0B00AF7B7A /* GradeExtendedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeExtendedCell.swift; sourceTree = "<group>"; };
+		280D33461C174D0B00AF7B7A /* GradeExtendedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradeExtendedCell.xib; sourceTree = "<group>"; };
 		5E91985F6F5529B0BAAF229C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5EC4098D1AE04F733F78F730 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8F12F48BFE9B83E27A0AC2A4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +60,8 @@
 		B51D45F81C038B9A003585D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B51D46041C038E2D003585D8 /* GradesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesListViewController.swift; sourceTree = "<group>"; };
 		B51D46051C038E2D003585D8 /* GradesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradesListViewController.xib; sourceTree = "<group>"; };
-		B51D46081C03915C003585D8 /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
-		B51D46091C03915C003585D8 /* GradeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradeCell.xib; sourceTree = "<group>"; };
+		B51D46081C03915C003585D8 /* GradeCompactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCompactCell.swift; sourceTree = "<group>"; };
+		B51D46091C03915C003585D8 /* GradeCompactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradeCompactCell.xib; sourceTree = "<group>"; };
 		B51D460C1C03948C003585D8 /* GradesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
 		B51D460E1C0396A5003585D8 /* USERNAME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USERNAME.swift; sourceTree = "<group>"; };
 		B51D46101C03A2A5003585D8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -136,8 +140,10 @@
 				B51D460C1C03948C003585D8 /* GradesModel.swift */,
 				B51D46041C038E2D003585D8 /* GradesListViewController.swift */,
 				B51D46051C038E2D003585D8 /* GradesListViewController.xib */,
-				B51D46081C03915C003585D8 /* GradeCell.swift */,
-				B51D46091C03915C003585D8 /* GradeCell.xib */,
+				B51D46081C03915C003585D8 /* GradeCompactCell.swift */,
+				B51D46091C03915C003585D8 /* GradeCompactCell.xib */,
+				280D33451C174D0B00AF7B7A /* GradeExtendedCell.swift */,
+				280D33461C174D0B00AF7B7A /* GradeExtendedCell.xib */,
 				B51D460E1C0396A5003585D8 /* USERNAME.swift */,
 				B51D45DD1C038B9A003585D8 /* Assets.xcassets */,
 				B51D45DF1C038B9A003585D8 /* LaunchScreen.storyboard */,
@@ -273,7 +279,8 @@
 			files = (
 				B51D46111C03A2A5003585D8 /* Podfile in Resources */,
 				B51D45E11C038B9A003585D8 /* LaunchScreen.storyboard in Resources */,
-				B51D460B1C03915C003585D8 /* GradeCell.xib in Resources */,
+				280D33481C174D0B00AF7B7A /* GradeExtendedCell.xib in Resources */,
+				B51D460B1C03915C003585D8 /* GradeCompactCell.xib in Resources */,
 				B51D46071C038E2D003585D8 /* GradesListViewController.xib in Resources */,
 				B51D45DE1C038B9A003585D8 /* Assets.xcassets in Resources */,
 			);
@@ -348,7 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B51D460A1C03915C003585D8 /* GradeCell.swift in Sources */,
+				280D33471C174D0B00AF7B7A /* GradeExtendedCell.swift in Sources */,
+				B51D460A1C03915C003585D8 /* GradeCompactCell.swift in Sources */,
 				B51D46061C038E2D003585D8 /* GradesListViewController.swift in Sources */,
 				B51D45D71C038B9A003585D8 /* AppDelegate.swift in Sources */,
 				B51D460D1C03948C003585D8 /* GradesModel.swift in Sources */,

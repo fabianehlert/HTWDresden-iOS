@@ -21,14 +21,12 @@ class GradesListViewController: UIViewController {
 		
 		tableView?.dataSource = self
 		
-		let nib = UINib(nibName: "GradeCell", bundle: nil)
+		let nib = UINib(nibName: "GradeCompactCell", bundle: nil)
 		tableView?.registerNib(nib, forCellReuseIdentifier: "cell")
 		
 		let model = GradesModel()
 		model.start {
 			grades in
-			
-			print(grades)
 			
 			self.grades = grades
 			self.tableView?.reloadData()
@@ -43,7 +41,7 @@ extension GradesListViewController: UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! GradeCell
+		let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! GradeCompactCell
 		
 		cell.grade = grades[indexPath.row]
 		
