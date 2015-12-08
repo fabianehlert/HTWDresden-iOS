@@ -12,7 +12,7 @@ class GradesListViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView?
 	
-	var grades = [Grade]()
+    var grades = [[Grade]]()
     
     var highlightedIndexPath: NSIndexPath?
 	
@@ -33,7 +33,7 @@ class GradesListViewController: UIViewController {
 		model.start {
 			grades in
 			
-			self.grades = grades
+            self.grades = grades.map { $0.1 }
 			self.tableView?.reloadData()
 		}
 	}
@@ -41,8 +41,16 @@ class GradesListViewController: UIViewController {
 
 extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
 	
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return grades.count
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return grades[section].first?.semester
+    }
+    
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return grades.count
+		return grades[section].count
 	}
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -58,7 +66,7 @@ extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
             cell = tableView.dequeueReusableCellWithIdentifier("compact") as! GradeCompactCell
         }
 		
-		cell.grade = grades[indexPath.row]
+		cell.grade = grades[indexPath.section][indexPath.row]
 		
 		return cell
 	}
@@ -67,11 +75,18 @@ extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
         
         var indexPathsToHighlight = [NSIndexPath]()
         
-        if let oldHighlight = highlightedIndexPath {
-            indexPathsToHighlight.append(oldHighlight)
+        if indexPath == highlightedIndexPath {
+            highlightedIndexPath = nil
+            indexPathsToHighlight.append(indexPath)
         }
-        highlightedIndexPath = indexPath
-        indexPathsToHighlight.append(highlightedIndexPath!)
+        else {
+            if let oldHighlight = highlightedIndexPath {
+                indexPathsToHighlight.append(oldHighlight)
+            }
+            highlightedIndexPath = indexPath
+            indexPathsToHighlight.append(highlightedIndexPath!)
+        }
+        
         tableView.reloadRowsAtIndexPaths(indexPathsToHighlight, withRowAnimation: .Fade)
         
         

@@ -19,7 +19,7 @@ class GradesModel {
 		
 	}
 	
-	func start(completion: ([Grade] -> Void)? = nil) {
+    func start(completion: ([String: [Grade]] -> Void)? = nil) {
         
 		loadCourses { success, data in
 			
@@ -38,7 +38,7 @@ class GradesModel {
 						return
 					}
 					
-					completion?(grades)
+					completion?(self.groupGrades(grades))
 					
 				}
 				
@@ -50,6 +50,21 @@ class GradesModel {
 		
 	}
 	
+    private func groupGrades(grades: [Grade]) -> [String: [Grade]] {
+        
+        var result = [String: [Grade]]()
+        
+        for grade in grades {
+            
+            if result[grade.semester] == nil {
+                result[grade.semester] = []
+            }
+            result[grade.semester]?.append(grade)
+        }
+        
+        return result
+    }
+    
 	private func loadCourses(completion: (success: Bool, data: [Course]) -> Void) {
 		
 		Alamofire.request(.POST, getPos, parameters: ["sNummer": sNummer, "RZLogin": Passwort])
