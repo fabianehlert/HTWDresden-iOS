@@ -18,8 +18,9 @@ class GradesListViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		title = "Noten"
+        
+        var Average: Double = 0
+        var Index: Double = 0
 		
 		tableView?.dataSource = self
         tableView?.delegate = self
@@ -32,10 +33,14 @@ class GradesListViewController: UIViewController {
 		let model = GradesModel()
 		model.start {
 			grades in
-			
             self.grades = grades.map { $0.1 }
-			self.tableView?.reloadData()
+            Average += model.getAverge(self.grades)
+            Index += 1
+            Average /= Index
+            self.title = "Gesamt: Ø " + String(format: "%.2f", Average)
+            self.tableView?.reloadData()
 		}
+        
 	}
 }
 

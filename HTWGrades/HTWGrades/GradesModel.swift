@@ -104,6 +104,24 @@ class GradesModel {
 		}
 		
 	}
+    
+    public func getAverge(grades: [[Grade]]) -> Double {
+        if grades.count == 0 {
+            return 0
+        }
+        
+        var Average: Double = 0
+        var i: Double = 0
+        
+        for x in 0...grades.count - 1 {
+            for y in 0...grades[x].count - 1 {
+                Average += grades[x][y].grade
+                i += 1
+            }
+        }
+        Average /= i
+        return Average
+    }
 	
 }
 
@@ -136,6 +154,7 @@ struct Grade: Mappable, CustomStringConvertible {
 	var credits: Double = 0
 	var grade: Double = 0
 	var semester: String
+    var semesterjahr: Int = 0
 	
 	init?(_ map: Map) {
 		
@@ -143,7 +162,16 @@ struct Grade: Mappable, CustomStringConvertible {
 		subject = map["PrTxt"].valueOr("")
 		state = map["Status"].valueOr("")
 		semester = map["Semester"].valueOrFail()
-
+        semesterjahr = Int(String(semester.characters.dropLast()))!
+        semester = String(semester.characters.dropFirst(4))
+        
+        if (semester == "1") {
+            semester = "Sommersemester \(semesterjahr)"
+        }
+        else {
+            semester = "Wintersemester \(semesterjahr)/" + String(String(semesterjahr+1).characters.dropFirst(2))
+        }
+        
 		if !map.isValid {
 			return nil
 		}
