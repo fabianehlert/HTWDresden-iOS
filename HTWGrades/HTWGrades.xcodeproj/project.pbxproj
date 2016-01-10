@@ -67,6 +67,7 @@
 		B51D460C1C03948C003585D8 /* GradesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
 		B51D460E1C0396A5003585D8 /* USERNAME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USERNAME.swift; sourceTree = "<group>"; };
 		B51D46101C03A2A5003585D8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		B5ED0C4D1C429DAC00BAD2DD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +128,7 @@
 		B51D45CA1C038B9A003585D8 = {
 			isa = PBXGroup;
 			children = (
+				B5ED0C4D1C429DAC00BAD2DD /* MyPlayground.playground */,
 				B51D46101C03A2A5003585D8 /* Podfile */,
 				B51D45D51C038B9A003585D8 /* HTWGrades */,
 				B51D45EA1C038B9A003585D8 /* HTWGradesTests */,

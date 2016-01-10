@@ -19,8 +19,8 @@ class GradesModel {
 		
 	}
 	
-    func start(completion: ([String: [Grade]] -> Void)? = nil) {
-        
+	func start(completion: ([String: [Grade]] -> Void)? = nil) {
+		
 		loadCourses { success, data in
 			
 			if !success {
@@ -45,26 +45,26 @@ class GradesModel {
 			}
 			
 		}
-				
+		
 		
 		
 	}
 	
-    private func groupGrades(grades: [Grade]) -> [String: [Grade]] {
-        
-        var result = [String: [Grade]]()
-        
-        for grade in grades {
-            
-            if result[grade.semester] == nil {
-                result[grade.semester] = []
-            }
-            result[grade.semester]?.append(grade)
-        }
-        
-        return result
-    }
-    
+	private func groupGrades(grades: [Grade]) -> [String: [Grade]] {
+		
+		var result = [String: [Grade]]()
+		
+		for grade in grades {
+			
+			if result[grade.semester] == nil {
+				result[grade.semester] = []
+			}
+			result[grade.semester]?.append(grade)
+		}
+		
+		return result
+	}
+	
 	private func loadCourses(completion: (success: Bool, data: [Course]) -> Void) {
 		
 		Alamofire.request(.POST, getPos, parameters: ["sNummer": sNummer, "RZLogin": Passwort])
@@ -104,24 +104,20 @@ class GradesModel {
 		}
 		
 	}
-    
-    public func getAverge(grades: [[Grade]]) -> Double {
-        if grades.count == 0 {
-            return 0
-        }
-        
-        var Average: Double = 0
-        var i: Double = 0
-        
-        for x in 0...grades.count - 1 {
-            for y in 0...grades[x].count - 1 {
-                Average += grades[x][y].grade
-                i += 1
-            }
-        }
-        Average /= i
-        return Average
-    }
+	
+	static func getAverage(grades: [[Grade]]) -> Double {
+		
+		let semesterAverages = grades.map {
+			semester -> Double in
+			
+			let allCredits = semester.reduce(0.0) { $0 + $1.credits }
+			let allWeightedGrades = semester.reduce(0.0) { $0 + ($1.credits * $1.grade) }
+			
+			return allWeightedGrades / allCredits
+		}
+		
+		return semesterAverages.reduce(0.0, combine: +) / Double(semesterAverages.count)
+	}
 	
 }
 
@@ -154,7 +150,7 @@ struct Grade: Mappable, CustomStringConvertible {
 	var credits: Double = 0
 	var grade: Double = 0
 	var semester: String
-    var semesterjahr: Int = 0
+	var semesterjahr: Int = 0
 	
 	init?(_ map: Map) {
 		
@@ -162,16 +158,16 @@ struct Grade: Mappable, CustomStringConvertible {
 		subject = map["PrTxt"].valueOr("")
 		state = map["Status"].valueOr("")
 		semester = map["Semester"].valueOrFail()
-        semesterjahr = Int(String(semester.characters.dropLast()))!
-        semester = String(semester.characters.dropFirst(4))
-        
-        if (semester == "1") {
-            semester = "Sommersemester \(semesterjahr)"
-        }
-        else {
-            semester = "Wintersemester \(semesterjahr)/" + String(String(semesterjahr+1).characters.dropFirst(2))
-        }
-        
+		semesterjahr = Int(String(semester.characters.dropLast()))!
+		semester = String(semester.characters.dropFirst(4))
+		
+		if (semester == "1") {
+			semester = "Sommersemester \(semesterjahr)"
+		}
+		else {
+			semester = "Wintersemester \(semesterjahr)/" + String(String(semesterjahr+1).characters.dropFirst(2))
+		}
+		
 		if !map.isValid {
 			return nil
 		}
