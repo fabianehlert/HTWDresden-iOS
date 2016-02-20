@@ -11,7 +11,7 @@ import Core
 
 public class GradesListViewController: ViewController {
     
-    @IBOutlet weak var tableView: UITableView?
+    var tableView = UITableView()
     
     var grades = [[Grade]]()
     
@@ -20,20 +20,24 @@ public class GradesListViewController: ViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView?.dataSource = self
-        tableView?.delegate = self
+        tableView.frame = view.bounds
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        view.addSubview(tableView)
         
-        let nib = UINib(nibName: "GradeExtendedCell", bundle: nil)
-        tableView?.registerNib(nib, forCellReuseIdentifier: "extended")
-        let nib2 = UINib(nibName: "GradeCompactCell", bundle: nil)
-        tableView?.registerNib(nib2, forCellReuseIdentifier: "compact")
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let nib = UINib(nibName: "GradeExtendedCell", bundle: NSBundle(forClass: GradeExtendedCell.self))
+        tableView.registerNib(nib, forCellReuseIdentifier: "extended")
+        let nib2 = UINib(nibName: "GradeCompactCell", bundle: NSBundle(forClass: GradeCompactCell.self))
+        tableView.registerNib(nib2, forCellReuseIdentifier: "compact")
         
         let model = GradesModel()
         model.start {
             [unowned self] grades in
             self.grades = grades.map { $0.1 }
             self.title = "Gesamt: Ø " + String(format: "%.2f", GradesModel.getAverage(self.grades))
-            self.tableView?.reloadData()
+            self.tableView.reloadData()
         }
     }
 }
