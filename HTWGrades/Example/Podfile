@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'HTWGrades_Example', :exclusive => true do
+  pod 'HTWGrades', :path => '../'
+
+  pod 'Core', :git => 'git@github.com:HTWDD/iOS-Core.git', :commit => 'd5ab78d5722b578cdc2597d95a947b204e4b2660'
+end
