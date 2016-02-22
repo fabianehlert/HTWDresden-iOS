@@ -379,11 +379,7 @@
 		510243672B23FDE90DF3406C8490ACFF /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				0FA537774869974D873A436EE3D11041 /* GradeCell.swift */,
-				F7A420156C5D28664ACB49DBD33BACD7 /* GradeCompactCell.swift */,
-				EBCDFDA3A36C6A4AB12B9E0E9ABF6328 /* GradeCompactCell.xib */,
-				59AEC755D700466F67308E8EE3F8BCA6 /* GradeExtendedCell.swift */,
-				3F43946070181BC48D7FFA8FCB9863E4 /* GradeExtendedCell.xib */,
+				B56AFE791C7B7A2D008EAAF7 /* Cell */,
 				FB5E3CD9A3A2B8DFA4D991DD15E49D40 /* GradesListViewController.swift */,
 				F98DE37BC7C9CC573D0842AE7B328EB1 /* GradesModel.swift */,
 				01217CDDFF06AF263F0B3167E3D8F249 /* GradesModule.swift */,
@@ -456,6 +452,18 @@
 			);
 			name = "Pods-HTWGrades_Example";
 			path = "Target Support Files/Pods-HTWGrades_Example";
+			sourceTree = "<group>";
+		};
+		B56AFE791C7B7A2D008EAAF7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0FA537774869974D873A436EE3D11041 /* GradeCell.swift */,
+				F7A420156C5D28664ACB49DBD33BACD7 /* GradeCompactCell.swift */,
+				EBCDFDA3A36C6A4AB12B9E0E9ABF6328 /* GradeCompactCell.xib */,
+				59AEC755D700466F67308E8EE3F8BCA6 /* GradeExtendedCell.swift */,
+				3F43946070181BC48D7FFA8FCB9863E4 /* GradeExtendedCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		D896323404930B8C4865CE8A9D7851F2 /* Support Files */ = {
