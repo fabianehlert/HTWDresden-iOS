@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E60CAD762AFE7BDA5DF930B9'
+               BlueprintIdentifier = '22D89303571963929B4D8A9A'
                BlueprintName = 'HTWGrades'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'HTWGrades.framework'>
