@@ -53,8 +53,8 @@ public class GradesListViewController: ViewController {
 		let v = GradesSettingsController(router: self.router)
 		v.settings = GradesModule.shared.settings
 		v.delegate = self
-        let n = v.wrapInNavigationController()
-        n.modalPresentationStyle = .PageSheet
+		let n = v.wrapInNavigationController()
+		n.modalPresentationStyle = .PageSheet
 		presentViewController(n, animated: true, completion: nil)
 //		navigationController?.pushViewController(v, animated: true)
 	}

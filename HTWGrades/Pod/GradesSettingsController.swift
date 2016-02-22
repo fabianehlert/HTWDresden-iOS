@@ -20,6 +20,8 @@ class TextField: UITextField {
 
 	func setup() {
 		backgroundColor = .whiteColor()
+
+		borderStyle = .RoundedRect
 	}
 }
 
@@ -34,11 +36,13 @@ class GradesSettingsController: ViewController {
 	private let username: TextField = {
 		let u = TextField()
 		u.autocapitalizationType = .None
+		u.placeholder = "S-Nummer"
 		return u
 	}()
 	private let password: TextField = {
 		let p = TextField()
 		p.secureTextEntry = true
+		p.placeholder = "Passwort"
 		return p
 	}()
 
@@ -70,10 +74,10 @@ class GradesSettingsController: ViewController {
 		view.addSubview(username)
 		view.addSubview(password)
 	}
-    
-    func dismiss() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
+
+	func dismiss() {
+		dismissViewControllerAnimated(true, completion: nil)
+	}
 
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
