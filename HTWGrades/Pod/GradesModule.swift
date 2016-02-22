@@ -7,3 +7,44 @@
 //
 
 import Foundation
+import Core
+
+class Settings {
+
+	var userDefaults: NSUserDefaults
+
+	init(userDefaults: NSUserDefaults = .standardUserDefaults()) {
+		self.userDefaults = userDefaults
+	}
+
+	var sNumber: String? {
+		get {
+			return userDefaults.objectForKey("sNumber") as? String
+		}
+		set {
+			userDefaults.setObject(newValue, forKey: "sNumber")
+		}
+	}
+	var password: String? {
+		get {
+			return userDefaults.objectForKey("password") as? String
+		}
+		set {
+			userDefaults.setObject(newValue, forKey: "password")
+		}
+	}
+}
+
+public class GradesModule: Core.Module {
+
+	public static var shared = GradesModule()
+
+	public var router: Router?
+
+	public var name: String { return "Noten" }
+	public var image: UIImage { return UIImage() }
+
+	public var initialController: UIViewController { return GradesListViewController(router: router).wrapInNavigationController() }
+
+	var settings = Settings()
+}

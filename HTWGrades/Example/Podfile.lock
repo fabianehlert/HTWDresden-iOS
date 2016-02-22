@@ -8,19 +8,19 @@ PODS:
   - ObjectMapper (1.1.5)
 
 DEPENDENCIES:
-  - Core (from `git@github.com:HTWDD/iOS-Core.git`, commit `d5ab78d5722b578cdc2597d95a947b204e4b2660`)
+  - Core (from `git@github.com:HTWDD/iOS-Core.git`, commit `33a7ef1`)
   - HTWGrades (from `../`)
 
 EXTERNAL SOURCES:
   Core:
-    :commit: d5ab78d5722b578cdc2597d95a947b204e4b2660
+    :commit: 33a7ef1
     :git: git@github.com:HTWDD/iOS-Core.git
   HTWGrades:
-    :path: "../"
+    :path: ../
 
 CHECKOUT OPTIONS:
   Core:
-    :commit: d5ab78d5722b578cdc2597d95a947b204e4b2660
+    :commit: 33a7ef1
     :git: git@github.com:HTWDD/iOS-Core.git
 
 SPEC CHECKSUMS:

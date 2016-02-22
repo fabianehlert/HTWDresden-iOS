@@ -12,59 +12,59 @@
 		0681ADC8BAE2C3185F13487BAAB4D9DD /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8828E8BB2B3DC6BB30AADFFC469DB9F0 /* Upload.swift */; };
 		07CEFB4732FD80D3CAA7A91CC6B588B2 /* Core-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9B9AB370B30CC05BE4889D6DFF04A /* Core-dummy.m */; };
 		0C9A2DD4DAE4D5B11D9011977DF5F45D /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC0E917645D4F465795405C1DDC59E /* Mappable.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0E0E0A89D9E85534A71E5302BF7C8D0C /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA537774869974D873A436EE3D11041 /* GradeCell.swift */; };
 		0F67DB6DF670F58085362ABA742B0209 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3A39ECF5FAB46E9CC27271E789515 /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1BC0C09F3A0ED8F8F89DE227A2BBD26A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */; };
+		24EABF0A2C1885086A2361820F0E09F2 /* GradeCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F040B96A14EDBE857376CED3A3637E4 /* GradeCompactCell.swift */; };
 		26ABDA3A5A65E676FC82998070DEA687 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99890FA340933E3D5A22A5B990EAAAD5 /* Alamofire.framework */; };
+		27117CFDA8418932E3DE74A02355F8C1 /* GradeExtendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA9989A93ED55644A3C16C614D3F43B /* GradeExtendedCell.swift */; };
+		27C1A94366CA1179DF73E772D8C487FC /* HTWGrades-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8838B70892D55816853520BBE9238388 /* HTWGrades-dummy.m */; };
 		2C5450AC69398958CF6F7539EF7D99E5 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B77A7E5FF9918837FE1D95AB12720300 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		302248F8299A4A60B77DA0A4A571EA90 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6509A4E61F5BDB7ADEB4BDFF5E525715 /* ObjectMapper.framework */; };
 		324D89C2858CB40A3836A15E11D381D5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99890FA340933E3D5A22A5B990EAAAD5 /* Alamofire.framework */; };
-		343448091D4DB68D8A4D3CC707503F6F /* GradesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98DE37BC7C9CC573D0842AE7B328EB1 /* GradesModel.swift */; };
+		357C6D5BED1EBEDCB3A2CC8FEDCEB49C /* GradesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3633A412D7065407C4FA0738B5C99F /* GradesModel.swift */; };
 		3659F93CAE683C2B5CFB50484B3D9928 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A913065DF8F8A11DE19ACF5A019E8658 /* UIKit.framework */; };
 		3C163EA470E80E8DDE4BEFD75E0BD0EC /* Core-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D4ED66DC8E69F9EDE4389AADFD877FC /* Core-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		412EA7218B26CEEBC596A2843F040D8D /* USERNAME.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB955086BE4EB57AF350AB5656D61482 /* USERNAME.swift */; };
 		418641CC5C24BD05B1F579DA43B0F863 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F43B50279D5EF13FBC2375C16B4227 /* CustomDateFormatTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		41E04AC414938715DAE9434009DB99CD /* HTWGrades-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 651A77670BFC9A7FAC0BA970E363072B /* HTWGrades-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42DECFB5B2C4C7879F4890F9DDABD58C /* HTWGrades-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 553037A435AAC63BB59A26738C396159 /* HTWGrades-dummy.m */; };
+		41E04AC414938715DAE9434009DB99CD /* HTWGrades-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1B194B89D48EAE751F842644C83147 /* HTWGrades-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4700295C63A6130A1CDD61CFD104F188 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA152159584C017285E2153ACD4AC46 /* DateFormatterTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4DE5FCC41D100B113B6645EA64410F16 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87E59C50D65AB85406DEB960D41F11C /* ParameterEncoding.swift */; };
 		51C5E338677F2D629B3977F76E743897 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 671CDA2F3388F80A9AF10E43FD7FBCCD /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		582E870503BBEC405FD709079A1E751A /* GradesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01217CDDFF06AF263F0B3167E3D8F249 /* GradesModule.swift */; };
 		5CFD5248034C7103E46994B1EEC07EBF /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5190375C67B51552EA12C68BAEA18C8 /* ObjectMapper-dummy.m */; };
-		729C6E493CBB475A9646771C3A4DCF15 /* GradesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5E3CD9A3A2B8DFA4D991DD15E49D40 /* GradesListViewController.swift */; };
+		705E8132C1D9B8EF63C3C4BF6EEBA249 /* GradesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA9C74543D62B1D047536867C4AA0D /* GradesModule.swift */; };
 		7CF859D041C980B73693C64402610B62 /* Core.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4DC3827BD6A925FFBD980D87A54633BD /* Core.bundle */; };
 		80F496237530D382A045A29654D8C11C /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52407A947969AC75C16FAF7DC86B7E80 /* ServerTrustPolicy.swift */; };
 		82971968CBDAB224212EEB4607C9FB8D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CFD8106C8DE5842A8B81F11779AD1E /* Result.swift */; };
 		8399DBEE3E2D98EB1F466132E476F4D9 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F380689C443D442113880C1173FFAD /* MultipartFormData.swift */; };
 		861752DD71CFA150900FE74EB873AC9D /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FEE544A1FEFB18C719F05C5705F07C /* EnumTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8A33058CBD31DCD83400802316FE938B /* GradesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A289043B84AD06762694E99063ACBB /* GradesListViewController.swift */; };
 		8A3C575E0D8B66DAC164729D8178F8F1 /* Pods-HTWGrades_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A71B52057AD06998535747D5677D6B /* Pods-HTWGrades_Example-dummy.m */; };
 		8C4C5854F2A814B029A85A835FE1F8AD /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC965E3F180D938A6D7C076EB9BFFB /* ISO8601DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9051CB8DEA2328629C9665CD8DD04F7C /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99D2BA47BC0BE94E455059C9E034001 /* TransformType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		90AE80D1EC991F8CE3FC1B42F36DE663 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A837AAD77DAA8D1BCB93F958664DAF9 /* Router.swift */; };
+		928F54660637AE6F70CFE958A72E9B2B /* GradesSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED8D6F4A0AAFEEF0E325657937DF0A /* GradesSettingsController.swift */; };
 		96D99D0C2472535A169DED65CB231CD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */; };
 		A2C172FE407C0BC3478ADCA91A6C9CEC /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B38726F28EBC6933812FF97D7452A2 /* Manager.swift */; };
 		A3505FA2FB3067D53847AD288AC04F03 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B528099A7AF36F7081568E8AAC962 /* Download.swift */; };
 		A747092119AAABE15DC237E635A140B9 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0DD36ED71BF4D89BD485552B45A48 /* Operators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A76330DB75FE5A32A098281F16D439E7 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05BA03AF23F5FE37C097C0EB95EA87 /* Map.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AA9B2E38E4EDA5DA65AE17BC2ED4378B /* GradeExtendedCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3F43946070181BC48D7FFA8FCB9863E4 /* GradeExtendedCell.xib */; };
 		AD3E5294390405DA2509441725B41328 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384963570398C8C529C58F1CF5AEEF07 /* ToJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B0A69D97930C8F8029E64C4C755A51B0 /* GradeCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A420156C5D28664ACB49DBD33BACD7 /* GradeCompactCell.swift */; };
 		B0FB4B01682814B9E3D32F9DC4A5E762 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9687FD040C1D8405D75666EBE010655 /* Alamofire.swift */; };
 		B392896133D14B823A185092710C3CC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */; };
 		B6D2DC3E3DA44CD382B9B425F40E11C1 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6629467F9EA4B97DDED4D56F413F8 /* Alamofire-dummy.m */; };
+		C18100C783C4036C84C3C42D635EB095 /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DAFC5674DE9B3040BF36320D00F94 /* GradeCell.swift */; };
 		C5283899E940022607A86ED4A5F87848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */; };
 		C75519F0450166A6F28126ECC7664E9C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F558461F7775E9E356831ECA25318E7 /* Validation.swift */; };
-		C8F0AD6072D3C010793F4CC8EC7CAE72 /* GradeExtendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AEC755D700466F67308E8EE3F8BCA6 /* GradeExtendedCell.swift */; };
+		CEF58E6A5BE71063E8110A7339CF527B /* GradeExtendedCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B563C5DEA79489CDC01DB690AE4ED5A3 /* GradeExtendedCell.xib */; };
 		D07AD18EAB0F8D45C482D9305BB65FAF /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253426A16FA0FD6D9D7284E2FC697C7A /* DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D21B7325B3642887BFBE977E021F2D26 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4C384840F3F89D6EAF28BE3E3F1648 /* ResponseSerialization.swift */; };
 		D75CA395D510E08C404E55F5BDAE55CE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DB6829C9F3A9A23AF94CD5A2F79327 /* Error.swift */; };
 		D7641D1AA732470D5293BE9FCC2C1BDB /* HTWGrades.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 664B9E143C3DB55714ED27C1F5C9573E /* HTWGrades.bundle */; };
 		D858CC67304F570A8C3183AEE9DE2DDC /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91668882AA591DF713E9CDD50C98D2C /* FromJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E806216B68870AB65D0EB4F93D1C4EBD /* GradeCompactCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = DEBF6CFA6FAFD06D370AF600267D9CA8 /* GradeCompactCell.xib */; };
 		EF28B68670B22500A0B148C57AE2F9CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A1C7B2CA91D418F2A32E61F4C5F24B /* ViewController.swift */; };
 		F3603C343B28DD67F711579BB9F52909 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3749915249D6B9C4A3E2CB1FFDBED3 /* URLTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F50331624510FB5DB211BA2269A9C0DE /* Pods-HTWGrades_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E2B8662853B57A4590FF3BF5B2D3B1 /* Pods-HTWGrades_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BCD3046390F2F723B5093149D1C2E2 /* Request.swift */; };
-		FE38F1EECF84DC6674971899FBB13445 /* GradeCompactCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = EBCDFDA3A36C6A4AB12B9E0E9ABF6328 /* GradeCompactCell.xib */; };
 		FED00737C9DB83B947EE0A0F6066F7AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */; };
 		FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6920AA1ECD5BDE39A53617001EA16AB9 /* Stream.swift */; };
 /* End PBXBuildFile section */
@@ -136,41 +136,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01217CDDFF06AF263F0B3167E3D8F249 /* GradesModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesModule.swift; sourceTree = "<group>"; };
-		0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HTWGrades.xcconfig; sourceTree = "<group>"; };
 		085CC2D0FB57A2B86C885F6CB114862A /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		0C2355F024F227A6E4B51D91472A6696 /* Pods-HTWGrades_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HTWGrades_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0DAEC36F889BD1DBDB4EDD5F990DC87A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		0FA537774869974D873A436EE3D11041 /* GradeCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
 		12F3D8130A7804C473C14BD3EBBF6107 /* Pods-HTWGrades_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HTWGrades_Example-resources.sh"; sourceTree = "<group>"; };
 		1496C1C5DB861729591285D73CA4E591 /* Pods-HTWGrades_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HTWGrades_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		18E2B8662853B57A4590FF3BF5B2D3B1 /* Pods-HTWGrades_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HTWGrades_Example-umbrella.h"; sourceTree = "<group>"; };
 		19B38726F28EBC6933812FF97D7452A2 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		1DA9989A93ED55644A3C16C614D3F43B /* GradeExtendedCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeExtendedCell.swift; sourceTree = "<group>"; };
 		2295F8278601CB0639D9595559AB9DE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253426A16FA0FD6D9D7284E2FC697C7A /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = ObjectMapper/Transforms/DateTransform.swift; sourceTree = "<group>"; };
+		25AAC1CF0706F1C294EFF2FFAEA74181 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		293C849902EAAA637183BE09CDF9A757 /* Core.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Core.xcconfig; sourceTree = "<group>"; };
 		2BA148DF83C7CA614AEC283B28F5D3CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2C3749915249D6B9C4A3E2CB1FFDBED3 /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = ObjectMapper/Transforms/URLTransform.swift; sourceTree = "<group>"; };
 		31DB6829C9F3A9A23AF94CD5A2F79327 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
 		384963570398C8C529C58F1CF5AEEF07 /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = ObjectMapper/Core/ToJSON.swift; sourceTree = "<group>"; };
-		3F43946070181BC48D7FFA8FCB9863E4 /* GradeExtendedCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GradeExtendedCell.xib; sourceTree = "<group>"; };
-		46985A386309D33756138BE47803E737 /* HTWGrades-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTWGrades-prefix.pch"; sourceTree = "<group>"; };
+		3EED8D6F4A0AAFEEF0E325657937DF0A /* GradesSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesSettingsController.swift; sourceTree = "<group>"; };
 		4A99E83E35F0F921F4553756FAF9397E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D4ED66DC8E69F9EDE4389AADFD877FC /* Core-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Core-umbrella.h"; sourceTree = "<group>"; };
 		4DC3827BD6A925FFBD980D87A54633BD /* Core.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Core.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFC0E917645D4F465795405C1DDC59E /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = ObjectMapper/Core/Mappable.swift; sourceTree = "<group>"; };
 		52407A947969AC75C16FAF7DC86B7E80 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		553037A435AAC63BB59A26738C396159 /* HTWGrades-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTWGrades-dummy.m"; sourceTree = "<group>"; };
 		57BCD3046390F2F723B5093149D1C2E2 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		59AD979C5CFA0F60B7E022BD377178CB /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59AEC755D700466F67308E8EE3F8BCA6 /* GradeExtendedCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeExtendedCell.swift; sourceTree = "<group>"; };
-		5D3449C9EB695C3C80F4455C7F301CF1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F040B96A14EDBE857376CED3A3637E4 /* GradeCompactCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeCompactCell.swift; sourceTree = "<group>"; };
 		5F558461F7775E9E356831ECA25318E7 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		5FA0DD36ED71BF4D89BD485552B45A48 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = ObjectMapper/Core/Operators.swift; sourceTree = "<group>"; };
 		616C2D93C49EA80461E5F9C33970DE89 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62454E29BFCD4459D41A39A4A1F18625 /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
 		6509A4E61F5BDB7ADEB4BDFF5E525715 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		651A77670BFC9A7FAC0BA970E363072B /* HTWGrades-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTWGrades-umbrella.h"; sourceTree = "<group>"; };
 		664B9E143C3DB55714ED27C1F5C9573E /* HTWGrades.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTWGrades.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		671CDA2F3388F80A9AF10E43FD7FBCCD /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		6920AA1ECD5BDE39A53617001EA16AB9 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
@@ -178,48 +173,53 @@
 		7222B673184CF2A8F93BEE18EF8E9284 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74FEE544A1FEFB18C719F05C5705F07C /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = ObjectMapper/Transforms/EnumTransform.swift; sourceTree = "<group>"; };
 		76764CBEF9444E96ACCED501BF5ACCDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77CA9C74543D62B1D047536867C4AA0D /* GradesModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesModule.swift; sourceTree = "<group>"; };
 		77F380689C443D442113880C1173FFAD /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		78A289043B84AD06762694E99063ACBB /* GradesListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesListViewController.swift; sourceTree = "<group>"; };
 		78C4562898041AC9C9378ED8F572B4FC /* HTWGrades.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTWGrades.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1B194B89D48EAE751F842644C83147 /* HTWGrades-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTWGrades-umbrella.h"; sourceTree = "<group>"; };
 		7A837AAD77DAA8D1BCB93F958664DAF9 /* Router.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Core/Classes/Routing/Router.swift; sourceTree = "<group>"; };
 		81A6629467F9EA4B97DDED4D56F413F8 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		82CFD8106C8DE5842A8B81F11779AD1E /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		835DAFC5674DE9B3040BF36320D00F94 /* GradeCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
 		8828E8BB2B3DC6BB30AADFFC469DB9F0 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		8838B70892D55816853520BBE9238388 /* HTWGrades-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTWGrades-dummy.m"; sourceTree = "<group>"; };
 		953EB494EA95DA1F7C27CAED8D4BE600 /* Pods-HTWGrades_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HTWGrades_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		96B3A39ECF5FAB46E9CC27271E789515 /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = ObjectMapper/Transforms/TransformOf.swift; sourceTree = "<group>"; };
 		99890FA340933E3D5A22A5B990EAAAD5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4C384840F3F89D6EAF28BE3E3F1648 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		9C3633A412D7065407C4FA0738B5C99F /* GradesModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
 		9DCC965E3F180D938A6D7C076EB9BFFB /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = ObjectMapper/Transforms/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		A08B528099A7AF36F7081568E8AAC962 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
 		A913065DF8F8A11DE19ACF5A019E8658 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B563C5DEA79489CDC01DB690AE4ED5A3 /* GradeExtendedCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GradeExtendedCell.xib; sourceTree = "<group>"; };
 		B77A7E5FF9918837FE1D95AB12720300 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		B88D2D9CD80CEE46579C821C0F96D77E /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE6819925F3DC50A442D73FD678880DD /* Core-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Core-prefix.pch"; sourceTree = "<group>"; };
-		BE89D9958621F42A0E031FB34ED29967 /* HTWGrades.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HTWGrades.modulemap; sourceTree = "<group>"; };
 		C138654052DED420A265844853211EE0 /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
+		CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HTWGrades.xcconfig; sourceTree = "<group>"; };
 		CCBB4E78C52CEB249CA0D509D12F4B00 /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		CD05BA03AF23F5FE37C097C0EB95EA87 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = ObjectMapper/Core/Map.swift; sourceTree = "<group>"; };
 		CD778A1952FC121EF083B6E9BA98B672 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE34A37811166439CF2449A485D5FA39 /* Pods-HTWGrades_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HTWGrades_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D049E25B27D48E4883A6D5651D0613C8 /* Pods_HTWGrades_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HTWGrades_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B36CB337099A27FC73432AD59DB5E2 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		D4CEA01C2BAF24793C88FDDBADFA69EE /* HTWGrades.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HTWGrades.modulemap; sourceTree = "<group>"; };
 		D5190375C67B51552EA12C68BAEA18C8 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		D8304C894F40A7C693B474950B1AA92C /* Pods-HTWGrades_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HTWGrades_Example.modulemap"; sourceTree = "<group>"; };
 		D87E59C50D65AB85406DEB960D41F11C /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		D9687FD040C1D8405D75666EBE010655 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		DE6EFDAEEBCBD1A39D1DB6442F592D8D /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = ObjectMapper/Core/Mapper.swift; sourceTree = "<group>"; };
+		DEBF6CFA6FAFD06D370AF600267D9CA8 /* GradeCompactCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GradeCompactCell.xib; sourceTree = "<group>"; };
 		E1A1C7B2CA91D418F2A32E61F4C5F24B /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Core/Classes/Base Controller/ViewController.swift"; sourceTree = "<group>"; };
 		E5E1DF9DE82138F953589D5DD736D438 /* Core.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Core.modulemap; sourceTree = "<group>"; };
 		E5F43B50279D5EF13FBC2375C16B4227 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = ObjectMapper/Transforms/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		E99D2BA47BC0BE94E455059C9E034001 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = ObjectMapper/Transforms/TransformType.swift; sourceTree = "<group>"; };
 		EAD9B9AB370B30CC05BE4889D6DFF04A /* Core-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Core-dummy.m"; sourceTree = "<group>"; };
-		EB955086BE4EB57AF350AB5656D61482 /* USERNAME.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = USERNAME.swift; sourceTree = "<group>"; };
-		EBCDFDA3A36C6A4AB12B9E0E9ABF6328 /* GradeCompactCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GradeCompactCell.xib; sourceTree = "<group>"; };
+		F087D3BEA6DB3FE7E19C4A547DA2E16E /* HTWGrades-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTWGrades-prefix.pch"; sourceTree = "<group>"; };
 		F3A71B52057AD06998535747D5677D6B /* Pods-HTWGrades_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HTWGrades_Example-dummy.m"; sourceTree = "<group>"; };
-		F7A420156C5D28664ACB49DBD33BACD7 /* GradeCompactCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradeCompactCell.swift; sourceTree = "<group>"; };
 		F91668882AA591DF713E9CDD50C98D2C /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = ObjectMapper/Core/FromJSON.swift; sourceTree = "<group>"; };
-		F98DE37BC7C9CC573D0842AE7B328EB1 /* GradesModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
-		FB5E3CD9A3A2B8DFA4D991DD15E49D40 /* GradesListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradesListViewController.swift; sourceTree = "<group>"; };
 		FD5C6282C3898D555B7EE476DB1BA00D /* Pods-HTWGrades_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HTWGrades_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -285,20 +285,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08D4798CC6FDF03B7A1E8DAA9BE67142 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BE89D9958621F42A0E031FB34ED29967 /* HTWGrades.modulemap */,
-				0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */,
-				553037A435AAC63BB59A26738C396159 /* HTWGrades-dummy.m */,
-				46985A386309D33756138BE47803E737 /* HTWGrades-prefix.pch */,
-				651A77670BFC9A7FAC0BA970E363072B /* HTWGrades-umbrella.h */,
-				5D3449C9EB695C3C80F4455C7F301CF1 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/HTWGrades";
-			sourceTree = "<group>";
-		};
 		08F5083886131BF0BA5F33CE4C40F8A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,20 +335,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37D8BA54062D416FC9A053947F3791FA /* HTWGrades */ = {
-			isa = PBXGroup;
-			children = (
-				510243672B23FDE90DF3406C8490ACFF /* Pod */,
-				08D4798CC6FDF03B7A1E8DAA9BE67142 /* Support Files */,
-			);
-			name = HTWGrades;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		3ED368257059BCB5FE8F84E07FBA50FD /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37D8BA54062D416FC9A053947F3791FA /* HTWGrades */,
+				C4E132DE10DB6D9DD4F32C1C0650EB26 /* HTWGrades */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -374,18 +350,6 @@
 				A913065DF8F8A11DE19ACF5A019E8658 /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		510243672B23FDE90DF3406C8490ACFF /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				B56AFE791C7B7A2D008EAAF7 /* Cell */,
-				FB5E3CD9A3A2B8DFA4D991DD15E49D40 /* GradesListViewController.swift */,
-				F98DE37BC7C9CC573D0842AE7B328EB1 /* GradesModel.swift */,
-				01217CDDFF06AF263F0B3167E3D8F249 /* GradesModule.swift */,
-				EB955086BE4EB57AF350AB5656D61482 /* USERNAME.swift */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		5990491BEC6DBE6D9BA5B809116DE97C /* ObjectMapper */ = {
@@ -408,6 +372,18 @@
 				DAB8EE02A23B2770954E34631CA215F0 /* Support Files */,
 			);
 			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		69AEB39749053A4D30A28387E684202D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				835DAFC5674DE9B3040BF36320D00F94 /* GradeCell.swift */,
+				5F040B96A14EDBE857376CED3A3637E4 /* GradeCompactCell.swift */,
+				DEBF6CFA6FAFD06D370AF600267D9CA8 /* GradeCompactCell.xib */,
+				1DA9989A93ED55644A3C16C614D3F43B /* GradeExtendedCell.swift */,
+				B563C5DEA79489CDC01DB690AE4ED5A3 /* GradeExtendedCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -454,16 +430,14 @@
 			path = "Target Support Files/Pods-HTWGrades_Example";
 			sourceTree = "<group>";
 		};
-		B56AFE791C7B7A2D008EAAF7 /* Cell */ = {
+		C4E132DE10DB6D9DD4F32C1C0650EB26 /* HTWGrades */ = {
 			isa = PBXGroup;
 			children = (
-				0FA537774869974D873A436EE3D11041 /* GradeCell.swift */,
-				F7A420156C5D28664ACB49DBD33BACD7 /* GradeCompactCell.swift */,
-				EBCDFDA3A36C6A4AB12B9E0E9ABF6328 /* GradeCompactCell.xib */,
-				59AEC755D700466F67308E8EE3F8BCA6 /* GradeExtendedCell.swift */,
-				3F43946070181BC48D7FFA8FCB9863E4 /* GradeExtendedCell.xib */,
+				F2B67AE3006E3F5B7A0F85A37E2999F3 /* Pod */,
+				F158AE03AB4863CCF52CBD8E70BBD9AD /* Support Files */,
 			);
-			name = Cell;
+			name = HTWGrades;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		D896323404930B8C4865CE8A9D7851F2 /* Support Files */ = {
@@ -502,6 +476,32 @@
 				88E2A802DB119216D6DC46C4DB99FEB1 /* Support Files */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		F158AE03AB4863CCF52CBD8E70BBD9AD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEA01C2BAF24793C88FDDBADFA69EE /* HTWGrades.modulemap */,
+				CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */,
+				8838B70892D55816853520BBE9238388 /* HTWGrades-dummy.m */,
+				F087D3BEA6DB3FE7E19C4A547DA2E16E /* HTWGrades-prefix.pch */,
+				7A1B194B89D48EAE751F842644C83147 /* HTWGrades-umbrella.h */,
+				25AAC1CF0706F1C294EFF2FFAEA74181 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HTWGrades";
+			sourceTree = "<group>";
+		};
+		F2B67AE3006E3F5B7A0F85A37E2999F3 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				78A289043B84AD06762694E99063ACBB /* GradesListViewController.swift */,
+				9C3633A412D7065407C4FA0738B5C99F /* GradesModel.swift */,
+				77CA9C74543D62B1D047536867C4AA0D /* GradesModule.swift */,
+				3EED8D6F4A0AAFEEF0E325657937DF0A /* GradesSettingsController.swift */,
+				69AEB39749053A4D30A28387E684202D /* Cell */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		F53F464FA17A38DA59574877156C5367 /* Products */ = {
@@ -605,7 +605,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3111F6354696AC1F76A99C8A6F4B187A /* Build configuration list for PBXNativeTarget "HTWGrades" */;
 			buildPhases = (
-				D045E651D580ACA3DECE094C60075ADA /* Sources */,
+				8F23015629E961F5A124AEBE978884C9 /* Sources */,
 				6AB9A0AAB87F0192562BD92B23F640CE /* Frameworks */,
 				C8E6106CC157D9CCCEECD3A5DB69684E /* Resources */,
 				826D02093752688106077BCC6A4B7527 /* Headers */,
@@ -807,20 +807,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D045E651D580ACA3DECE094C60075ADA /* Sources */ = {
+		8F23015629E961F5A124AEBE978884C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E0E0A89D9E85534A71E5302BF7C8D0C /* GradeCell.swift in Sources */,
-				B0A69D97930C8F8029E64C4C755A51B0 /* GradeCompactCell.swift in Sources */,
-				FE38F1EECF84DC6674971899FBB13445 /* GradeCompactCell.xib in Sources */,
-				C8F0AD6072D3C010793F4CC8EC7CAE72 /* GradeExtendedCell.swift in Sources */,
-				AA9B2E38E4EDA5DA65AE17BC2ED4378B /* GradeExtendedCell.xib in Sources */,
-				729C6E493CBB475A9646771C3A4DCF15 /* GradesListViewController.swift in Sources */,
-				343448091D4DB68D8A4D3CC707503F6F /* GradesModel.swift in Sources */,
-				582E870503BBEC405FD709079A1E751A /* GradesModule.swift in Sources */,
-				42DECFB5B2C4C7879F4890F9DDABD58C /* HTWGrades-dummy.m in Sources */,
-				412EA7218B26CEEBC596A2843F040D8D /* USERNAME.swift in Sources */,
+				C18100C783C4036C84C3C42D635EB095 /* GradeCell.swift in Sources */,
+				24EABF0A2C1885086A2361820F0E09F2 /* GradeCompactCell.swift in Sources */,
+				E806216B68870AB65D0EB4F93D1C4EBD /* GradeCompactCell.xib in Sources */,
+				27117CFDA8418932E3DE74A02355F8C1 /* GradeExtendedCell.swift in Sources */,
+				CEF58E6A5BE71063E8110A7339CF527B /* GradeExtendedCell.xib in Sources */,
+				8A33058CBD31DCD83400802316FE938B /* GradesListViewController.swift in Sources */,
+				357C6D5BED1EBEDCB3A2CC8FEDCEB49C /* GradesModel.swift in Sources */,
+				705E8132C1D9B8EF63C3C4BF6EEBA249 /* GradesModule.swift in Sources */,
+				928F54660637AE6F70CFE958A72E9B2B /* GradesSettingsController.swift in Sources */,
+				27C1A94366CA1179DF73E772D8C487FC /* HTWGrades-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,7 +1018,7 @@
 		};
 		4AA33641404C32F7D3F7AD6063CF5676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */;
+			baseConfigurationReference = CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = HTWGrades;
@@ -1156,7 +1156,7 @@
 		};
 		B293C10393287BEBB88E1B5A11B2F120 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */;
+			baseConfigurationReference = CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = HTWGrades;
@@ -1195,7 +1195,7 @@
 		};
 		D11A2B27294098C14935001F844F4658 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */;
+			baseConfigurationReference = CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1223,7 +1223,7 @@
 		};
 		D182F287E49D4766CFCBE894FF6133F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0777243769A6CC1D56F0FF6AE52DE3F4 /* HTWGrades.xcconfig */;
+			baseConfigurationReference = CA44DD46AC573A7D74E3DB0CD1A0E803 /* HTWGrades.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
