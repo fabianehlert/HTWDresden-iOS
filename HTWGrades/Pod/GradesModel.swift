@@ -55,6 +55,7 @@ class GradesModel {
 			if result[grade.semester] == nil {
 				result[grade.semester] = []
 			}
+
 			result[grade.semester]?.append(grade)
 		}
 
