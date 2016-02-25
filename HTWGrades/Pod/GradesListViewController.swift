@@ -23,7 +23,7 @@ public class GradesListViewController: ViewController {
 		super.viewDidLoad()
 
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "reloadData")
-		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Play, target: self, action: "settings")
+		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "settings")
 
 		tableView.frame = view.bounds
 		tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -75,13 +75,24 @@ extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
 	public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return grades[section].first?.semester
 	}
+    
+    public func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 230/255)
+    }
+    
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
 
 	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return grades[section].count
 	}
 
 	public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-		return highlightedIndexPath == indexPath ? 200 : 50
+		return highlightedIndexPath == indexPath ? 200 : 40
 	}
 
 	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

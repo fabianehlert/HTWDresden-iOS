@@ -45,6 +45,8 @@ class GradesSettingsController: ViewController {
 		p.placeholder = "Passwort"
 		return p
 	}()
+    
+    private var bConfirm: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
 
 	private var isEdited = false
 
@@ -60,8 +62,8 @@ class GradesSettingsController: ViewController {
 
 		navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schließen", style: .Plain, target: self, action: "dismiss")
 
-		view.backgroundColor = .blackColor()
-
+		view.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        
 		username.delegate = self
 		password.delegate = self
 
@@ -70,9 +72,15 @@ class GradesSettingsController: ViewController {
 
 		password.frame = CGRect(x: 0, y: username.frame.origin.y + username.frame.size.height + 8, width: username.frame.size.width, height: 30)
 		password.autoresizingMask = [.FlexibleWidth, .FlexibleBottomMargin]
+        
+        bConfirm.setTitle("Bestätigen", forState: .Normal)
+        bConfirm.addTarget(self, action: "dismiss", forControlEvents: .TouchUpInside)
+        bConfirm.backgroundColor = UIColor(red: 0, green: 92/255, blue: 153/255, alpha: 1)
+        bConfirm.frame = CGRect(x: 0, y: password.frame.origin.y + password.frame.size.height + 8, width: username.frame.size.width, height: 30)
 
 		view.addSubview(username)
 		view.addSubview(password)
+        view.addSubview(bConfirm)
 	}
 
 	func dismiss() {

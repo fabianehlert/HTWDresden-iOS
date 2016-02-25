@@ -110,13 +110,13 @@ class GradesModel {
 	}
 
 	static func getAverage(grades: [[Grade]]) -> Double {
-
+        // Fehler fixen wobei nachgeholte Prüfungen nicht die vorhergehende Note ersetzen
 		let semesterAverages = grades.map {
 			semester -> Double in
 
 			let allCredits = semester.reduce(0.0) { $0 + $1.credits }
-			let allWeightedGrades = semester.reduce(0.0) { $0 + ($1.credits * $1.grade) }
-
+            let allWeightedGrades = semester.reduce(0.0) { $0 + ($1.credits * $1.grade) }
+            
 			return allWeightedGrades / allCredits
 		}
 
