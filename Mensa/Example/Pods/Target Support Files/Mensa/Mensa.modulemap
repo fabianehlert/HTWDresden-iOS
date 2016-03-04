@@ -1,0 +1,6 @@
+framework module Mensa {
+  umbrella header "Mensa-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+PODS:
+  - Mensa (0.1.0)
+
+DEPENDENCIES:
+  - Mensa (from `../`)
+
+EXTERNAL SOURCES:
+  Mensa:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Mensa: 382e6fb3b4978d32764677222a33e2f7e9ca787e
+
+COCOAPODS: 0.39.0

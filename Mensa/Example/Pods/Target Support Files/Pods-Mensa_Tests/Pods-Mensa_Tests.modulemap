@@ -1,0 +1,6 @@
+framework module Pods_Mensa_Tests {
+  umbrella header "Pods-Mensa_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

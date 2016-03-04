@@ -1,0 +1,25 @@
+{
+  "name": "Mensa",
+  "version": "0.1.0",
+  "summary": "A short description of Mensa.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Mensa",
+  "license": "MIT",
+  "authors": {
+    "Benjamin Herzog": "herzog.benjamin@me.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Mensa.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Mensa": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
