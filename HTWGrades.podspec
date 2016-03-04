@@ -6,18 +6,15 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/HTWGrades"
-  s.license          = 'MIT'
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/HTWGrades.git", :tag => s.version.to_s }
+  s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.0'
 
-  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'HTWGrades/Pod/**/*'
   s.resource_bundles = {
-    'HTWGrades' => ['Pod/Assets/*.png']
+    'HTWGrades' => ['HTWGrades/Pod/Assets/*.png']
   }
   
-  s.dependency 'ObjectMapper'
-  s.dependency 'Alamofire'
+  s.dependency 'Core'
 end

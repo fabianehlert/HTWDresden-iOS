@@ -6,10 +6,6 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/HTWDD/HTWDresden-iOS"
-  s.license          = 'MIT'
-  s.author           = { "Benjamin Herzog" => "mail@benchr.de" }
-
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
 
@@ -19,4 +15,5 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
   s.dependency 'Alamofire'
+  s.dependency 'ObjectMapper'
 end
