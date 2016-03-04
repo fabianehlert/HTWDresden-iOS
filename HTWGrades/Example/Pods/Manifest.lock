@@ -1,32 +1,26 @@
 PODS:
-  - Alamofire (3.1.5)
+  - Alamofire (3.2.1)
   - Core (0.0.1):
-    - Alamofire (~> 3.1.5)
+    - Alamofire
   - HTWGrades (0.0.1):
     - Alamofire
     - ObjectMapper
   - ObjectMapper (1.1.5)
 
 DEPENDENCIES:
-  - Core (from `git@github.com:HTWDD/iOS-Core.git`, commit `33a7ef1`)
-  - HTWGrades (from `../`)
+  - Core (from `../../`)
+  - HTWGrades (from `../../`)
 
 EXTERNAL SOURCES:
   Core:
-    :commit: 33a7ef1
-    :git: git@github.com:HTWDD/iOS-Core.git
+    :path: "../../"
   HTWGrades:
-    :path: ../
-
-CHECKOUT OPTIONS:
-  Core:
-    :commit: 33a7ef1
-    :git: git@github.com:HTWDD/iOS-Core.git
+    :path: "../../"
 
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
-  Core: 41566cb90a5c60ad5554b411b70a343456bd0efb
-  HTWGrades: 2d5a38e843bb0cb03545ac75e0038bf34b566116
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Core: 9727f0596c016eb06076733afe6df54b54cacfd4
+  HTWGrades: f37b54157973cac42aa4992b2b2d54969e623913
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
 
 COCOAPODS: 0.39.0

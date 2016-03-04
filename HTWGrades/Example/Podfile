@@ -2,7 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'HTWGrades_Example', :exclusive => true do
-  pod 'HTWGrades', :path => '../'
+  pod 'HTWGrades', :path => '../../'
 
-  pod 'Core', :git => 'git@github.com:HTWDD/iOS-Core.git', :commit => '33a7ef1'
+  pod 'Core', :path => '../../'
 end
