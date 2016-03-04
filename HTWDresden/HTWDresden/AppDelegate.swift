@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let m = MensaModule()
 		router.registerModule(m)
 		
-		window?.rootViewController = m.initialController
+		window?.rootViewController = l.initialController
 		window?.makeKeyAndVisible()
 		
 		return true
