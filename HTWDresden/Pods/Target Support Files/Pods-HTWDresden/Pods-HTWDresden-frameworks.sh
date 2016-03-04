@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HTWDresden/Grades.framework"
   install_framework "Pods-HTWDresden/Lesson.framework"
   install_framework "Pods-HTWDresden/ObjectMapper.framework"
+  install_framework "Pods-HTWDresden/SwiftString.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HTWDresden/Alamofire.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HTWDresden/Grades.framework"
   install_framework "Pods-HTWDresden/Lesson.framework"
   install_framework "Pods-HTWDresden/ObjectMapper.framework"
+  install_framework "Pods-HTWDresden/SwiftString.framework"
 fi

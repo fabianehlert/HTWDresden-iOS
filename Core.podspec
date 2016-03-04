@@ -16,4 +16,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
+  s.dependency 'SwiftString'
 end

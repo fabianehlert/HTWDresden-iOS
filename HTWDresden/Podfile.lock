@@ -3,11 +3,13 @@ PODS:
   - Core (0.0.1):
     - Alamofire
     - ObjectMapper
+    - SwiftString
   - Grades (0.0.1):
     - Core
   - Lesson (0.0.1):
     - Core
   - ObjectMapper (1.1.5)
+  - SwiftString (0.4)
 
 DEPENDENCIES:
   - Core (from `../`)
@@ -24,9 +26,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
-  Core: c4b5db1f6a9dd79ca9408c8b0d47bd45cb2d7769
+  Core: dde655c97cea474f863130a34d709684134f8f50
   Grades: bc6960018bc3cc20f712e70dfbc9a35de7bc7065
   Lesson: 0079bf5764d65de8502701427b7905297d24efeb
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
+  SwiftString: 23dbbc68d1385c17160c5363dd5e11f9ed3f6dfb
 
 COCOAPODS: 0.39.0
