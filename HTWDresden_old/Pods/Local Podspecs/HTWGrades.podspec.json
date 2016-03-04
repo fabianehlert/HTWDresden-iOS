@@ -1,0 +1,30 @@
+{
+  "name": "HTWGrades",
+  "version": "0.0.1",
+  "summary": "A short description of HTWGrades.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/HTWGrades",
+  "license": "MIT",
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/HTWGrades.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "HTWGrades/Pod/**/*",
+  "resource_bundles": {
+    "HTWGrades": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "ObjectMapper": [
+
+    ],
+    "Alamofire": [
+
+    ]
+  }
+}

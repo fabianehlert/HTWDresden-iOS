@@ -2,12 +2,12 @@
 //  HTWDresdenTests.swift
 //  HTWDresdenTests
 //
-//  Created by Benjamin Herzog on 21.08.14.
-//  Copyright (c) 2014 Benjamin Herzog. All rights reserved.
+//  Created by Benjamin Herzog on 04/03/16.
+//  Copyright © 2016 HTW Dresden. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import HTWDresden
 
 class HTWDresdenTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class HTWDresdenTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }

@@ -1,6 +1,16 @@
 source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'HTWGrades', :path => '../'
-pod 'Core', :path => '../'
+target 'HTWDresden' do
+
+	pod 'Core', :path => '../'
+	pod 'HTWGrades', :path => '../'
+
+end
+
+target 'HTWDresdenTests' do
+
+end
+
