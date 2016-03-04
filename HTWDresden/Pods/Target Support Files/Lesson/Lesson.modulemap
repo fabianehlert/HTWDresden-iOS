@@ -1,6 +1,0 @@
-framework module Lesson {
-  umbrella header "Lesson-umbrella.h"
-
-  export *
-  module * { export * }
-}
