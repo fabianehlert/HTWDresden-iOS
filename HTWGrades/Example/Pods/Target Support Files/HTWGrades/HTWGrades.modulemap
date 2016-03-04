@@ -1,6 +1,0 @@
-framework module HTWGrades {
-  umbrella header "HTWGrades-umbrella.h"
-
-  export *
-  module * { export * }
-}

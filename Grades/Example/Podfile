@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'HTWGrades_Example', :exclusive => true do
+	pod 'Grades', :path => '../../'
+	
+	pod 'Core', :path => '../../'
+end

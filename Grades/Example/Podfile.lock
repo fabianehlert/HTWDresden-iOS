@@ -8,14 +8,14 @@ PODS:
   - ObjectMapper (1.1.5)
 
 DEPENDENCIES:
-  - Core (from `../`)
-  - Grades (from `../`)
+  - Core (from `../../`)
+  - Grades (from `../../`)
 
 EXTERNAL SOURCES:
   Core:
-    :path: "../"
+    :path: "../../"
   Grades:
-    :path: "../"
+    :path: "../../"
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a

@@ -6,7 +6,7 @@ use_frameworks!
 target 'HTWDresden' do
 
 	pod 'Core', :path => '../'
-	pod 'HTWGrades', :path => '../'
+	pod 'Grades', :path => '../'
 
 end
 

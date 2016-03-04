@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  HTWDresden
+//  HTWGrades
 //
-//  Created by Benjamin Herzog on 04/03/16.
-//  Copyright © 2016 HTW Dresden. All rights reserved.
+//  Created by Benjamin Herzog on 02/20/2016.
+//  Copyright (c) 2016 Benjamin Herzog. All rights reserved.
 //
 
 import UIKit
-import Core
 import Grades
 
 @UIApplicationMain
@@ -15,19 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    let router = Router()
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window = UIWindow()
         
-        let g = GradesModule()
-        router.registerModule(g)
-        
-        window?.rootViewController = g.initialController
+        let module = GradesModule.shared
+        window?.rootViewController = module.initialController
         window?.makeKeyAndVisible()
         
         return true
     }
 }
-
