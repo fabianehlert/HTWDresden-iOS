@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HTWDresden/Alamofire.framework"
   install_framework "Pods-HTWDresden/Core.framework"
   install_framework "Pods-HTWDresden/Grades.framework"
+  install_framework "Pods-HTWDresden/Lesson.framework"
   install_framework "Pods-HTWDresden/ObjectMapper.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HTWDresden/Alamofire.framework"
   install_framework "Pods-HTWDresden/Core.framework"
   install_framework "Pods-HTWDresden/Grades.framework"
+  install_framework "Pods-HTWDresden/Lesson.framework"
   install_framework "Pods-HTWDresden/ObjectMapper.framework"
 fi

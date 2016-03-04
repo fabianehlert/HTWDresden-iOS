@@ -9,6 +9,7 @@
 import UIKit
 import Core
 import Grades
+import Lesson
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,8 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let g = GradesModule()
         router.registerModule(g)
+		
+		let l = LessonsModule()
+		router.registerModule(l)
         
-        window?.rootViewController = g.initialController
+        window?.rootViewController = l.initialController
         window?.makeKeyAndVisible()
         
         return true
