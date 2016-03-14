@@ -81,10 +81,10 @@ class Parser: NSObject, NSXMLParserDelegate {
                 var intIndex: Int = self.strTitle.startIndex.distanceTo(startRange!.startIndex)
                 let startIndex = self.strTitle.startIndex.advancedBy(intIndex + (startRange?.count)!)
                 intIndex = self.strTitle.startIndex.distanceTo(endRange!.startIndex)
-                let endIndex = self.strTitle.startIndex.advancedBy(intIndex - 2)
+                let endIndex = self.strTitle.startIndex.advancedBy(intIndex + 2)
                 let range = startIndex...endIndex
                 self.strCost = self.strTitle[range]
-                self.strCost.appendContentsOf("€")
+                self.strCost = self.strCost.stringByReplacingOccurrencesOfString("EUR", withString: "€")
             }
             MealData.append(MealData_t(strTitle: self.strTitle, strDescription: self.strDescription, strMensa: self.strMensa, strCost: self.strCost))
             self.strTitle.removeAll()
