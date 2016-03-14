@@ -25,6 +25,8 @@ class Parser: NSObject, NSXMLParserDelegate {
     var strTitle: String = ""
     var strDescription: String = ""
     var strMensa: String = ""
+    var strCostStudent: String = ""
+    var strCostOther: String = ""
     var bParseTitle: Bool = false
     var bParseDescription: Bool = false
     var bParseMensa: Bool = false
@@ -74,7 +76,29 @@ class Parser: NSObject, NSXMLParserDelegate {
         }
         else if elementName == "author" {
             bParseMensa = false
-            MealData.append(MealData_t(strTitle: self.strTitle, strDescription: self.strDescription, strMensa: self.strMensa))
+            let startRange1 = self.strDescription.rangeOfString("(Studierende: ")
+            let endRange1 = self.strDescription.rangeOfString("EUR")
+            let startRange2 = self.strDescription.rangeOfString("/ Bedienstete: ")
+            let endRange2 = self.strDescription.rangeOfString("EUR)")
+            if startRange1 != nil {
+                var intIndex: Int = self.strDescription.startIndex.distanceTo(startRange1!.startIndex)
+                let startIndex = self.strDescription.startIndex.advancedBy(intIndex + (startRange1?.count)!)
+                intIndex = self.strDescription.startIndex.distanceTo(endRange1!.startIndex)
+                let endIndex = self.strDescription.startIndex.advancedBy(intIndex - 2)
+                let range2 = startIndex...endIndex
+                strCostStudent = self.strDescription[range2]
+                strCostStudent.appendContentsOf("€")
+            }
+            if startRange2 != nil {
+                var intIndex: Int = self.strDescription.startIndex.distanceTo(startRange2!.startIndex)
+                let startIndex = self.strDescription.startIndex.advancedBy(intIndex + (startRange2?.count)!)
+                intIndex = self.strDescription.startIndex.distanceTo(endRange2!.startIndex)
+                let endIndex = self.strDescription.startIndex.advancedBy(intIndex - 2)
+                let range2 = startIndex...endIndex
+                strCostOther = self.strDescription[range2]
+                strCostOther.appendContentsOf("€")
+            }
+            MealData.append(MealData_t(strTitle: self.strTitle, strDescription: self.strDescription, strMensa: self.strMensa, strCostStudent: self.strCostStudent, strCostOther: self.strCostOther))
             self.strTitle.removeAll()
             self.strDescription.removeAll()
             self.strMensa.removeAll()
@@ -97,5 +121,7 @@ class Parser: NSObject, NSXMLParserDelegate {
         var strTitle: String
         var strDescription: String
         var strMensa: String
+        var strCostStudent: String
+        var strCostOther: String
     }
 }
