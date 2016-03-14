@@ -26,13 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let g = GradesModule()
 		router.registerModule(g)
 		
-		let l = LessonsModule()
-		router.registerModule(l)
+		//let l = LessonsModule()
+		//router.registerModule(l)
 		
 		let m = MensaModule()
 		router.registerModule(m)
 		
-		window?.rootViewController = l.initialController
+		window?.rootViewController = m.initialController
 		window?.makeKeyAndVisible()
 		
 		return true
