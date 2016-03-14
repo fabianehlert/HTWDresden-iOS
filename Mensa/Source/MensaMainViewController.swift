@@ -102,6 +102,8 @@ class Parser: NSObject, NSXMLParserDelegate {
             self.strTitle.removeAll()
             self.strDescription.removeAll()
             self.strMensa.removeAll()
+            self.strCostStudent.removeAll()
+            self.strCostOther.removeAll()
         }
     }
     
