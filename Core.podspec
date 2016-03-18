@@ -1,4 +1,5 @@
 Pod::Spec.new do |s|
+
   s.name             = "Core"
   s.version          = "0.0.1"
   s.summary          = "This is the Core-Library for the HTWDresden iOS-App."
@@ -17,4 +18,5 @@ Pod::Spec.new do |s|
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
   s.dependency 'SwiftString'
+  
 end

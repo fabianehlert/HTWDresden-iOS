@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '24F6E0764F0B9AEF5CF9FAE6'
+               BlueprintIdentifier = 'F760BBC6446AFEF7070E3C4D'
                BlueprintName = 'Mensa'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Mensa.framework'>

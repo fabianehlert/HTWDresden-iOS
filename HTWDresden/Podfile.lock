@@ -11,7 +11,7 @@ PODS:
   - Mensa (0.0.1):
     - Core
   - ObjectMapper (1.1.5)
-  - SwiftString (0.4)
+  - SwiftString (0.5)
 
 DEPENDENCIES:
   - Core (from `../`)
@@ -21,13 +21,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Core:
-    :path: "../"
+    :path: ../
   Grades:
-    :path: "../"
+    :path: ../
   Lesson:
-    :path: "../"
+    :path: ../
   Mensa:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
@@ -36,6 +36,6 @@ SPEC CHECKSUMS:
   Lesson: 0079bf5764d65de8502701427b7905297d24efeb
   Mensa: 3fa64364a4e5210e9e14897b2a9628c29185f858
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
-  SwiftString: 23dbbc68d1385c17160c5363dd5e11f9ed3f6dfb
+  SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
 COCOAPODS: 0.39.0

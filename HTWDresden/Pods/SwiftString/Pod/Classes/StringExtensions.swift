@@ -26,7 +26,7 @@ public extension String {
     
     // https://gist.github.com/stevenschobert/540dd33e828461916c11
     func camelize() -> String {
-        let source = clean(" ", allOf: "-", "_")
+        let source = clean(with: " ", allOf: "-", "_")
         if source.characters.contains(" ") {
             let first = source.substringToIndex(source.startIndex.advancedBy(1))
             let cammel = NSString(format: "%@", (source as NSString).capitalizedString.stringByReplacingOccurrencesOfString(" ", withString: "", options: [], range: nil)) as String
@@ -74,7 +74,7 @@ public extension String {
         return components.joinWithSeparator(" ")
     }
     
-    func clean(with: String, allOf: String...) -> String {
+    func clean(with with: String, allOf: String...) -> String {
         var string = self
         for target in allOf {
             string = string.stringByReplacingOccurrencesOfString(target, withString: with)
@@ -138,8 +138,7 @@ public extension String {
     }
     
     func isEmpty() -> Bool {
-        let nonWhitespaceSet = NSCharacterSet.whitespaceAndNewlineCharacterSet().invertedSet
-        return componentsSeparatedByCharactersInSet(nonWhitespaceSet).joinWithSeparator("").length != 0
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).length == 0
     }
     
     func isNumeric() -> Bool {
@@ -149,7 +148,7 @@ public extension String {
         return false
     }
     
-    func join<S : SequenceType>(elements: S) -> String {
+    func join<S: SequenceType>(elements: S) -> String {
         return elements.map{String($0)}.joinWithSeparator(self)
     }
     
@@ -158,7 +157,7 @@ public extension String {
     }
     
     func lines() -> [String] {
-        return characters.split{$0 == "\n"}.map(String.init)
+        return self.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
     }
     
     var length: Int {
@@ -179,13 +178,13 @@ public extension String {
         return "".join([self, string.times(n)])
     }
     
-    func slugify() -> String {
-        let slugCharacterSet = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-")
+    func slugify(withSeparator separator: Character = "-") -> String {
+        let slugCharacterSet = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\(separator)")
         return latinize()
             .lowercaseString
             .componentsSeparatedByCharactersInSet(slugCharacterSet.invertedSet)
             .filter { $0 != "" }
-            .joinWithSeparator("-")
+            .joinWithSeparator(String(separator))
     }
     
     func split(separator: Character) -> [String] {
@@ -245,7 +244,7 @@ public extension String {
         return dateFormatter.dateFromString(self)
     }
     
-    func toDateTime(format : String = "yyyy-MM-dd HH:mm:ss") -> NSDate? {
+    func toDateTime(format: String = "yyyy-MM-dd HH:mm:ss") -> NSDate? {
         return toDate(format)
     }
     
@@ -253,7 +252,6 @@ public extension String {
         if let range = rangeOfCharacterFromSet(NSCharacterSet.whitespaceAndNewlineCharacterSet().invertedSet) {
             return self[range.startIndex..<endIndex]
         }
-        
         return self
     }
     
@@ -261,19 +259,17 @@ public extension String {
         if let range = rangeOfCharacterFromSet(NSCharacterSet.whitespaceAndNewlineCharacterSet().invertedSet, options: NSStringCompareOptions.BackwardsSearch) {
             return self[startIndex..<range.endIndex]
         }
-        
         return self
     }
     
     func trimmed() -> String {
-        return trimmedLeft().trimmedRight()
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
     
     subscript(r: Range<Int>) -> String {
         get {
             let startIndex = self.startIndex.advancedBy(r.startIndex)
             let endIndex = self.startIndex.advancedBy(r.endIndex - r.startIndex)
-            
             return self[startIndex..<endIndex]
         }
     }
@@ -289,7 +285,5 @@ public extension String {
             let index = self.startIndex.advancedBy(i)
             return self[index]
         }
-    }
-    
-    
+    }    
 }
