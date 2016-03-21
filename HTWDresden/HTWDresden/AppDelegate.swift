@@ -9,7 +9,7 @@
 import UIKit
 import Core
 import Grades
-import Lesson
+//import Lesson
 import Mensa
 
 @UIApplicationMain
