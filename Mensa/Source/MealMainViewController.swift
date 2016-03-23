@@ -1,28 +1,19 @@
 //
-//  MensaMainViewController.swift
+//  MealMainViewController.swift
 //  Pods
 //
-//  Created by Benjamin Herzog on 04/03/16.
+//  Created by Daniel Martin on 23.03.16.
 //
 //
 
-import UIKit
-import Core
-
-let getMensa = "http://www.studentenwerk-dresden.de/feeds/speiseplan.rss"
-
-var mensaData: [MensaData_t] = []
-var selectedMensa: Int = 0
-var iUniqueMensen: [Int] = []
-
-class MensaMainViewController: Core.ViewController {
-
+class MealMainViewController: UIViewController {
     var tableView = UITableView()
-    
     var data: [String] = []
-
+    var mealData: [MensaData_t] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.frame = view.bounds
         tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         tableView.delegate      =   self
@@ -32,27 +23,20 @@ class MensaMainViewController: Core.ViewController {
         
         self.view.addSubview(tableView)
         
-        let p: Parser = Parser.init(strPath: getMensa)
-        mensaData = p.loadData()
-        var bUnique = true
-        for (var i = 0; i < mensaData.count; i += 1) {
-            for index in data {
-                if index == mensaData[i].strMensa {
-                    bUnique = false
-                }
-                else {
-                    bUnique = true
-                }
-            }
-            if bUnique {
-                data.append(mensaData[i].strMensa)
-                iUniqueMensen.append(i)
+        GetMealData()
+    }
+    
+    func GetMealData() {
+        for iIndex in mensaData {
+            if (iIndex.strMensa == mensaData[selectedMensa].strMensa) {
+                mealData.append(iIndex)
+                data.append(iIndex.strTitle)
             }
         }
     }
 }
 
-extension MensaMainViewController: UITableViewDelegate, UITableViewDataSource {
+extension MealMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
@@ -67,9 +51,9 @@ extension MensaMainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(mensaData[iUniqueMensen[indexPath.row]].strMensa)
-        selectedMensa = iUniqueMensen[indexPath.row]
-        self.navigationController?.pushViewController(MealMainViewController(), animated: true)
+        print(mensaData[selectedMensa + indexPath.row].strTitle)
+        print(mensaData[selectedMensa + indexPath.row].strDescription)
+        print(mensaData[selectedMensa + indexPath.row].strCost)
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,5 +61,3 @@ extension MensaMainViewController: UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 }
-
-

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MealData_t {
+struct MensaData_t {
     var strTitle: String
     var strDescription: String
     var strMensa: String
@@ -25,7 +25,7 @@ class Parser: NSObject, NSXMLParserDelegate {
     var bParseTitle: Bool = false
     var bParseDescription: Bool = false
     var bParseMensa: Bool = false
-    var MealData: [MealData_t] = [MealData_t]()
+    var MensaData: [MensaData_t] = [MensaData_t]()
     
     override init() {
         super.init()
@@ -35,7 +35,7 @@ class Parser: NSObject, NSXMLParserDelegate {
         self.strPath = strPath
     }
     
-    func loadData () -> [MealData_t] {
+    func loadData () -> [MensaData_t] {
         let url: NSURL = NSURL(string: strPath)!
         parser = NSXMLParser(contentsOfURL: url)!
         parser.delegate = self
@@ -47,7 +47,7 @@ class Parser: NSObject, NSXMLParserDelegate {
         else {
             print("Fehler beim Parsen der Mensadaten!")
         }
-        return MealData
+        return MensaData
     }
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
@@ -82,7 +82,7 @@ class Parser: NSObject, NSXMLParserDelegate {
                 self.strCost = self.strTitle[range]
                 self.strCost = self.strCost.stringByReplacingOccurrencesOfString("EUR", withString: "€")
             }
-            MealData.append(MealData_t(strTitle: self.strTitle, strDescription: self.strDescription, strMensa: self.strMensa, strCost: self.strCost))
+            MensaData.append(MensaData_t(strTitle: self.strTitle, strDescription: self.strDescription, strMensa: self.strMensa, strCost: self.strCost))
             self.strTitle.removeAll()
             self.strDescription.removeAll()
             self.strMensa.removeAll()
