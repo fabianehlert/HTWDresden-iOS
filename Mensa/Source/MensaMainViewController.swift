@@ -61,6 +61,7 @@ extension MensaMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         cell.textLabel?.text = self.data[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
         

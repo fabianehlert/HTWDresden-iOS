@@ -6,6 +6,8 @@
 //
 //
 
+var selectedMeal: Int = 0
+
 class MealMainViewController: UIViewController {
     var tableView = UITableView()
     var data: [String] = []
@@ -45,15 +47,18 @@ extension MealMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
         cell.textLabel?.text = self.data[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(mensaData[selectedMensa + indexPath.row].strTitle)
-        print(mensaData[selectedMensa + indexPath.row].strDescription)
-        print(mensaData[selectedMensa + indexPath.row].strCost)
+        selectedMeal = selectedMensa + indexPath.row
+        print(mensaData[selectedMeal].strTitle)
+        print(mensaData[selectedMeal].strDescription)
+        print(mensaData[selectedMeal].strCost)
+        self.navigationController?.pushViewController(MealDetailViewController(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
