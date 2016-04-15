@@ -7,7 +7,6 @@ target 'HTWDresden' do
 	
 	pod 'Core', :path => '../'
 	pod 'Grades', :path => '../'
-	pod 'Lesson', :path => '../'
 	pod 'Mensa', :path => '../'
 	
 end
@@ -15,4 +14,3 @@ end
 target 'HTWDresdenTests' do
 	
 end
-
