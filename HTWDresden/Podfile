@@ -5,10 +5,13 @@ use_frameworks!
 
 target 'HTWDresden' do
 	
-	pod 'Core', :path => '../'
-	pod 'Grades', :path => '../'
-	pod 'Mensa', :path => '../'
-	
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'SwiftString'
+    pod 'Kingfisher', '~> 2.2'
+    pod 'Cartography'
+    pod 'ReactiveUI'
+    
 end
 
 target 'HTWDresdenTests' do

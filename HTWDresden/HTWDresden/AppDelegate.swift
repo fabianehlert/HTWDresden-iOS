@@ -7,19 +7,14 @@
 //
 
 import UIKit
-import Core
-import Grades
-import Mensa
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 	var window: UIWindow?
 
 	let router = Router()
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
 		window = UIWindow()
 
 		let g = GradesModule()
@@ -28,7 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let m = MensaModule()
 		router.registerModule(m)
 
-		window?.rootViewController = m.initialController
+		let tabbar = UITabBarController()
+		tabbar.viewControllers = router.modules.map { $0.1.initialController }
+
+		window?.rootViewController = TabbarController(items: router.modules.map { $0 })
 		window?.makeKeyAndVisible()
 
 		return true

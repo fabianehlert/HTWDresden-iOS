@@ -1,38 +1,25 @@
 PODS:
   - Alamofire (3.3.1)
-  - Core (0.0.1):
-    - Alamofire
-    - Kingfisher (~> 2.2)
-    - ObjectMapper
-    - SwiftString
-  - Grades (0.0.1):
-    - Core
+  - Cartography (0.6.0)
   - Kingfisher (2.2.2)
-  - Mensa (0.0.1):
-    - Core
   - ObjectMapper (1.2.0)
+  - ReactiveUI (0.0.3)
   - SwiftString (0.5)
 
 DEPENDENCIES:
-  - Core (from `../`)
-  - Grades (from `../`)
-  - Mensa (from `../`)
-
-EXTERNAL SOURCES:
-  Core:
-    :path: ../
-  Grades:
-    :path: ../
-  Mensa:
-    :path: ../
+  - Alamofire
+  - Cartography
+  - Kingfisher (~> 2.2)
+  - ObjectMapper
+  - ReactiveUI
+  - SwiftString
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  Core: a90ab08c7d5b04616ffa77dbb97a93e76b9c3ee2
-  Grades: bc6960018bc3cc20f712e70dfbc9a35de7bc7065
+  Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
   Kingfisher: 7e8de5b0cf7b5dc8ec559d193029a0859df93ef1
-  Mensa: 3fa64364a4e5210e9e14897b2a9628c29185f858
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  ReactiveUI: 05d1f5d884e5a2496a2cd2ac6c0ed35ab0218c02
   SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
 COCOAPODS: 0.39.0

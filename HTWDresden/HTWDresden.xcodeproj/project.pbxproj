@@ -11,6 +11,26 @@
 		B51104E81C89916400E962A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51104E71C89916400E962A2 /* Assets.xcassets */; };
 		B51104EB1C89916400E962A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51104E91C89916400E962A2 /* LaunchScreen.storyboard */; };
 		B51104F61C89916400E962A2 /* HTWDresdenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51104F51C89916400E962A2 /* HTWDresdenTests.swift */; };
+		B51EB88C1CC6A220007AE0FE /* MealDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8831CC6A220007AE0FE /* MealDetailViewCell.swift */; };
+		B51EB88D1CC6A220007AE0FE /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8841CC6A220007AE0FE /* MealDetailViewController.swift */; };
+		B51EB88E1CC6A220007AE0FE /* MealMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8851CC6A220007AE0FE /* MealMainViewController.swift */; };
+		B51EB88F1CC6A220007AE0FE /* MensaMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8871CC6A220007AE0FE /* MensaMainCollectionViewCell.swift */; };
+		B51EB8901CC6A220007AE0FE /* MensaMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8881CC6A220007AE0FE /* MensaMainViewController.swift */; };
+		B51EB8911CC6A220007AE0FE /* MensaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB88A1CC6A220007AE0FE /* MensaModule.swift */; };
+		B51EB8921CC6A220007AE0FE /* MensaParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB88B1CC6A220007AE0FE /* MensaParser.swift */; };
+		B51EB8981CC6A34F007AE0FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8951CC6A34F007AE0FE /* ViewController.swift */; };
+		B51EB8991CC6A34F007AE0FE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8971CC6A34F007AE0FE /* Router.swift */; };
+		B51EB8A51CC6A373007AE0FE /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB89C1CC6A373007AE0FE /* GradeCell.swift */; };
+		B51EB8A61CC6A373007AE0FE /* GradeCompactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB89D1CC6A373007AE0FE /* GradeCompactCell.swift */; };
+		B51EB8A71CC6A373007AE0FE /* GradeCompactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51EB89E1CC6A373007AE0FE /* GradeCompactCell.xib */; };
+		B51EB8A81CC6A373007AE0FE /* GradeExtendedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB89F1CC6A373007AE0FE /* GradeExtendedCell.swift */; };
+		B51EB8A91CC6A373007AE0FE /* GradeExtendedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51EB8A01CC6A373007AE0FE /* GradeExtendedCell.xib */; };
+		B51EB8AA1CC6A373007AE0FE /* GradesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8A11CC6A373007AE0FE /* GradesListViewController.swift */; };
+		B51EB8AB1CC6A373007AE0FE /* GradesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8A21CC6A373007AE0FE /* GradesModel.swift */; };
+		B51EB8AC1CC6A373007AE0FE /* GradesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8A31CC6A373007AE0FE /* GradesModule.swift */; };
+		B51EB8AD1CC6A373007AE0FE /* GradesSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8A41CC6A373007AE0FE /* GradesSettingsController.swift */; };
+		B51EB8B01CC6A5A7007AE0FE /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8AF1CC6A5A7007AE0FE /* TabbarController.swift */; };
+		B51EB8B31CC6AB61007AE0FE /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51EB8B21CC6AB61007AE0FE /* Dictionary.swift */; };
 		EFCE404210C5D97BBD68B1B9 /* Pods_HTWDresden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C8557038304520DA18E25D /* Pods_HTWDresden.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +56,26 @@
 		B51104F11C89916400E962A2 /* HTWDresdenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTWDresdenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51104F51C89916400E962A2 /* HTWDresdenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTWDresdenTests.swift; sourceTree = "<group>"; };
 		B51104F71C89916400E962A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B51EB8831CC6A220007AE0FE /* MealDetailViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailViewCell.swift; sourceTree = "<group>"; };
+		B51EB8841CC6A220007AE0FE /* MealDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
+		B51EB8851CC6A220007AE0FE /* MealMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealMainViewController.swift; sourceTree = "<group>"; };
+		B51EB8871CC6A220007AE0FE /* MensaMainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensaMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		B51EB8881CC6A220007AE0FE /* MensaMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensaMainViewController.swift; sourceTree = "<group>"; };
+		B51EB88A1CC6A220007AE0FE /* MensaModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensaModule.swift; sourceTree = "<group>"; };
+		B51EB88B1CC6A220007AE0FE /* MensaParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MensaParser.swift; sourceTree = "<group>"; };
+		B51EB8951CC6A34F007AE0FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B51EB8971CC6A34F007AE0FE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B51EB89C1CC6A373007AE0FE /* GradeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
+		B51EB89D1CC6A373007AE0FE /* GradeCompactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeCompactCell.swift; sourceTree = "<group>"; };
+		B51EB89E1CC6A373007AE0FE /* GradeCompactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradeCompactCell.xib; sourceTree = "<group>"; };
+		B51EB89F1CC6A373007AE0FE /* GradeExtendedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeExtendedCell.swift; sourceTree = "<group>"; };
+		B51EB8A01CC6A373007AE0FE /* GradeExtendedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GradeExtendedCell.xib; sourceTree = "<group>"; };
+		B51EB8A11CC6A373007AE0FE /* GradesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesListViewController.swift; sourceTree = "<group>"; };
+		B51EB8A21CC6A373007AE0FE /* GradesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesModel.swift; sourceTree = "<group>"; };
+		B51EB8A31CC6A373007AE0FE /* GradesModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesModule.swift; sourceTree = "<group>"; };
+		B51EB8A41CC6A373007AE0FE /* GradesSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesSettingsController.swift; sourceTree = "<group>"; };
+		B51EB8AF1CC6A5A7007AE0FE /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		B51EB8B21CC6AB61007AE0FE /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				B51104E01C89916400E962A2 /* AppDelegate.swift */,
+				B51EB8AE1CC6A595007AE0FE /* Main App */,
+				B51EB89A1CC6A36A007AE0FE /* Grades */,
+				B51EB8931CC6A340007AE0FE /* Core */,
+				B51EB8811CC6A213007AE0FE /* Mensa */,
 				B51104E71C89916400E962A2 /* Assets.xcassets */,
 				B51104E91C89916400E962A2 /* LaunchScreen.storyboard */,
 				B51104EC1C89916400E962A2 /* Info.plist */,
@@ -112,6 +156,110 @@
 				B51104F71C89916400E962A2 /* Info.plist */,
 			);
 			path = HTWDresdenTests;
+			sourceTree = "<group>";
+		};
+		B51EB8811CC6A213007AE0FE /* Mensa */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8821CC6A220007AE0FE /* Detail */,
+				B51EB8851CC6A220007AE0FE /* MealMainViewController.swift */,
+				B51EB8861CC6A220007AE0FE /* MensaOverview */,
+				B51EB8891CC6A220007AE0FE /* Models */,
+			);
+			name = Mensa;
+			sourceTree = "<group>";
+		};
+		B51EB8821CC6A220007AE0FE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8831CC6A220007AE0FE /* MealDetailViewCell.swift */,
+				B51EB8841CC6A220007AE0FE /* MealDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B51EB8861CC6A220007AE0FE /* MensaOverview */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8871CC6A220007AE0FE /* MensaMainCollectionViewCell.swift */,
+				B51EB8881CC6A220007AE0FE /* MensaMainViewController.swift */,
+			);
+			path = MensaOverview;
+			sourceTree = "<group>";
+		};
+		B51EB8891CC6A220007AE0FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB88A1CC6A220007AE0FE /* MensaModule.swift */,
+				B51EB88B1CC6A220007AE0FE /* MensaParser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B51EB8931CC6A340007AE0FE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8941CC6A34F007AE0FE /* Base Controller */,
+				B51EB8961CC6A34F007AE0FE /* Routing */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B51EB8941CC6A34F007AE0FE /* Base Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8951CC6A34F007AE0FE /* ViewController.swift */,
+			);
+			path = "Base Controller";
+			sourceTree = "<group>";
+		};
+		B51EB8961CC6A34F007AE0FE /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8971CC6A34F007AE0FE /* Router.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		B51EB89A1CC6A36A007AE0FE /* Grades */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB89B1CC6A373007AE0FE /* Cell */,
+				B51EB8A11CC6A373007AE0FE /* GradesListViewController.swift */,
+				B51EB8A21CC6A373007AE0FE /* GradesModel.swift */,
+				B51EB8A31CC6A373007AE0FE /* GradesModule.swift */,
+				B51EB8A41CC6A373007AE0FE /* GradesSettingsController.swift */,
+			);
+			name = Grades;
+			sourceTree = "<group>";
+		};
+		B51EB89B1CC6A373007AE0FE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB89C1CC6A373007AE0FE /* GradeCell.swift */,
+				B51EB89D1CC6A373007AE0FE /* GradeCompactCell.swift */,
+				B51EB89E1CC6A373007AE0FE /* GradeCompactCell.xib */,
+				B51EB89F1CC6A373007AE0FE /* GradeExtendedCell.swift */,
+				B51EB8A01CC6A373007AE0FE /* GradeExtendedCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B51EB8AE1CC6A595007AE0FE /* Main App */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8AF1CC6A5A7007AE0FE /* TabbarController.swift */,
+				B51EB8B11CC6AB57007AE0FE /* Extensions */,
+			);
+			name = "Main App";
+			sourceTree = "<group>";
+		};
+		B51EB8B11CC6AB57007AE0FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B51EB8B21CC6AB61007AE0FE /* Dictionary.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51EB8A71CC6A373007AE0FE /* GradeCompactCell.xib in Resources */,
 				B51104EB1C89916400E962A2 /* LaunchScreen.storyboard in Resources */,
+				B51EB8A91CC6A373007AE0FE /* GradeExtendedCell.xib in Resources */,
 				B51104E81C89916400E962A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +415,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51EB8AA1CC6A373007AE0FE /* GradesListViewController.swift in Sources */,
+				B51EB88C1CC6A220007AE0FE /* MealDetailViewCell.swift in Sources */,
+				B51EB8B31CC6AB61007AE0FE /* Dictionary.swift in Sources */,
 				B51104E11C89916400E962A2 /* AppDelegate.swift in Sources */,
+				B51EB8991CC6A34F007AE0FE /* Router.swift in Sources */,
+				B51EB8A61CC6A373007AE0FE /* GradeCompactCell.swift in Sources */,
+				B51EB88E1CC6A220007AE0FE /* MealMainViewController.swift in Sources */,
+				B51EB8981CC6A34F007AE0FE /* ViewController.swift in Sources */,
+				B51EB8B01CC6A5A7007AE0FE /* TabbarController.swift in Sources */,
+				B51EB8A81CC6A373007AE0FE /* GradeExtendedCell.swift in Sources */,
+				B51EB8A51CC6A373007AE0FE /* GradeCell.swift in Sources */,
+				B51EB8AD1CC6A373007AE0FE /* GradesSettingsController.swift in Sources */,
+				B51EB8AC1CC6A373007AE0FE /* GradesModule.swift in Sources */,
+				B51EB8AB1CC6A373007AE0FE /* GradesModel.swift in Sources */,
+				B51EB88F1CC6A220007AE0FE /* MensaMainCollectionViewCell.swift in Sources */,
+				B51EB8901CC6A220007AE0FE /* MensaMainViewController.swift in Sources */,
+				B51EB8921CC6A220007AE0FE /* MensaParser.swift in Sources */,
+				B51EB88D1CC6A220007AE0FE /* MealDetailViewController.swift in Sources */,
+				B51EB8911CC6A220007AE0FE /* MensaModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HTWDresden/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.htw-dresden.HTWDresden";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,6 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HTWDresden/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.htw-dresden.HTWDresden";
 				PRODUCT_NAME = "$(TARGET_NAME)";
