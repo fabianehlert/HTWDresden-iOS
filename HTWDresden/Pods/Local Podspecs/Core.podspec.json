@@ -19,6 +19,9 @@
     ],
     "SwiftString": [
 
+    ],
+    "Kingfisher": [
+      "~> 2.2"
     ]
   }
 }

@@ -25,13 +25,12 @@ class MealMainViewController: UIViewController {
 }
 
 extension MealMainViewController: UITableViewDelegate, UITableViewDataSource {
-
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return meals.count
 	}
 
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 		cell.textLabel?.text = meals[indexPath.row].strTitle
 		cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
@@ -39,7 +38,7 @@ extension MealMainViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let controller = MealDetailViewController()
+		let controller = MealDetailViewController()
 		self.navigationController?.pushViewController(controller, animated: true)
 	}
 }

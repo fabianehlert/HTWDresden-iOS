@@ -16,7 +16,6 @@ struct MensaData {
 }
 
 class Parser: NSObject, NSXMLParserDelegate {
-	var parser = NSXMLParser()
 	var strPath = ""
 	var strTitle = ""
 	var strDescription = ""
@@ -27,27 +26,55 @@ class Parser: NSObject, NSXMLParserDelegate {
 	var bParseMensa = false
 	var mensaData = [String: [MensaData]]()
 
-	override init() {
+	init(strPath: String) {
+		self.strPath = strPath
 		super.init()
 	}
 
-	init(strPath: String) {
-		self.strPath = strPath
-	}
-
-	func loadData() -> [String: [MensaData]] {
-		let url: NSURL = NSURL(string: strPath)!
-		parser = NSXMLParser(contentsOfURL: url)!
-		parser.delegate = self
-		let success: Bool = parser.parse()
-
-		if success {
-			print("Parsing war erfolgreich!")
+	func loadData(completion: [String: [MensaData]] -> Void) {
+		guard let url = NSURL(string: self.strPath) else {
+			return
 		}
-		else {
-			print("Fehler beim Parsen der Mensadaten!")
-		}
-		return mensaData
+
+		NSURLSession.sharedSession().dataTaskWithURL(url) {
+			data, response, error in
+
+			var result: [String: [MensaData]] = [:]
+
+			defer {
+				NSOperationQueue.mainQueue().addOperationWithBlock {
+					completion(result)
+				}
+			}
+
+			if let error = error {
+				print(error)
+				return
+			}
+
+			guard let response = response as? NSHTTPURLResponse else {
+				return
+			}
+
+			let statusCode = response.statusCode
+			print("status code: ", statusCode)
+
+			guard let data = data where statusCode == 200 else {
+				return
+			}
+
+			let parser = NSXMLParser(data: data)
+			parser.delegate = self
+			let success = parser.parse()
+
+			if success {
+				print("Parsing war erfolgreich!")
+				result = self.mensaData
+			}
+			else {
+				print("Fehler beim Parsen der Mensadaten!")
+			}
+		}.resume()
 	}
 
 	func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {

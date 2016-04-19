@@ -20,5 +20,5 @@ public class MensaModule: Core.Module {
 	public var name: String { return "Mensa" }
 	public var image: UIImage { return UIImage() }
 	
-	public var initialController: UIViewController { return MensaMainViewController(router: router).wrapInNavigationController() }
+    public var initialController: UIViewController { return MensaMainViewController(collectionViewLayout: UICollectionViewFlowLayout()).wrapInNavigationController() }
 }

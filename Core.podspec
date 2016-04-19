@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
   s.dependency 'SwiftString'
-  
+  s.dependency 'Kingfisher', '~> 2.2'
+
 end
