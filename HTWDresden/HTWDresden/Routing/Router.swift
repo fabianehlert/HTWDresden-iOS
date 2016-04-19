@@ -3,8 +3,6 @@ import UIKit
 public typealias RouteURL = String
 
 public protocol Module {
-	var router: Router? { get set }
-
 	var name: String { get }
 	var image: UIImage { get }
 
@@ -13,20 +11,21 @@ public protocol Module {
 
 public protocol Route: RawRepresentable { }
 
-public class Router {
-	var currentController: ViewController?
+public class ApplicationContainer {
+	private var names = [String]()
+	private var modules = [String: Module]()
 
-	public typealias RoutingParameter = [String: AnyObject]
-
-	private(set) var modules = [String: Module]()
+    var sortedModules: [(name: String, module: Module)] {
+		return names.map {
+			return ($0, modules[$0]!)
+		}
+	}
 
 	public func registerModule(module: Module) {
+		if let index = names.indexOf(module.name) {
+			names.removeAtIndex(index)
+		}
 		modules[module.name] = module
-	}
-
-	public func registerRoute<T: Route>(route: T, module: Module, handler: RoutingParameter -> Void) {
-	}
-
-	public func route<T: Route>(route: T, parameter: RoutingParameter) {
+		names.append(module.name)
 	}
 }

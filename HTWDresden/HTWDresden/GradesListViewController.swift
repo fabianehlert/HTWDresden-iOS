@@ -8,8 +8,7 @@
 
 import UIKit
 
-public class GradesListViewController: ViewController {
-
+public class GradesListViewController: UIViewController {
 	var tableView = UITableView()
 
 	var grades = [[Grade]]()
@@ -49,7 +48,7 @@ public class GradesListViewController: ViewController {
 	}
 
 	func settings() {
-		let v = GradesSettingsController(router: self.router)
+		let v = GradesSettingsController()
 		v.settings = GradesModule.shared.settings
 		v.delegate = self
 		let n = v.wrapInNavigationController()
@@ -66,7 +65,6 @@ extension GradesListViewController: GradesSettingsControllerDelegate {
 }
 
 extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
-
 	public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return grades.count
 	}
@@ -74,17 +72,17 @@ extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
 	public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return grades[section].first?.semester
 	}
-    
-    public func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
-        
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 230/255)
-    }
-    
-    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
+
+	public func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		view.tintColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
+
+		let header = view as! UITableViewHeaderFooterView
+		header.textLabel?.textColor = UIColor(red: 30 / 255, green: 30 / 255, blue: 30 / 255, alpha: 230 / 255)
+	}
+
+	public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 50
+	}
 
 	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return grades[section].count
@@ -109,7 +107,6 @@ extension GradesListViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 
 	public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
 		var indexPathsToHighlight = [NSIndexPath]()
 
 		if indexPath == highlightedIndexPath {

@@ -26,6 +26,9 @@ class TabbarController: UIViewController {
 		modules = Dictionary(items.map { ($0.0, $0.1.initialController) })
 		names = items.map { $0.name }
 		super.init(nibName: nil, bundle: nil)
+		if let name = names.first {
+			switchToModule(name)
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -56,7 +59,7 @@ class TabbarController: UIViewController {
 			name in
 			let view = UIButton(type: .System)
 			view.setTitle(name, forState: .Normal)
-            view.backgroundColor = .redColor()
+			view.backgroundColor = .redColor()
 			view.addAction({ _ in
 
 				self.switchToModule(name)

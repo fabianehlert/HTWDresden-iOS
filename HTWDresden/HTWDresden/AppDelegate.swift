@@ -12,21 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
-	let router = Router()
+	let container = ApplicationContainer()
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		window = UIWindow()
 
 		let g = GradesModule()
-		router.registerModule(g)
+		container.registerModule(g)
 
 		let m = MensaModule()
-		router.registerModule(m)
+		container.registerModule(m)
 
-		let tabbar = UITabBarController()
-		tabbar.viewControllers = router.modules.map { $0.1.initialController }
-
-		window?.rootViewController = TabbarController(items: router.modules.map { $0 })
+		window?.rootViewController = TabbarController(items: container.sortedModules )
 		window?.makeKeyAndVisible()
 
 		return true

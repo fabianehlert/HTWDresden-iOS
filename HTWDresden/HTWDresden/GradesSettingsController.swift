@@ -29,7 +29,7 @@ protocol GradesSettingsControllerDelegate {
 	func didUpdateValues()
 }
 
-class GradesSettingsController: ViewController {
+class GradesSettingsController: UIViewController {
 	var delegate: GradesSettingsControllerDelegate?
 
 	private let username: TextField = {

@@ -5,8 +5,6 @@ public class MensaModule: Module {
 
 	public static var shared = MensaModule()
 
-	public var router: Router?
-
 	public var name: String { return "Mensa" }
 	public var image: UIImage { return UIImage() }
 

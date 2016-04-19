@@ -38,12 +38,10 @@ public class GradesModule: Module {
 
 	public static var shared = GradesModule()
 
-	public var router: Router?
-
 	public var name: String { return "Noten" }
 	public var image: UIImage { return UIImage() }
 
-	public var initialController: UIViewController { return GradesListViewController(router: router).wrapInNavigationController() }
+	public var initialController: UIViewController { return GradesListViewController().wrapInNavigationController() }
 
 	var settings = Settings()
 }
