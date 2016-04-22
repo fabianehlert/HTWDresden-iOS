@@ -75,7 +75,7 @@ class GradesSettingsController: UIViewController {
 		bConfirm.setTitle("Bestätigen", forState: .Normal)
 		bConfirm.addTarget(self, action: #selector(GradesSettingsController.dismiss), forControlEvents: .TouchUpInside)
 		bConfirm.backgroundColor = UIColor(red: 0, green: 92 / 255, blue: 153 / 255, alpha: 1)
-		bConfirm.frame = CGRect(x: 0, y: password.frame.origin.y + password.frame.size.height + 8, width: username.frame.size.width, height: 30)
+		bConfirm.frame = CGRect(x: 0, y: password.frame.origin.y + password.frame.size.height + 8, width: username.frame.size.width, height: 40)
 
 		view.addSubview(username)
 		view.addSubview(password)

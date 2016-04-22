@@ -13,7 +13,7 @@ class MensaMainViewController: UICollectionViewController, UICollectionViewDeleg
 		self.title = "Mensa"
 
 		super.viewDidLoad()
-		collectionView?.backgroundColor = .whiteColor()
+		collectionView?.backgroundColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1)
 
 		collectionView?.registerClass(MensaMainCollectionViewCell.self, forCellWithReuseIdentifier: identifier)
 		collectionView?.alwaysBounceVertical = true

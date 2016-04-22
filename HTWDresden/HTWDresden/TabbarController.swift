@@ -59,7 +59,8 @@ class TabbarController: UIViewController {
 			name in
 			let view = UIButton(type: .System)
 			view.setTitle(name, forState: .Normal)
-			view.backgroundColor = .redColor()
+            view.tintColor = .whiteColor()
+			view.backgroundColor = UIColor(red: 0, green: 92 / 255, blue: 153 / 255, alpha: 1)
 			view.addAction({ _ in
 
 				self.switchToModule(name)

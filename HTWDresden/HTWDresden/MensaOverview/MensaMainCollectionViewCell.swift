@@ -20,17 +20,22 @@ class MensaMainCollectionViewCell: UICollectionViewCell {
 	var label: UILabel!
 
 	private func setup() {
-		contentView.backgroundColor = .redColor()
+		contentView.backgroundColor = .whiteColor()
 
 		label = UILabel(frame: bounds)
 		label.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-		label.text = "YEAH"
+		label.text = "Mensa"
 		contentView.addSubview(label)
 	}
 
 	override var highlighted: Bool {
 		didSet {
-			contentView.backgroundColor = highlighted ? .grayColor() : .redColor()
+			contentView.backgroundColor = highlighted ? .grayColor() : .whiteColor()
 		}
 	}
+    override var selected: Bool {
+        didSet {
+            contentView.backgroundColor = selected ? .grayColor() : .whiteColor()
+        }
+    }
 }

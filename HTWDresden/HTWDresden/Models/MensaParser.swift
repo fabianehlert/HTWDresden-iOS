@@ -13,6 +13,7 @@ class Parser: NSObject, NSXMLParserDelegate {
 	var strDescription = ""
 	var strMensa = ""
 	var strCost = ""
+    var bParseItem = false
 	var bParseTitle = false
 	var bParseDescription = false
 	var bParseMensa = false
@@ -70,6 +71,12 @@ class Parser: NSObject, NSXMLParserDelegate {
 	}
 
 	func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String]) {
+        if elementName == "item" {
+            bParseItem = true
+        }
+        if !bParseItem {
+            return
+        }
 		if elementName == "title" {
 			bParseTitle = true
 		}
@@ -82,6 +89,9 @@ class Parser: NSObject, NSXMLParserDelegate {
 	}
 
 	func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if elementName == "item" {
+            bParseItem = false
+        }
 		if elementName == "title" {
 			bParseTitle = false
 		}
